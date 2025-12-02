@@ -1,0 +1,44 @@
+# Same Day Tours
+
+|------------------------------------------------|------------|-------|--------------------------------------------|------------------|--------------|
+| Tour Name                                      | Duration   | Person | Description                                | Location         | Action       |
+|------------------------------------------------|------------|-------|--------------------------------------------|------------------|--------------|
+| Old Delhi Food Tasting Tour                    | 4 hours    | 25    | Old Delhi Food Tasting Tour                | Old Delhi        | Explore Now  |
+| Delhi Private Tour By Car                      | 1 day      | 25    | Delhi Private Day Tour by Car              | Old And New Delhi| Explore Now  |
+| Taj Mahal Sunrise And Old Delhi Tour           | 1 day      | 25    | Taj Mahal Sunrise And Old Delhi Tour       | Delhi Taj Mahal  | Explore Now  |
+| Taj Mahal Sunrise Tour From Delhi              | 1 day      | 25    | Taj Mahal Sunrise Tour From Delhi          | Delhi Taj Mahal  | Explore Now  |
+| Taj Mahal Tour By Gatimaan Express Train       | 1 day      | 25    | Taj Mahal Tour By Gatimaan Express Train   | Delhi Taj Mahal  | Explore Now  |
+| Taj Mahal And Agra Overnight Tour              | 2 days     | 25    | Taj Mahal And Agra Overnight Tour          | Delhi Taj Mahal  | Explore Now  |
+| Taj Mahal And Agra Tour By Premium Car         | 1 day      | 25    | Taj Mahal And Agra Tour By Premium Car     | Delhi Taj Mahal  | Explore Now  |
+| Day Trip To Taj Mahal and Agra Fort By Car     | 1 day      | 25    | Day Trip To Taj Mahal and Agra Fort By Car | Delhi Taj Mahal  | Explore Now  |
+| 2 Days Agra And Jaipur Tour From Delhi         | 2 days     | 25    | 2 Days Agra And Jaipur Tour From Delhi     | Agra Jaipur      | Explore Now  |
+| Evening Delhi City Tour                        | 4 hours    | 25    | Evening Delhi City Tour 4 Hours            | Delhi            | Explore Now  |
+
+
+
+# Golden Triangle Tours
+
+|------------------------------------------------|-----------|-------|----------------------------------------------|-------------------------------|--------------|
+| Tour Name                                      | Duration  | Person| Description                                  | Location                      | Action       |
+|------------------------------------------------|-----------|-------|----------------------------------------------|-------------------------------|--------------|
+| Golden Triangle Tour with Varanasi             | 6 days    | 25    | Golden Triangle Tour With Varanasi           | Delhi, Agra, Jaipur And Varanasi | Explore Now  |
+| Golden Triangle Tour with Udaipur              | 6 days    | 25    | Golden Triangle Tour with Udaipur            | Delhi, Agra, Jaipur And Udaipur  | Explore Now  |
+| Golden Triangle Tour with Ranthambore          | 5 days    | 25    | Golden Triangle Tour with Ranthambore        | Delhi, Agra, Jaipur And Ranthambore | Explore Now  |
+| Golden Triangle Tour with Amritsar             | 7 days    | 25    | Golden Triangle Tour with Amritsar           | Delhi, Agra, Jaipur And Amritsar   | Explore Now  |
+| Golden Triangle Tour 4N5D                      | 5 days    | 25    | Golden Triangle Tour 4N5D                    | Delhi, Agra, Jaipur, India         | Explore Now  |
+| Golden Triangle Tour 3N4D                      | 4 days    | 25    | Golden Triangle Tour 3N4D                    | Delhi, Agra, Jaipur, India         | Explore Now  |
+| Golden Triangle Tour 2N3D                      | 3 days    | 25    | Golden Triangle Tour 2N3D                    | Delhi, Agra, Jaipur, India         | Explore N
+
+
+# Taj Mahal
+
+|------------------------------------------------|-----------|-------|--------------------------------------------|--------------------|--------------|
+| Tour Name                                      | Duration  | Person| Description                                | Location           | Action       |
+|------------------------------------------------|-----------|-------|--------------------------------------------|--------------------|--------------|
+| Taj Mahal Sunrise And Old Delhi Tour           | 1 day     | 25    | Taj Mahal Sunrise And Old Delhi Tour       | Delhi Taj Mahal    | Explore Now  |
+| Taj Mahal Sunrise Tour From Delhi              | 1 day     | 25    | Taj Mahal Sunrise Tour From Delhi          | Delhi Taj Mahal    | Explore Now  |
+| Taj Mahal Tour By Gatimaan Express Train       | 1 day     | 25    | Taj Mahal Tour By Gatimaan Express Train   | Delhi Taj Mahal    | Explore Now  |
+| Taj Mahal And Agra Overnight Tour              | 2 days    | 25    | Taj Mahal And Agra Overnight Tour          | Delhi Taj Mahal    | Explore Now  |
+| Taj Mahal And Agra Tour By Premium Car         | 1 day     | 25    | Taj Mahal And Agra Tour By Premium Car     | Delhi Taj Mahal    | Explore Now  |
+| Day Trip To Taj Mahal and Agra Fort By Car     | 1 day     | 25    | Day Trip To Taj Mahal and Agra Fort By Car | Delhi Taj Mahal    | Explore Now  |
+| 2 Days Agra And Jaipur Tour From Delhi         | 2 days    | 25    | 2 Days Agra And Jaipur Tour From Delhi     | Agra Jaipur        | Explore Now  |
