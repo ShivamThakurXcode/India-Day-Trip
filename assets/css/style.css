@@ -3,7 +3,10 @@
 :root {
     --theme-color: #1CA8CB;
     --primary-color: #1CA8CB;
-    --title-color: #113D48;
+
+    /* --title-color: #113D48; */
+    --title-color: #0c2d62;
+
     --body-color: #6E7070;
     --smoke-color: #E9F6F9;
     --smoke-color2: #F3F4F6;
@@ -8098,7 +8101,7 @@ ol.wp-block-rss {
 }
 
 .header-top {
-    padding: 10px 0;
+    padding: 5px 0;
     --body-color: $block-color2
 }
 
@@ -8162,7 +8165,7 @@ ol.wp-block-rss {
 
 .header-layout1 .header-top {
     position: relative;
-    padding: 6px 0;
+    padding: 3px 0;
     border-bottom: 1px solid #E1E4E5;
     z-index: 2
 }
@@ -8386,7 +8389,7 @@ ol.wp-block-rss {
 }
 
 .header-layout2 .main-menu>ul>li>a {
-    padding: 38.5px 0px
+    padding: 25px 0px
 }
 
 .header-layout3 .menu-area {
@@ -8446,6 +8449,34 @@ ol.wp-block-rss {
     .header-layout3 .header-logo {
         padding: 0 20px
     }
+}
+
+/* Footer icon alignment fix */
+.footer-layout2 .info-box_text .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.footer-layout2 .info-box_text .icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Footer links hover border */
+.copyright-wrap .footer-links a:hover {
+    border: 1px solid orange;
+    padding: 2px 4px;
+}
+
+.copyright-wrap .copyright-text a:hover {
+    border: 1px solid orange;
+    padding: 2px 4px;
 }
 
 @media (max-width: 375px) {
@@ -9104,8 +9135,8 @@ ol.wp-block-rss {
 }
 
 .widget-area {
-    padding-top: 100px;
-    padding-bottom: 46px
+    padding-top: 40px;
+    padding-bottom: 40px
 }
 
 .sticky-footer {
@@ -9336,12 +9367,12 @@ ol.wp-block-rss {
 }
 
 .footer-layout2 .widget-area {
-    padding-bottom: 70px
+    padding-bottom: 20px
 }
 
 @media (max-width: 991px) {
     .footer-layout2 .widget-area {
-        padding-bottom: 30px
+        padding-bottom: 20px
     }
 }
 

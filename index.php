@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-<!-- Mirrored from html.themehour.net/tourm/demo/home-tour.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Dec 2025 16:36:24 GMT -->
 
 <head>
     <meta charset="utf-8">
@@ -12,254 +11,54 @@
     <meta name="keywords" content="India Day Trip, Agra tours, Taj Mahal tours, Golden Triangle tours, Same Day tours">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Manrope:wght@200..800&amp;family=Montez&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* Color Switcher Enhancement */
-        .color-switch-btns button {
-            position: relative;
-            transition: all 0.3s ease;
-        }
 
-        .color-switch-btns button.active {
-            transform: scale(1.2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border: 2px solid #fff;
-        }
+    <!-- links  -->
+    <?php include 'components/links.php'; ?>
 
-        .color-switch-btns button:hover {
-            transform: scale(1.1);
-        }
-
-        /* Tour Slider Section Header Styling */
-        .tour-area .row.align-items-center {
-            margin-bottom: 30px;
-        }
-
-        .tour-area .title-area .sec-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--title-color);
-            margin-bottom: 0;
-        }
-
-        /* Tour Location Styling */
-        .tour-location {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 5px;
-        }
-
-        @media (max-width: 767px) {
-            .tour-area .row.align-items-center {
-                flex-direction: column;
-                align-items: flex-start !important;
-                gap: 15px;
-            }
-
-            .tour-area .row.align-items-center .col-auto:last-child {
-                width: 100%;
-            }
-
-            .tour-area .row.align-items-center .col-auto:last-child .line-btn {
-                width: 100%;
-                text-align: center;
-                display: inline-block;
-            }
-
-            .tour-area .title-area .sec-title {
-                font-size: 24px;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div id="preloader" class="preloader">
-        <div class="preloader-inner"><img src="assets/img/logo/logo-header.png" alt=""></div>
-        <div id="loader" class="th-preloader">
-            <div class="animation-preloader">
 
-            </div>
-        </div>
-    </div>
-    <div class="sidemenu-wrapper sidemenu-info">
-        <div class="sidemenu-content"><button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget">
-                <div class="th-widget-about">
-                    <div class="about-logo"><a href="index.html"><img src="assets/img/logo/logo-header.png"
-                                alt="India Day Trip"></a>
-                    </div>
-                    <p class="about-text">India Day Trip is an Agra-based tour and travel company specializing in Same
-                        Day Tours, Taj Mahal Tours, and Golden Triangle Tours.</p>
-                    <div class="th-social"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a
-                            href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a
-                            href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> <a
-                            href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a></div>
-                </div>
-            </div>
-            <div class="widget">
-                <h3 class="widget_title">Recent Posts</h3>
-                <div class="recent-post-wrap">
-                    <div class="recent-post">
-                        <div class="media-img"><a href="blog-details.html"><img
-                                    src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
-                        <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="far fa-calendar"></i>24 Jun ,
-                                    2025</a></div>
-                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Best Time to Visit
-                                    Taj Mahal</a></h4>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="media-img"><a href="blog-details.html"><img
-                                    src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
-                        <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="far fa-calendar"></i>22 Jun ,
-                                    2025</a></div>
-                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Golden Triangle
-                                    Itinerary Guide</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="widget">
-                <h3 class="widget_title">Get In Touch</h3>
-                <div class="th-widget-contact">
-                    <div class="info-box_text">
-                        <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
-                        <div class="details">
-                            <p><a href="tel:+918126052755" class="info-box_link">+91 81260 52755/2h</a></p>
-                        </div>
-                    </div>
-                    <div class="info-box_text">
-                        <div class="icon"><img src="assets/img/icon/envelope.svg" alt="img"></div>
-                        <div class="details">
-                            <p><a href="mailto:info@indiadaytrip.com" class="info-box_link">info@indiadaytrip.com</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="info-box_text">
-                        <div class="icon"><img src="assets/img/icon/location-dot.svg" alt="img"></div>
-                        <div class="details">
-                            <p>Shop No. 2, Gupta Market, Tajganj, Agra</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- prelaoder -->
+    <?php include 'components/preloader.php'; ?>
+    <!-- sidemenu -->
+    <?php include 'components/sidebar.php'; ?>
+
+    <!-- popup search box -->
     <div class="popup-search-box"><button class="searchClose"><i class="fal fa-times"></i></button>
         <form action="#"><input type="text" placeholder="What are you looking for?"> <button type="submit"><i
                     class="fal fa-search"></i></button></form>
     </div>
     <div class="th-menu-wrapper onepage-nav">
         <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo"><a href="index.html"><img src="assets/img/logo/logo-header.png"
+            <div class="mobile-logo"><a href="index.php"><img src="assets/img/logo/logo-header.png"
                         alt="India Day Trip"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a class="active" href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li class="menu-item-has-children"><a href="#">Tours</a>
                         <ul class="sub-menu">
-                            <li><a href="same-day-tours.html">Same Day Tours</a></li>
-                            <li><a href="taj-mahal-tours.html">Taj Mahal Tours</a></li>
-                            <li><a href="golden-triangle-tours.html">Golden Triangle Tours</a></li>
-                            <li><a href="agra-tours.html">Agra Tours</a></li>
+                            <li><a href="same-day-tours.php">Same Day Tours</a></li>
+                            <li><a href="taj-mahal-tours.php">Taj Mahal Tours</a></li>
+                            <li><a href="golden-triangle-tours.php">Golden Triangle Tours</a></li>
+                            <li><a href="agra-tours.php">Agra Tours</a></li>
                         </ul>
                     </li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <header class="th-header header-layout1 header-layout2">
-        <div class="header-top">
-            <div class="container th-container">
-                <div class="row justify-content-center justify-content-lg-between align-items-center">
-                    <div class="col-auto d-none d-md-block">
-                        <div class="header-links">
-                            <ul>
-                                <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular fa-location-dot"></i>
-                                    <span>Shop No. 2, Gupta Market, Tajganj, Agra</span>
-                                </li>
-                                <li class="d-none d-xl-inline-block"><i class="fa-regular fa-clock"></i> <span>Daily:
-                                        8.00 am - 8.00 pm</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto">
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sticky-wrapper">
-            <div class="menu-area" data-bg-src="assets/img/bg/line-pattern.png">
-                <div class="container th-container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-auto">
-                            <div class="header-logo"><a href="index.html"><img src="assets/img/logo/logo-header.png"
-                                        alt="India Day Trip"></a></div>
-                        </div>
-                        <div class="col-auto">
-                            <nav class="main-menu d-none d-xl-inline-block">
-                                <ul>
-                                    <li><a class="active" href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Tours</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="same-day-tours.html">Same Day Tours</a></li>
-                                            <li><a href="taj-mahal-tours.html">Taj Mahal Tours</a></li>
-                                            <li><a href="golden-triangle-tours.html">Golden Triangle Tours</a></li>
-                                            <li><a href="agra-tours.html">Agra Tours</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
-                                    class="far fa-bars"></i></button>
-                        </div>
-                        <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="contact.html" class="th-btn style3 th-icon">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+
+    <!-- header  -->
+
+    <?php include 'components/header.php'; ?>
+
+
     <div class="hero-2" id="hero">
         <div class="hero2-overlay" data-bg-src="assets/img/bg/line-pattern.png"></div>
         <div class="swiper hero-slider-2" id="heroSlide2">
@@ -271,12 +70,9 @@
                             <div class="hero-style2">
                                 <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Discover <span
                                         class="hero-text">The Beauty of Agra</span></h1>
-                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Experience the timeless
-                                    wonder of the Taj Mahal and explore the rich Mughal heritage of Agra. Your trusted
-                                    Agra-based travel partner for unforgettable journeys to one of India's most iconic
-                                    destinations.</p>
+                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Experience the wonder of the Taj Mahal with Agra's trusted travel experts.</p>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="same-day-tours.html" class="th-btn white-btn th-icon">Explore Agra
+                                        href="same-day-tours.php" class="th-btn white-btn th-icon">Explore Agra
                                         Tours</a>
                                 </div>
                             </div>
@@ -291,12 +87,9 @@
                             <div class="hero-style2">
                                 <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Explore <span
                                         class="hero-text">The Heart of Delhi</span></h1>
-                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Discover the vibrant
-                                    capital city where ancient history meets modern culture. India Day Trip offers
-                                    personalized travel experiences with a focus on comfort, safety, and cultural
-                                    immersion in Delhi's magnificent monuments and bustling markets.</p>
+                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Experience Delhi's rich history and vibrant culture with India Day Trip.</p>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="golden-triangle-tours.html" class="th-btn white-btn th-icon">Explore Delhi
+                                        href="golden-triangle-tours.php" class="th-btn white-btn th-icon">Explore Delhi
                                         Tours</a></div>
                             </div>
                         </div>
@@ -310,12 +103,9 @@
                             <div class="hero-style2">
                                 <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Experience <span
                                         class="hero-text">The Pink City of Jaipur</span></h1>
-                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Immerse yourself in the
-                                    royal splendor of Rajasthan's capital. From majestic palaces to colorful bazaars,
-                                    Jaipur offers an enchanting blend of regal architecture, rich traditions, and warm
-                                    hospitality that will create memories to last a lifetime.</p>
+                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Discover Jaipur's royal charm and vibrant bazaars.</p>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="golden-triangle-tours.html" class="th-btn white-btn th-icon">Explore
+                                        href="golden-triangle-tours.php" class="th-btn white-btn th-icon">Explore
                                         Jaipur
                                         Tours</a></div>
                             </div>
@@ -341,7 +131,7 @@
                             <div class="hero-card_content">
                                 <h3 class="box-title">Agra Day Tour</h3>
                                 <h4 class="hero-card_price"><span class="currency">$120.00</span>/Person</h4><span><i
-                                        class="fa-light fa-clock"></i>1 Day</span> <a href="same-day-tours.html"
+                                        class="fa-light fa-clock"></i>1 Day</span> <a href="same-day-tours.php"
                                     class="th-btn style2">Book Now</a>
                             </div>
                         </div>
@@ -354,7 +144,7 @@
                             <div class="hero-card_content">
                                 <h3 class="box-title">Delhi City Tour</h3>
                                 <h4 class="hero-card_price"><span class="currency">$150.00</span>/Person</h4><span><i
-                                        class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.html"
+                                        class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.php"
                                     class="th-btn style2">Book Now</a>
                             </div>
                         </div>
@@ -367,7 +157,7 @@
                             <div class="hero-card_content">
                                 <h3 class="box-title">Jaipur Heritage Tour</h3>
                                 <h4 class="hero-card_price"><span class="currency">$180.00</span>/Person</h4><span><i
-                                        class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.html"
+                                        class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.php"
                                     class="th-btn style2">Book Now</a>
                             </div>
                         </div>
@@ -399,9 +189,9 @@
                                 <img src="assets/img/destination/d-delhi.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Delhi</a>
+                                <a href="destination.php">Delhi</a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -413,9 +203,9 @@
                                 <img src="assets/img/destination/d-agra.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Agra </a>
+                                <a href="destination.php">Agra </a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -427,9 +217,9 @@
                                 <img src="assets/img/destination/d-jaipur.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Jaipur</a>
+                                <a href="destination.php">Jaipur</a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -441,9 +231,9 @@
                                 <img src="assets/img/destination/d-amritsar.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Amaritsar</a>
+                                <a href="destination.php">Amaritsar</a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -455,9 +245,9 @@
                                 <img src="assets/img/destination/d-ranthambore.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Ranthambore</a>
+                                <a href="destination.php">Ranthambore</a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -469,9 +259,9 @@
                                 <img src="assets/img/destination/d-varansi.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Varanasi</a>
+                                <a href="destination.php">Varanasi</a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -483,9 +273,9 @@
                                 <img src="assets/img/destination/d-amritsar.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Amaritsar</a>
+                                <a href="destination.php">Amaritsar</a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -497,9 +287,9 @@
                                 <img src="assets/img/destination/d-jaipur.png" alt="Image">
                             </div>
                             <h3 class="box-title">
-                                <a href="destination.html">Jaipur</a>
+                                <a href="destination.php">Jaipur</a>
                             </h3>
-                            <a class="line-btn" href="destination.html">See packages</a>
+                            <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
 
@@ -547,7 +337,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/sunrise-taj.png"
                                         alt="Taj Mahal Sunrise Tour From Delhi"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -557,7 +347,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$100.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 Day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -567,7 +357,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/agra-tour-1.png"
                                         alt="Taj Mahal And Agra Overnight Tour"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal And Agra Overnight
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal And Agra Overnight
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -577,7 +367,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$180.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 Days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -587,7 +377,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/golden-tour.png"
                                         alt="Golden Triangle Tour 4N5D"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Golden Triangle Tour 4N5D</a></h3>
+                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour 4N5D</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur, India</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
@@ -596,7 +386,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$450.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 Days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -607,7 +397,7 @@
                                         src="assets/img/tours-image/delhi-food-taste.png"
                                         alt="Old Delhi Food Tasting Tour"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Old Delhi Food Tasting Tour</a>
+                                    <h3 class="box-title"><a href="tour-details.php">Old Delhi Food Tasting Tour</a>
                                     </h3>
                                     <p class="tour-location">Old Delhi</p>
                                     <div class="tour-rating">
@@ -617,7 +407,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$50.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>4 hours</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -627,7 +417,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/gatiman.png"
                                         alt="Taj Mahal Tour By Gatimaan Express Train"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -637,7 +427,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$90.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 Day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -648,7 +438,7 @@
                                         src="assets/img/tours-image/varanashi-tour.png"
                                         alt="Golden Triangle Tour with Varanasi"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
                                             Varanasi</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
                                     <div class="tour-rating">
@@ -658,7 +448,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$650.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 Days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -864,7 +654,7 @@
                         </div>
                     </div>
                     <div class="col-md-auto">
-                        <a href="same-day-tours.html" class="th-btn style4 th-icon">See All Tours</a>
+                        <a href="same-day-tours.php" class="th-btn style4 th-icon">See All Tours</a>
                     </div>
                 </div>
             </div>
@@ -878,7 +668,7 @@
                                         src="assets/img/tours-image/delhi-food-taste.png"
                                         alt="Old Delhi Food Tasting Tour"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Old Delhi Food Tasting Tour</a>
+                                    <h3 class="box-title"><a href="tour-details.php">Old Delhi Food Tasting Tour</a>
                                     </h3>
                                     <p class="tour-location">Old Delhi</p>
                                     <div class="tour-rating">
@@ -888,7 +678,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$50.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>4 hours</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -897,7 +687,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/private-car.png"
                                         alt="Delhi Private Tour By Car"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Delhi Private Tour By Car</a></h3>
+                                    <h3 class="box-title"><a href="tour-details.php">Delhi Private Tour By Car</a></h3>
                                     <p class="tour-location">Old And New Delhi</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
@@ -906,7 +696,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$80.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -915,7 +705,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/taj-old-delhi.png"
                                         alt="Taj Mahal Sunrise And Old Delhi Tour"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Sunrise And Old Delhi
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise And Old Delhi
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -925,7 +715,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$120.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -934,7 +724,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/sunrise-taj.png"
                                         alt="Taj Mahal Sunrise Tour From Delhi"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -944,7 +734,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$100.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -953,7 +743,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/gatiman.png"
                                         alt="Taj Mahal Tour By Gatimaan Express Train"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -963,7 +753,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$90.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -984,7 +774,7 @@
                         </div>
                     </div>
                     <div class="col-md-auto">
-                        <a href="taj-mahal-tours.html" class="th-btn style4 th-icon">See All Tours</a>
+                        <a href="taj-mahal-tours.php" class="th-btn style4 th-icon">See All Tours</a>
                     </div>
                 </div>
             </div>
@@ -997,7 +787,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/taj-old-delhi.png"
                                         alt="Taj Mahal Sunrise And Old Delhi Tour"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Sunrise And Old Delhi
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise And Old Delhi
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -1007,7 +797,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$120.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1016,7 +806,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/sunrise-taj.png"
                                         alt="Taj Mahal Sunrise Tour From Delhi"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -1026,7 +816,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$100.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1035,7 +825,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/gatiman.png"
                                         alt="Taj Mahal Tour By Gatimaan Express Train"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -1045,7 +835,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$90.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1054,7 +844,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/agra-tour-1.png"
                                         alt="Taj Mahal And Agra Overnight Tour"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal And Agra Overnight
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal And Agra Overnight
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -1064,7 +854,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$180.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1073,7 +863,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/premium-car.png"
                                         alt="Taj Mahal And Agra Tour By Premium Car"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Taj Mahal And Agra Tour By Premium
+                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal And Agra Tour By Premium
                                             Car</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -1083,7 +873,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$150.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1104,7 +894,7 @@
                         </div>
                     </div>
                     <div class="col-md-auto">
-                        <a href="golden-triangle-tours.html" class="th-btn style4 th-icon">See All Tours</a>
+                        <a href="golden-triangle-tours.php" class="th-btn style4 th-icon">See All Tours</a>
                     </div>
                 </div>
             </div>
@@ -1118,7 +908,7 @@
                                         src="assets/img/tours-image/varanashi-tour.png"
                                         alt="Golden Triangle Tour with Varanasi"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
                                             Varanasi</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
                                     <div class="tour-rating">
@@ -1128,7 +918,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$650.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1137,7 +927,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/udaipur-tour.png"
                                         alt="Golden Triangle Tour with Udaipur"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
                                             Udaipur</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Udaipur</p>
                                     <div class="tour-rating">
@@ -1147,7 +937,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$700.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1156,7 +946,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/ranthambroe.png"
                                         alt="Golden Triangle Tour with Ranthambore"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
                                             Ranthambore</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Ranthambore</p>
                                     <div class="tour-rating">
@@ -1166,7 +956,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$600.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1175,7 +965,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/amritsar-tour.png"
                                         alt="Golden Triangle Tour with Amritsar"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
                                             Amritsar</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Amritsar</p>
                                     <div class="tour-rating">
@@ -1185,7 +975,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$750.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1194,7 +984,7 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/tours-image/golden-tour.png"
                                         alt="Golden Triangle Tour 4N5D"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Golden Triangle Tour 4N5D</a></h3>
+                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour 4N5D</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur, India</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
@@ -1203,7 +993,7 @@
                                     </div>
                                     <h4 class="tour-box_price"><span class="currency">$450.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 days</span> <a
-                                            href="contact.html" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1281,7 +1071,204 @@
         </div>
     </div>
 
-    <section class="overflow-hidden space">
+
+    <section class="testi-area overflow-hidden space-top pb-5" id=" testi-sec">
+        <div class="container-fluid p-0">
+            <div class="title-area mb-20 text-center"><span class="sub-title text-anime-style-2">Testimonial</span>
+                <h2 class="sec-title text-anime-style-3">What Client Say About us</h2>
+            </div>
+            <div class="slider-area">
+                <div class="swiper th-slider testiSlider1 has-shadow" id="testiSlider1"
+                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"767":{"slidesPerView":"2","centeredSlides":"true"},"992":{"slidesPerView":"2","centeredSlides":"true"},"1200":{"slidesPerView":"2.5","centeredSlides":"true"},"1400":{"slidesPerView":"2.5","centeredSlides":"true"}}}'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Maria Doe</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Andrew Simon</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Alex Jordan</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Maria Doe</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Angelina Rose</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Maria Doe</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Andrew Simon</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                                alt="testimonial"></div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">Alex Jordan</h3><span
+                                                class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review"><i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                            class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <p class="testi-card_text">“A home that perfectly blends sustainability with luxury
+                                    until I discovered Ecoland Residence. From the moment I stepped into this community,
+                                    I knew it was where I wanted to live. The commitment to eco-friendly living”</p>
+                                <div class="testi-card-quote"><img src="assets/img/icon/testi-quote.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-mockup d-none d-xl-block" data-bottom="-2%" data-right="0%"><img
+                src="assets/img/shape/line2.png" alt="shape"></div>
+        <div class="shape-mockup movingX d-none d-xl-block" data-top="30%" data-left="5%"><img
+                src="assets/img/shape/shape_7.png" alt="shape"></div>
+    </section>
+
+    <section class="overflow-hidden space-bottom pt-5">
         <div class="container">
             <div class="row justify-content-lg-between justify-content-center align-items-end">
                 <div class="col-lg">
@@ -1291,7 +1278,7 @@
                     </div>
                 </div>
                 <div class="col-lg-auto d-none d-lg-block">
-                    <div class="sec-btn"><a href="blog.html" class="th-btn style4 th-icon">See More Articles</a></div>
+                    <div class="sec-btn"><a href="blog.php" class="th-btn style4 th-icon">See More Articles</a></div>
                 </div>
             </div>
             <div class="row gx-24 gy-30">
@@ -1300,10 +1287,10 @@
                         <div class="blog-img global-img"><img src="assets/img/blog/blog-agra.png"
                                 alt="Best Time to Visit Taj Mahal"></div>
                         <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="blog.html">Sep 09, 2024</a> <a
-                                    href="blog.html">6 min read</a></div>
-                            <h3 class="box-title"><a href="blog-details.html">Best Time to Visit Taj Mahal: A Complete
-                                    Guide</a></h3><a href="blog-details.html" class="th-btn style4 th-icon">Read
+                            <div class="blog-meta"><a class="author" href="blog.php">Sep 09, 2024</a> <a
+                                    href="blog.php">6 min read</a></div>
+                            <h3 class="box-title"><a href="blog-details.php">Best Time to Visit Taj Mahal: A Complete
+                                    Guide</a></h3><a href="blog-details.php" class="th-btn style4 th-icon">Read
                                 More</a>
                         </div>
                     </div>
@@ -1311,10 +1298,10 @@
                         <div class="blog-img global-img"><img src="assets/img/blog/blog-tour.png"
                                 alt="Golden Triangle Itinerary"></div>
                         <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="blog.html">Sep 10, 2024</a> <a
-                                    href="blog.html">8 min read</a></div>
-                            <h3 class="box-title"><a href="blog-details.html">Perfect 5-Day Golden Triangle
-                                    Itinerary</a></h3><a href="blog-details.html" class="th-btn style4 th-icon">Read
+                            <div class="blog-meta"><a class="author" href="blog.php">Sep 10, 2024</a> <a
+                                    href="blog.php">8 min read</a></div>
+                            <h3 class="box-title"><a href="blog-details.php">Perfect 5-Day Golden Triangle
+                                    Itinerary</a></h3><a href="blog-details.php" class="th-btn style4 th-icon">Read
                                 More</a>
                         </div>
                     </div>
@@ -1324,11 +1311,11 @@
                         <div class="blog-img global-img"><img src="assets/img/blog/blog-delhi.png"
                                 alt="Agra Local Cuisine"></div>
                         <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="blog.html">Sep 05, 2024</a> <a
-                                    href="blog.html">6 min read</a></div>
+                            <div class="blog-meta"><a class="author" href="blog.php">Sep 05, 2024</a> <a
+                                    href="blog.php">6 min read</a></div>
                             <h3 class="box-title">
-                                <a href="blog-details.html">Must-Try Local Places & Foods in Delhi</a>
-                            </h3><a href="blog-details.html" class="th-btn style4 th-icon">Read
+                                <a href="blog-details.php">Must-Try Local Places & Foods in Delhi</a>
+                            </h3><a href="blog-details.php" class="th-btn style4 th-icon">Read
                                 More</a>
                         </div>
                     </div>
@@ -1337,119 +1324,11 @@
         </div>
     </section>
 
-    <footer class="footer-wrapper bg-title footer-layout2 shape-mockup-wrap">
-        <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="widget footer-widget">
-                            <div class="th-widget-about">
-                                <div class="about-logo">
-                                    <a href="index.html">
-                                        <img src="assets/img/logo/logo-footer.png" alt="India Day Trip">
-                                    </a>
-                                </div>
-                                <p class="about-text">India Day Trip is an Agra-based tour and travel company
-                                    specializing in Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours.</p>
-                                <div class="th-social"><a href="https://www.facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i
-                                            class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a> <a href="https://www.whatsapp.com/"><i
-                                            class="fab fa-whatsapp"></i></a> <a href="https://instagram.com/"><i
-                                            class="fab fa-instagram"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Quick Links</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="same-day-tours.html">Same Day Tours</a></li>
-                                    <li><a href="taj-mahal-tours.html">Taj Mahal Tours</a></li>
-                                    <li><a href="golden-triangle-tours.html">Golden Triangle Tours</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Get In Touch</h3>
-                            <div class="th-widget-contact">
-                                <div class="info-box_text">
-                                    <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
-                                    <div class="details">
-                                        <p><a href="tel:+918126052755" class="info-box_link">+91 81260 52755/2h</a></p>
-                                    </div>
-                                </div>
-                                <div class="info-box_text">
-                                    <div class="icon"><img src="assets/img/icon/envelope.svg" alt="img"></div>
-                                    <div class="details">
-                                        <p><a href="mailto:info@indiadaytrip.com"
-                                                class="info-box_link">info@indiadaytrip.com</a></p>
-                                    </div>
-                                </div>
-                                <div class="info-box_text">
-                                    <div class="icon"><img src="assets/img/icon/location-dot.svg" alt="img"></div>
-                                    <div class="details">
-                                        <p>Shop No. 2, Gupta Market, Tajganj, Agra</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Instagram Gallery</h3>
-                            <div class="sidebar-gallery">
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_3_1.jpg" alt="Taj Mahal">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_3_2.jpg" alt="Agra Fort">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_3_3.jpg"
-                                        alt="Amber Fort"> <a target="_blank" href="https://www.instagram.com/"
-                                        class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_3_4.jpg"
-                                        alt="India Gate"> <a target="_blank" href="https://www.instagram.com/"
-                                        class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_3_5.jpg"
-                                        alt="Qutub Minar"> <a target="_blank" href="https://www.instagram.com/"
-                                        class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_3_6.jpg"
-                                        alt="Hawa Mahal"> <a target="_blank" href="https://www.instagram.com/"
-                                        class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-wrap">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-md-6">
-                        <p class="copyright-text">Copyright 2025 <a href="index.html">India Day Trip</a>. All Rights
-                            Reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-end d-none d-md-block">
-                        <div class="footer-card"><span class="title">We Accept</span> <img
-                                src="assets/img/shape/cards.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="scroll-top"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg></div>
+
+    <!-- footer -->
+
+    <?php include 'components/footer.php'; ?>
+
     <div id="login-form" class="popup-login-register mfp-hide">
         <ul class="nav" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation"><button class="nav-menu" id="pills-home-tab" data-bs-toggle="pill"
@@ -1473,7 +1352,7 @@
                             <div class="form-btn mb-20 col-12"><button class="th-btn btn-fw th-radius2">Send
                                     Message</button></div>
                         </div>
-                        <div id="forgot_url"><a href="my-account.html">Forgot password?</a></div>
+                        <div id="forgot_url"><a href="my-account.php">Forgot password?</a></div>
                         <p class="form-messages mb-0 mt-3"></p>
                     </form>
                 </div>
@@ -1505,70 +1384,11 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/circle-progress.js"></script>
-    <script src="assets/js/matter.min.js"></script>
-    <script src="assets/js/matterjs-custom.js"></script>
-    <script src="assets/js/nice-select.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        // Enhanced Color Switcher Fix
-        jQuery(document).ready(function ($) {
-            // Initialize color buttons with their colors
-            $(".color-switch-btns button").each(function () {
-                const $button = $(this);
-                const color = $button.data("color");
 
-                // Set the button's background color preview
-                $button.css("--theme-color", color);
-                $button.css("background-color", color);
+    <!-- script  -->
 
-                // Add click handler
-                $button.on("click", function () {
-                    const selectedColor = $(this).data("color");
+    <?php include 'components/script.php'; ?>
 
-                    // Update both theme-color and primary-color CSS variables
-                    $(":root").css("--theme-color", selectedColor);
-                    $(":root").css("--primary-color", selectedColor);
-
-                    // Store in localStorage for persistence
-                    localStorage.setItem("theme-color", selectedColor);
-
-                    // Add active class to clicked button
-                    $(".color-switch-btns button").removeClass("active");
-                    $(this).addClass("active");
-                });
-            });
-
-            // Load saved color from localStorage on page load
-            const savedColor = localStorage.getItem("theme-color");
-            if (savedColor) {
-                $(":root").css("--theme-color", savedColor);
-                $(":root").css("--primary-color", savedColor);
-
-                // Mark the corresponding button as active
-                $(".color-switch-btns button").each(function () {
-                    if ($(this).data("color") === savedColor) {
-                        $(this).addClass("active");
-                    }
-                });
-            }
-
-            // Toggle color scheme panel
-            $(document).on("click", ".switchIcon", function () {
-                $(".color-scheme-wrap").toggleClass("active");
-            });
-        });
-    </script>
 </body>
-<!-- Mirrored from html.themehour.net/tourm/demo/home-tour.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Dec 2025 16:37:17 GMT -->
 
 </html>
