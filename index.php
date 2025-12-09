@@ -169,145 +169,101 @@
                         src="assets/img/icon/down-arrow.svg" alt=""></span>Scroll Down</a></div>
     </div>
 
-    <section class="category-area2 bg-top-center space overflow-hidden">
+    <section class="category-area bg-top-center background-image" style="background-image: url(&quot;assets/img/bg/category_bg_1.webp&quot;);">
         <div class="container th-container">
             <div class="title-area text-center">
-                <span class="sub-title">Discover India's Highlights</span>
+                <span class="sub-title">Wonderful Place For You</span>
                 <h2 class="sec-title">Top Destinations</h2>
-                <p class="sec-text">Explore our most popular tour packages across India. Find your next adventure from
-                    our curated selection of iconic cities, natural wonders, and cultural gems.</p>
             </div>
-            <div class="swiper categorySlider2 swiper-initialized swiper-horizontal" id="categorySlide2">
-                <div class="swiper-wrapper" id="swiper-wrapper-45b1f92e916d3de10" aria-live="polite"
-                    style="cursor: grab; transition-duration: 0ms; transform: translate3d(-1771.2px, 0px, 0px); transition-delay: 0ms;">
-
-                    <div class="swiper-slide" role="group" aria-label="1 / 8" data-swiper-slide-index="0"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 213.392px) rotate(0deg); transform-origin: right top;">
+            <div class="swiper th-slider has-shadow categorySlider background-image swiper-initialized swiper-horizontal swiper-backface-hidden"
+                id="categorySlider1"
+                data-slider-options='{"spaceBetween": "50","breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"},"1400":{"slidesPerView":"5"}}}'
+                style="background-image: url(&quot;assets/img/bg/category_bg_1.webp&quot;);">
+                <div class="swiper-wrapper" id="swiper-wrapper-custom" aria-live="off" style="transition-duration: 1000ms;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="1 / 8" data-swiper-slide-index="0">
+                        <div class="category-card single" style="transform: translate(0px, 10px) rotate(-3deg); transform-origin: right top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-delhi.png" alt="Image">
+                                <img src="assets/img/destination/d-delhi.png" alt="Delhi">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Delhi</a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Delhi</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide" role="group" aria-label="2 / 8" data-swiper-slide-index="1"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 183.874px) rotate(0deg); transform-origin: right top;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="2 / 8" data-swiper-slide-index="1">
+                        <div class="category-card single" style="transform: translate(0px, 0px) rotate(-1deg); transform-origin: right top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-agra.png" alt="Image">
+                                <img src="assets/img/destination/d-agra.png" alt="Agra">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Agra </a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Agra</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide" role="group" aria-label="3 / 8" data-swiper-slide-index="2"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 154.356px) rotate(0deg); transform-origin: right top;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="3 / 8" data-swiper-slide-index="2">
+                        <div class="category-card single" style="transform: translate(0px, 0px) rotate(1deg); transform-origin: left top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-jaipur.png" alt="Image">
+                                <img src="assets/img/destination/d-jaipur.png" alt="Jaipur">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Jaipur</a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Jaipur</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide" role="group" aria-label="4 / 8" data-swiper-slide-index="3"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 124.837px) rotate(0deg); transform-origin: right top;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="4 / 8" data-swiper-slide-index="3">
+                        <div class="category-card single" style="transform: translate(0px, 22px) rotate(4deg); transform-origin: left top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-amritsar.png" alt="Image">
+                                <img src="assets/img/destination/d-amritsar.png" alt="Amritsar">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Amaritsar</a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Amritsar</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide" role="group" aria-label="5 / 8" data-swiper-slide-index="4"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 95.3192px) rotate(0deg); transform-origin: right top;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="5 / 8" data-swiper-slide-index="4">
+                        <div class="category-card single" style="transform: translate(0px, 49px) rotate(7deg); transform-origin: left top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-ranthambore.png" alt="Image">
+                                <img src="assets/img/destination/d-ranthambore.png" alt="Ranthambore">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Ranthambore</a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Ranthambore</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide" role="group" aria-label="6 / 8" data-swiper-slide-index="5"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 65.801px) rotate(0deg); transform-origin: right top;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="6 / 8" data-swiper-slide-index="5">
+                        <div class="category-card single" style="transform: translate(0px, 89px) rotate(11deg); transform-origin: right top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-varansi.png" alt="Image">
+                                <img src="assets/img/destination/d-varansi.png" alt="Varanasi">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Varanasi</a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Varanasi</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide" role="group" aria-label="7 / 8" data-swiper-slide-index="6"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 36.2828px) rotate(0deg); transform-origin: right top;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="7 / 8" data-swiper-slide-index="6">
+                        <div class="category-card single" style="transform: translate(0px, 62px) rotate(9deg); transform-origin: right top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-amritsar.png" alt="Image">
+                                <img src="assets/img/destination/d-amritsar.png" alt="Amritsar">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Amaritsar</a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Amritsar</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide" role="group" aria-label="8 / 8" data-swiper-slide-index="7"
-                        style="width: 235.2px; margin-right: 60px;">
-                        <div class="category-card single2"
-                            style="transform: translate(0px, 6.76454px) rotate(0deg); transform-origin: right top;">
+                    <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="8 / 8" data-swiper-slide-index="7">
+                        <div class="category-card single" style="transform: translate(0px, 36px) rotate(6deg); transform-origin: right top;">
                             <div class="box-img global-img">
-                                <img src="assets/img/destination/d-jaipur.png" alt="Image">
+                                <img src="assets/img/destination/d-jaipur.png" alt="Jaipur">
                             </div>
-                            <h3 class="box-title">
-                                <a href="destination.php">Jaipur</a>
-                            </h3>
+                            <h3 class="box-title"><a href="destination.php">Jaipur</a></h3>
                             <a class="line-btn" href="destination.php">See packages</a>
                         </div>
                     </div>
-
                 </div>
-                <div
-                    class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-                    <span class="swiper-pagination-bullet" tabindex="0" role="button"
-                        aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0"
-                        role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet"
-                        tabindex="0" role="button" aria-label="Go to slide 3"></span><span
-                        class="swiper-pagination-bullet" tabindex="0" role="button"
-                        aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0"
-                        role="button" aria-label="Go to slide 5"></span><span
-                        class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
-                        aria-label="Go to slide 6" aria-current="true"></span><span class="swiper-pagination-bullet"
-                        tabindex="0" role="button" aria-label="Go to slide 7"></span><span
-                        class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span>
-                </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                <div class="slider-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active" aria-label="Go to Slide 01" tabindex="0" aria-current="true"></span>
+                    <span class="swiper-pagination-bullet" aria-label="Go to Slide 02" tabindex="0"></span>
+                    <span class="swiper-pagination-bullet" aria-label="Go to Slide 03" tabindex="0"></span>
+                    <span class="swiper-pagination-bullet" aria-label="Go to Slide 04" tabindex="0"></span>
+                    <span class="swiper-pagination-bullet" aria-label="Go to Slide 05" tabindex="0"></span>
+                    <span class="swiper-pagination-bullet" aria-label="Go to Slide 06" tabindex="0"></span>
+                    <span class="swiper-pagination-bullet" aria-label="Go to Slide 07" tabindex="0"></span>
+                    <span class="swiper-pagination-bullet" aria-label="Go to Slide 08" tabindex="0"></span>
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
         </div>
     </section>
