@@ -4,12 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - About Tourm</title>
-    <meta name="author" content="Tourm">
-    <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
-    <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
+    <title>About India Day Trip - Trusted Travel Partner in Agra</title>
+    <meta name="author" content="India Day Trip">
+    <meta name="description" content="Learn about India Day Trip, an Agra-based tour company specializing in Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Discover our commitment to exceptional travel experiences.">
+    <meta name="keywords" content="About India Day Trip, Agra tour company, travel agency India, Taj Mahal tours, Golden Triangle tours, Same Day tours">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indiadaytrip.com/about/">
+    <meta property="og:title" content="About India Day Trip - Trusted Travel Partner in Agra">
+    <meta property="og:description" content="Learn about India Day Trip, an Agra-based tour company specializing in Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Discover our commitment to exceptional travel experiences.">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/normal/about_3_1.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://indiadaytrip.com/about/">
+    <meta property="twitter:title" content="About India Day Trip - Trusted Travel Partner in Agra">
+    <meta property="twitter:description" content="Learn about India Day Trip, an Agra-based tour company specializing in Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Discover our commitment to exceptional travel experiences.">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/normal/about_3_1.jpg">
+
     <?php include '../components/links.php'; ?>
 </head>
 

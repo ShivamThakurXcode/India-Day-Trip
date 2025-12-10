@@ -4,12 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Book Now</title>
-    <meta name="author" content="Tourm">
-    <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
-    <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
+    <title>Book Now - India Day Trip | Reserve Your Agra Tour</title>
+    <meta name="author" content="India Day Trip">
+    <meta name="description" content="Book your tour with India Day Trip. Choose from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Secure online booking for Agra, Delhi, and Jaipur adventures.">
+    <meta name="keywords" content="Book tour India Day Trip, reserve Agra tours, online booking Taj Mahal, Golden Triangle tour booking">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indiadaytrip.com/to_book/">
+    <meta property="og:title" content="Book Now - India Day Trip | Reserve Your Agra Tour">
+    <meta property="og:description" content="Book your tour with India Day Trip. Choose from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Secure online booking for Agra, Delhi, and Jaipur adventures.">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://indiadaytrip.com/to_book/">
+    <meta property="twitter:title" content="Book Now - India Day Trip | Reserve Your Agra Tour">
+    <meta property="twitter:description" content="Book your tour with India Day Trip. Choose from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Secure online booking for Agra, Delhi, and Jaipur adventures.">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.png">
+
     <?php include '../components/links.php'; ?>
 </head>
 
