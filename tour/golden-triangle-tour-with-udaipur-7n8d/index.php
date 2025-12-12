@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Golden Triangle Tour with Udaipur - Palaces & Lakes</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Discover India's architectural wonders and romantic lake city on this Golden Triangle tour extended to Udaipur, the Venice of the East, featuring stunning palaces and serene lakes.
             </p>
@@ -862,3 +860,4 @@
 </body>
 
 </html>
+

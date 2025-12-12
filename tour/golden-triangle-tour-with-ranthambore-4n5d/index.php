@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Golden Triangle Tour with Ranthambore - Wildlife & Heritage</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Combine India's architectural marvels with thrilling wildlife experiences on this Golden Triangle tour enhanced with Ranthambore National Park, home to the majestic Bengal tiger.
             </p>
@@ -751,3 +749,4 @@
 </body>
 
 </html>
+

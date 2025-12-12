@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Taj Mahal And Agra Tour By Premium Car - Luxury Experience</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Indulge in luxury as you explore the Taj Mahal and Agra in premium cars. Experience VIP access, personalized service, and the finest transportation for your journey to India's crown jewel.
             </p>
@@ -607,3 +605,4 @@
 </body>
 
 </html>
+

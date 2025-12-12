@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Golden Triangle Tour 4N5D - India's Heritage Circuit</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Embark on India's most iconic Golden Triangle tour, exploring the architectural marvels and cultural heritage of Delhi, Agra, and Jaipur over five unforgettable days.
             </p>
@@ -748,3 +746,4 @@
 </body>
 
 </html>
+

@@ -44,141 +44,95 @@
             </div>
         </div>
     </div>
-    <div class="about-area position-relative overflow-hidden overflow-hidden space" id="about-sec">
+    <!-- About India Day Trip -->
+    <div class="about-area position-relative overflow-hidden space-top" id="about-sec">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-7">
-                    <div class="img-box3">
-                        <div class="img1"><img src="../assets/img/normal/about_3_1.jpg" alt="About"></div>
-                        <div class="img2"><img src="../assets/img/normal/about_3_2.jpg" alt="About"></div>
-                        <div class="img3 movingX"><img src="../assets/img/normal/about_3_3.jpg" alt="About"></div>
+            <div class="row gy-4">
+                <div class="col-xl-6">
+                    <div class="img-box15 pe-xl-4">
+                        <div class="img1 global-img"><img src="../assets/img/home/about-1.png" alt="About India Day Trip">
+                        </div>
                     </div>
                 </div>
-                <div class="col-xl-5">
+                <div class="col-xl-6">
                     <div class="ps-xl-4">
-                        <div class="title-area mb-20"><span class="sub-title style1">Welcome To Tourm</span>
-                            <h2 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">We are world reputeted travel agency
-                            </h2>
+                        <div class="title-area mb-20"><span class="sub-title style1">About India Day Trip</span>
+                            <h2 class="sec-title mb-20">Your Trusted Travel Partner in Agra</h2>
+                            <p class="sec-text2 mb-50">India Day Trip is an Agra-based tour and travel company
+                                specializing in Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. With years
+                                of experience, we provide exceptional travel experiences across India's most iconic
+                                destinations.</p>
                         </div>
-                        <p class="pe-xl-5">There are many variations of passages of available but the majority have
-                            suffered alteration in some form, by injected hum randomised words.</p>
-                        <p class="mb-30 pe-xl-5">Leiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt.</p>
-                        <div class="about-item-wrap">
-                            <div class="about-item style2">
-                                <div class="about-item_img"><img src="../assets/img/icon/about_1_1.svg" alt=""></div>
+                        <div class="about-item-wrap style2">
+                            <div class="about-item style4">
+                                <div class="about-item_img"><img src="../assets/img/icon/about_2_1.svg" alt=""></div>
                                 <div class="about-item_centent">
-                                    <h5 class="box-title">Exclusive Trip</h5>
-                                    <p class="about-item_text">There are many variations of passages of available but
-                                        the majority.</p>
+                                    <h5 class="box-title">Hassle-Free Booking</h5>
+                                    <p class="about-item_text">Easy online booking process with secure payment options
+                                        and instant confirmation.</p>
                                 </div>
                             </div>
-                            <div class="about-item style2">
-                                <div class="about-item_img"><img src="../assets/img/icon/about_1_2.svg" alt=""></div>
+                            <div class="about-item style4">
+                                <div class="about-item_img"><img src="../assets/img/icon/about_2_2.svg" alt=""></div>
                                 <div class="about-item_centent">
-                                    <h5 class="box-title">Safety First Always</h5>
-                                    <p class="about-item_text">There are many variations of passages of available but
-                                        the majority.</p>
-                                </div>
-                            </div>
-                            <div class="about-item style2">
-                                <div class="about-item_img"><img src="../assets/img/icon/about_1_3.svg" alt=""></div>
-                                <div class="about-item_centent">
-                                    <h5 class="box-title">Professional Guide</h5>
-                                    <p class="about-item_text">There are many variations of passages of available but
-                                        the majority.</p>
+                                    <h5 class="box-title">Cultural Immersion</h5>
+                                    <p class="about-item_text">Authentic experiences that connect you with India's rich
+                                        heritage and traditions.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-35"><a href="contact.php" class="th-btn style3 th-icon">Contact With Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="shape-mockup movingX d-none d-xxl-block" data-top="0%" data-left="-18%"><img
-                    src="../assets/img/shape/shape_2_1.png" alt="shape"></div>
-            <div class="shape-mockup jump d-none d-xxl-block" data-top="28%" data-right="-15%"><img
-                    src="../assets/img/shape/shape_2_2.png" alt="shape"></div>
-            <div class="shape-mockup spin d-none d-xxl-block" data-bottom="18%" data-left="-112%"><img
-                    src="../assets/img/shape/shape_2_3.png" alt="shape"></div>
-            <div class="shape-mockup movixgX d-none d-xxl-block" data-bottom="18%" data-right="-12%"><img
-                    src="../assets/img/shape/shape_2_4.png" alt="shape"></div>
-        </div>
-    </div>
-
-
-    <div class="brand-area overflow-hidden">
-        <div class="container th-container">
-            <div class="swiper th-slider brandSlider1" id="brandSlider1"
-                data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"6"},"1400":{"slidesPerView":"8"}}}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_1.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_1.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_2.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_2.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_3.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_3.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_4.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_4.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_5.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_5.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_6.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_6.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_7.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_7.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_8.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_8.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_4.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_4.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_3.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_3.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_2.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_2.svg"
-                                    alt="Brand Logo"></a></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="brand-box"><a href="#"><img class="original" src="../assets/img/brand/brand_1_1.svg"
-                                    alt="Brand Logo"> <img class="gray" src="../assets/img/brand/brand_1_1.svg"
-                                    alt="Brand Logo"></a></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- About India Day Trip -->
+    <div class="about-area position-relative overflow-hidden space-top" id="about-sec">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-xl-6">
+                    <div class="ps-xl-4">
+                        <div class="title-area mb-20"><span class="sub-title style1">About India Day Trip</span>
+                            <h2 class="sec-title mb-20">Your Trusted Travel Partner in Agra</h2>
+                            <p class="sec-text2 mb-50">India Day Trip is an Agra-based tour and travel company
+                                specializing in Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. With years
+                                of experience, we provide exceptional travel experiences across India's most iconic
+                                destinations.</p>
+                        </div>
+                        <div class="about-item-wrap style2">
+                            <div class="about-item style4">
+                                <div class="about-item_img"><img src="../assets/img/icon/about_2_1.svg" alt=""></div>
+                                <div class="about-item_centent">
+                                    <h5 class="box-title">Hassle-Free Booking</h5>
+                                    <p class="about-item_text">Easy online booking process with secure payment options
+                                        and instant confirmation.</p>
+                                </div>
+                            </div>
+                            <div class="about-item style4">
+                                <div class="about-item_img"><img src="../assets/img/icon/about_2_2.svg" alt=""></div>
+                                <div class="about-item_centent">
+                                    <h5 class="box-title">Cultural Immersion</h5>
+                                    <p class="about-item_text">Authentic experiences that connect you with India's rich
+                                        heritage and traditions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="img-box15 pe-xl-4">
+                        <div class="img1 global-img"><img src="../assets/img/home/about-1.png" alt="About India Day Trip">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="sidebar-gallery-area space">
         <div class="container-fluid">
             <div class="slider-area">

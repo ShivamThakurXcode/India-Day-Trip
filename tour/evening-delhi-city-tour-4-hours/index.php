@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Evening Delhi City Tour 4 Hours - Delhi After Dark</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Discover Delhi's magical transformation after sunset on this 4-hour evening city tour. Experience illuminated monuments, bustling markets, and the city's vibrant nightlife.
             </p>
@@ -607,3 +605,4 @@
 </body>
 
 </html>
+

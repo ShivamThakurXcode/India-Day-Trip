@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Golden Triangle Tour 2N3D - Express Heritage Experience</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Experience India's most iconic Golden Triangle highlights in just 3 days, perfect for travelers seeking an efficient introduction to Delhi, Agra, and Jaipur's architectural wonders.
             </p>
@@ -675,3 +673,4 @@
 </body>
 
 </html>
+

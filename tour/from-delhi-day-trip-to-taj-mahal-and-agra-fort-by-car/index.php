@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Day Trip To Taj Mahal and Agra Fort By Car - Mughal Heritage</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Discover the pinnacle of Mughal architecture on this comprehensive day trip from Delhi to the Taj Mahal and Agra Fort. Experience two UNESCO World Heritage Sites in one unforgettable journey.
             </p>
@@ -608,3 +606,4 @@
 </body>
 
 </html>
+

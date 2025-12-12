@@ -252,9 +252,6 @@
                 <span class="ratting"><i class="fa-sharp fa-solid fa-star"></i><span>4.8</span></span>
               </div>
               <h2 class="box-title">2 Days Agra And Jaipur Tour From Delhi - Golden Triangle</h2>
-              <h4 class="tour-price">
-                <span class="currency">$25</span>/Person
-              </h4>
               <p class="box-text mb-30">
                 Embark on India's most popular Golden Triangle tour, exploring the Mughal splendor of Agra and the royal heritage of Jaipur over two unforgettable days from Delhi.
               </p>
@@ -578,3 +575,4 @@
 </body>
 
 </html>
+

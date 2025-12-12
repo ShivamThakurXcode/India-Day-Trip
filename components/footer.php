@@ -66,7 +66,7 @@ if ($depth > 0) {
                                 <li><a href="<?php echo $base_path; ?>same-day-tours/index.php">Same Day Tours</a></li>
                                 <li><a href="<?php echo $base_path; ?>taj-mahal-tours/index.php">Taj Mahal Tours</a></li>
                                 <li><a href="<?php echo $base_path; ?>golden-triangle-tours/index.php">Golden Triangle Tours</a></li>
-                                <li><a href="<?php echo $base_path; ?>agra-tours/index.php">Rajasthan Tours</a></li>
+                                <li><a href="<?php echo $base_path; ?>rajasthan-tour-packages/index.php">Rajasthan Tours</a></li>
                             </ul>
                         </div>
                     </div>
