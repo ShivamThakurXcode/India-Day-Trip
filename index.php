@@ -12,6 +12,20 @@
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indiadaytrip.com/">
+    <meta property="og:title" content="India Day Trip - Agra Based Tour & Travel Company">
+    <meta property="og:description" content="India Day Trip - Agra based tour and travel company offering Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://indiadaytrip.com/">
+    <meta property="twitter:title" content="India Day Trip - Agra Based Tour & Travel Company">
+    <meta property="twitter:description" content="India Day Trip - Agra based tour and travel company offering Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.png">
+
     <!-- links  -->
     <?php include 'components/links.php'; ?>
 
@@ -72,7 +86,7 @@
                                         class="hero-text">The Beauty of Agra</span></h1>
                                 <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Experience the wonder of the Taj Mahal with Agra's trusted travel experts.</p>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="same-day-tours.php" class="th-btn white-btn th-icon">Explore Agra
+                                        href="tour/index.php" class="th-btn white-btn th-icon">Explore Agra
                                         Tours</a>
                                 </div>
                             </div>
@@ -89,7 +103,7 @@
                                         class="hero-text">The Heart of Delhi</span></h1>
                                 <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Experience Delhi's rich history and vibrant culture with India Day Trip.</p>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="golden-triangle-tours.php" class="th-btn white-btn th-icon">Explore Delhi
+                                        href="tour/index.php" class="th-btn white-btn th-icon">Explore Delhi
                                         Tours</a></div>
                             </div>
                         </div>
@@ -105,7 +119,7 @@
                                         class="hero-text">The Pink City of Jaipur</span></h1>
                                 <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Discover Jaipur's royal charm and vibrant bazaars.</p>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="golden-triangle-tours.php" class="th-btn white-btn th-icon">Explore
+                                        href="tour/index.php" class="th-btn white-btn th-icon">Explore
                                         Jaipur
                                         Tours</a></div>
                             </div>
@@ -130,7 +144,7 @@
                             <div class="hero-img"><img src="assets/img/hero/hero-agra.png" alt="Agra Tour"></div>
                             <div class="hero-card_content">
                                 <h3 class="box-title">Agra Day Tour</h3>
-                                <h4 class="hero-card_price"><span class="currency">$120.00</span>/Person</h4><span><i
+                                <span><i
                                         class="fa-light fa-clock"></i>1 Day</span> <a href="same-day-tours.php"
                                     class="th-btn style2">Book Now</a>
                             </div>
@@ -143,7 +157,7 @@
                             <div class="hero-img"><img src="assets/img/hero/hero-delhi.png" alt="Delhi Tour"></div>
                             <div class="hero-card_content">
                                 <h3 class="box-title">Delhi City Tour</h3>
-                                <h4 class="hero-card_price"><span class="currency">$150.00</span>/Person</h4><span><i
+                                <span><i
                                         class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.php"
                                     class="th-btn style2">Book Now</a>
                             </div>
@@ -156,7 +170,7 @@
                             <div class="hero-img"><img src="assets/img/hero/hero-jaipur.png" alt="Jaipur Tour"></div>
                             <div class="hero-card_content">
                                 <h3 class="box-title">Jaipur Heritage Tour</h3>
-                                <h4 class="hero-card_price"><span class="currency">$180.00</span>/Person</h4><span><i
+                                <span><i
                                         class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.php"
                                     class="th-btn style2">Book Now</a>
                             </div>
@@ -185,8 +199,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-delhi.png" alt="Delhi">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Delhi</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Delhi</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                     <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="2 / 8" data-swiper-slide-index="1">
@@ -194,8 +208,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-agra.png" alt="Agra">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Agra</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Agra</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                     <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="3 / 8" data-swiper-slide-index="2">
@@ -203,8 +217,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-jaipur.png" alt="Jaipur">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Jaipur</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Jaipur</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                     <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="4 / 8" data-swiper-slide-index="3">
@@ -212,8 +226,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-amritsar.png" alt="Amritsar">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Amritsar</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Amritsar</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                     <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="5 / 8" data-swiper-slide-index="4">
@@ -221,8 +235,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-ranthambore.png" alt="Ranthambore">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Ranthambore</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Ranthambore</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                     <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="6 / 8" data-swiper-slide-index="5">
@@ -230,8 +244,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-varansi.png" alt="Varanasi">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Varanasi</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Varanasi</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                     <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="7 / 8" data-swiper-slide-index="6">
@@ -239,8 +253,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-amritsar.png" alt="Amritsar">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Amritsar</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Amritsar</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                     <div class="swiper-slide" style="width: 236.8px; margin-right: 50px;" role="group" aria-label="8 / 8" data-swiper-slide-index="7">
@@ -248,8 +262,8 @@
                             <div class="box-img global-img">
                                 <img src="assets/img/destination/d-jaipur.png" alt="Jaipur">
                             </div>
-                            <h3 class="box-title"><a href="destination.php">Jaipur</a></h3>
-                            <a class="line-btn" href="destination.php">See packages</a>
+                            <h3 class="box-title"><a href="tour/index.php">Jaipur</a></h3>
+                            <a class="line-btn" href="tour/index.php">See packages</a>
                         </div>
                     </div>
                 </div>
@@ -290,10 +304,10 @@
                         <div class="swiper-slide" role="group" aria-label="1 / 6" data-swiper-slide-index="0"
                             style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/sunrise-taj.png"
-                                        alt="Taj Mahal Sunrise Tour From Delhi"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi/"><img src="assets/img/tours-image/sunrise-taj.png"
+                                            alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi/">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -301,19 +315,18 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$100.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 Day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 6"
                             data-swiper-slide-index="1" style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/agra-tour-1.png"
-                                        alt="Taj Mahal And Agra Overnight Tour"></div>
+                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/"><img src="assets/img/tours-image/agra-tour-1.png"
+                                            alt="Taj Mahal And Agra Overnight Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal And Agra Overnight
+                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/">Taj Mahal And Agra Overnight
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -321,39 +334,37 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$180.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 6"
                             data-swiper-slide-index="2" style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/golden-tour.png"
-                                        alt="Golden Triangle Tour 4N5D"></div>
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d/"><img src="assets/img/tours-image/golden-tour.png"
+                                            alt="Golden Triangle Tour 4N5D"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour 4N5D</a></h3>
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d/">Golden Triangle Tour 4N5D</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur, India</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$450.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 6"
                             data-swiper-slide-index="3" style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img
-                                        src="assets/img/tours-image/delhi-food-taste.png"
-                                        alt="Old Delhi Food Tasting Tour"></div>
+                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour/"><img
+                                            src="assets/img/tours-image/delhi-food-taste.png"
+                                            alt="Old Delhi Food Tasting Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Old Delhi Food Tasting Tour</a>
+                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour/">Old Delhi Food Tasting Tour</a>
                                     </h3>
                                     <p class="tour-location">Old Delhi</p>
                                     <div class="tour-rating">
@@ -361,19 +372,18 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$50.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>4 hours</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" role="group" aria-label="5 / 6" data-swiper-slide-index="4"
                             style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/gatiman.png"
-                                        alt="Taj Mahal Tour By Gatimaan Express Train"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/"><img src="assets/img/tours-image/gatiman.png"
+                                            alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -381,20 +391,19 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$90.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 Day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" role="group" aria-label="6 / 6" data-swiper-slide-index="5"
                             style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img
-                                        src="assets/img/tours-image/varanashi-tour.png"
-                                        alt="Golden Triangle Tour with Varanasi"></div>
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/"><img
+                                            src="assets/img/tours-image/varanashi-tour.png"
+                                            alt="Golden Triangle Tour with Varanasi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/">Golden Triangle Tour with
                                             Varanasi</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
                                     <div class="tour-rating">
@@ -402,9 +411,8 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$650.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -516,7 +524,7 @@
             </div>
         </div>
     </div>
-    <div class="brand-area overflow-hidden ">
+    <!-- <div class="brand-area overflow-hidden ">
         <div class="container th-container">
             <div class="swiper th-slider brandSlider1 swiper-initialized swiper-horizontal" id="brandSlider1"
                 data-slider-options="{&quot;breakpoints&quot;:{&quot;0&quot;:{&quot;slidesPerView&quot;:1},&quot;576&quot;:{&quot;slidesPerView&quot;:&quot;2&quot;},&quot;768&quot;:{&quot;slidesPerView&quot;:&quot;3&quot;},&quot;992&quot;:{&quot;slidesPerView&quot;:&quot;3&quot;},&quot;1200&quot;:{&quot;slidesPerView&quot;:&quot;6&quot;},&quot;1400&quot;:{&quot;slidesPerView&quot;:&quot;8&quot;}}}">
@@ -597,7 +605,7 @@
                 </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Same Day Tours Slider -->
     <section class="tour-area position-relative overflow-hidden pt-5 pb-5">
@@ -620,11 +628,11 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img
-                                        src="assets/img/tours-image/delhi-food-taste.png"
-                                        alt="Old Delhi Food Tasting Tour"></div>
+                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour/"><img
+                                            src="assets/img/tours-image/delhi-food-taste.png"
+                                            alt="Old Delhi Food Tasting Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Old Delhi Food Tasting Tour</a>
+                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour/">Old Delhi Food Tasting Tour</a>
                                     </h3>
                                     <p class="tour-location">Old Delhi</p>
                                     <div class="tour-rating">
@@ -632,36 +640,34 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$50.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>4 hours</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/private-car.png"
-                                        alt="Delhi Private Tour By Car"></div>
+                                <div class="tour-box_img global-img"><a href="tour/delhi-private-day-tour-by-car/"><img src="assets/img/tours-image/private-car.png"
+                                            alt="Delhi Private Tour By Car"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Delhi Private Tour By Car</a></h3>
+                                    <h3 class="box-title"><a href="tour/delhi-private-day-tour-by-car/">Delhi Private Tour By Car</a></h3>
                                     <p class="tour-location">Old And New Delhi</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$80.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/taj-old-delhi.png"
-                                        alt="Taj Mahal Sunrise And Old Delhi Tour"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/"><img src="assets/img/tours-image/taj-old-delhi.png"
+                                            alt="Taj Mahal Sunrise And Old Delhi Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise And Old Delhi
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/">Taj Mahal Sunrise And Old Delhi
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -669,18 +675,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$120.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/sunrise-taj.png"
-                                        alt="Taj Mahal Sunrise Tour From Delhi"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi/"><img src="assets/img/tours-image/sunrise-taj.png"
+                                            alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi/">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -688,18 +693,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$100.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/gatiman.png"
-                                        alt="Taj Mahal Tour By Gatimaan Express Train"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/"><img src="assets/img/tours-image/gatiman.png"
+                                            alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -707,9 +711,8 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$90.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -740,10 +743,10 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/taj-old-delhi.png"
-                                        alt="Taj Mahal Sunrise And Old Delhi Tour"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/"><img src="assets/img/tours-image/taj-old-delhi.png"
+                                            alt="Taj Mahal Sunrise And Old Delhi Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise And Old Delhi
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/">Taj Mahal Sunrise And Old Delhi
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -751,18 +754,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$120.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/sunrise-taj.png"
-                                        alt="Taj Mahal Sunrise Tour From Delhi"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi/"><img src="assets/img/tours-image/sunrise-taj.png"
+                                            alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi/">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -770,18 +772,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$100.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/gatiman.png"
-                                        alt="Taj Mahal Tour By Gatimaan Express Train"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/"><img src="assets/img/tours-image/gatiman.png"
+                                            alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -789,18 +790,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$90.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/agra-tour-1.png"
-                                        alt="Taj Mahal And Agra Overnight Tour"></div>
+                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/"><img src="assets/img/tours-image/agra-tour-1.png"
+                                            alt="Taj Mahal And Agra Overnight Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal And Agra Overnight
+                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/">Taj Mahal And Agra Overnight
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -808,18 +808,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$180.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/premium-car.png"
-                                        alt="Taj Mahal And Agra Tour By Premium Car"></div>
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars/"><img src="assets/img/tours-image/premium-car.png"
+                                            alt="Taj Mahal And Agra Tour By Premium Car"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Taj Mahal And Agra Tour By Premium
+                                    <h3 class="box-title"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars/">Taj Mahal And Agra Tour By Premium
                                             Car</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -827,9 +826,8 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$150.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -860,11 +858,11 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img
-                                        src="assets/img/tours-image/varanashi-tour.png"
-                                        alt="Golden Triangle Tour with Varanasi"></div>
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/"><img
+                                            src="assets/img/tours-image/varanashi-tour.png"
+                                            alt="Golden Triangle Tour with Varanasi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/">Golden Triangle Tour with
                                             Varanasi</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
                                     <div class="tour-rating">
@@ -872,18 +870,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$650.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/udaipur-tour.png"
-                                        alt="Golden Triangle Tour with Udaipur"></div>
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-udaipur-7n8d/"><img src="assets/img/tours-image/udaipur-tour.png"
+                                            alt="Golden Triangle Tour with Udaipur"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-udaipur-7n8d/">Golden Triangle Tour with
                                             Udaipur</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Udaipur</p>
                                     <div class="tour-rating">
@@ -891,18 +888,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$700.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/ranthambroe.png"
-                                        alt="Golden Triangle Tour with Ranthambore"></div>
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d/"><img src="assets/img/tours-image/ranthambroe.png"
+                                            alt="Golden Triangle Tour with Ranthambore"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d/">Golden Triangle Tour with
                                             Ranthambore</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Ranthambore</p>
                                     <div class="tour-rating">
@@ -910,18 +906,17 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$600.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/amritsar-tour.png"
-                                        alt="Golden Triangle Tour with Amritsar"></div>
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-amritsar-6n7d/"><img src="assets/img/tours-image/amritsar-tour.png"
+                                            alt="Golden Triangle Tour with Amritsar"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-amritsar-6n7d/">Golden Triangle Tour with
                                             Amritsar</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Amritsar</p>
                                     <div class="tour-rating">
@@ -929,27 +924,25 @@
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$750.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/img/tours-image/golden-tour.png"
-                                        alt="Golden Triangle Tour 4N5D"></div>
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d/"><img src="assets/img/tours-image/golden-tour.png"
+                                            alt="Golden Triangle Tour 4N5D"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.php">Golden Triangle Tour 4N5D</a></h3>
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d/">Golden Triangle Tour 4N5D</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur, India</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of
                                                 5</span></div>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$450.00</span>/Person</h4>
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>

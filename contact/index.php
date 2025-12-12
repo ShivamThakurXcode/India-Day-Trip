@@ -4,12 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Contact Us</title>
-    <meta name="author" content="Tourm">
-    <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
-    <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
+    <title>Contact India Day Trip - Get in Touch for Agra Tours</title>
+    <meta name="author" content="India Day Trip">
+    <meta name="description" content="Contact India Day Trip for inquiries about Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Reach out to our Agra-based travel experts for personalized travel planning.">
+    <meta name="keywords" content="Contact India Day Trip, Agra tours contact, travel agency India contact, Taj Mahal tours booking, Golden Triangle tours inquiry">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indiadaytrip.com/contact/">
+    <meta property="og:title" content="Contact India Day Trip - Get in Touch for Agra Tours">
+    <meta property="og:description" content="Contact India Day Trip for inquiries about Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Reach out to our Agra-based travel experts for personalized travel planning.">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/bg/video_bg_1.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://indiadaytrip.com/contact/">
+    <meta property="twitter:title" content="Contact India Day Trip - Get in Touch for Agra Tours">
+    <meta property="twitter:description" content="Contact India Day Trip for inquiries about Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Reach out to our Agra-based travel experts for personalized travel planning.">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/bg/video_bg_1.jpg">
+
     <?php include '../components/links.php'; ?>
 </head>
 

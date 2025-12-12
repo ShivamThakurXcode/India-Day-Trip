@@ -4,12 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Privacy Policy</title>
-    <meta name="author" content="Tourm">
-    <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
-    <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
+    <title>Privacy Policy - India Day Trip Travel Agency</title>
+    <meta name="author" content="India Day Trip">
+    <meta name="description" content="Read our privacy policy to understand how India Day Trip collects, uses, and protects your personal information when booking tours in Agra, Delhi, and Jaipur.">
+    <meta name="keywords" content="Privacy policy India Day Trip, travel agency privacy, data protection tours, personal information Agra tours">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indiadaytrip.com/privacy-policy/">
+    <meta property="og:title" content="Privacy Policy - India Day Trip Travel Agency">
+    <meta property="og:description" content="Read our privacy policy to understand how India Day Trip collects, uses, and protects your personal information when booking tours in Agra, Delhi, and Jaipur.">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://indiadaytrip.com/privacy-policy/">
+    <meta property="twitter:title" content="Privacy Policy - India Day Trip Travel Agency">
+    <meta property="twitter:description" content="Read our privacy policy to understand how India Day Trip collects, uses, and protects your personal information when booking tours in Agra, Delhi, and Jaipur.">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+
     <?php include '../components/links.php'; ?>
 </head>
 

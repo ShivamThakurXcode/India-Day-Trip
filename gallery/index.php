@@ -4,12 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Our Gallery</title>
-    <meta name="author" content="Tourm">
-    <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
-    <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
+    <title>India Day Trip Gallery - Explore Agra & Taj Mahal Photos</title>
+    <meta name="author" content="India Day Trip">
+    <meta name="description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
+    <meta name="keywords" content="India Day Trip gallery, Agra photos, Taj Mahal images, Golden Triangle tours photos, Delhi travel gallery, Jaipur pictures">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indiadaytrip.com/gallery/">
+    <meta property="og:title" content="India Day Trip Gallery - Explore Agra & Taj Mahal Photos">
+    <meta property="og:description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/gallery/gallery_8_1.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://indiadaytrip.com/gallery/">
+    <meta property="twitter:title" content="India Day Trip Gallery - Explore Agra & Taj Mahal Photos">
+    <meta property="twitter:description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/gallery/gallery_8_1.jpg">
+
     <?php include '../components/links.php'; ?>
 </head>
 

@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Old Delhi Food Tasting Tour - A Culinary Adventure</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Dive into the vibrant flavors of Old Delhi with our exclusive food tasting tour. Explore the bustling streets, sample authentic street food, and discover the rich culinary heritage of India's historic capital.
             </p>
@@ -606,3 +604,4 @@
 </body>
 
 </html>
+

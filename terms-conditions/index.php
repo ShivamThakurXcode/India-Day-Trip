@@ -4,12 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Terms & Conditions</title>
-    <meta name="author" content="Tourm">
-    <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
-    <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
+    <title>Terms & Conditions - India Day Trip Travel Agency</title>
+    <meta name="author" content="India Day Trip">
+    <meta name="description" content="Review the terms and conditions for booking tours with India Day Trip. Understand our policies for Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours in Agra, Delhi, and Jaipur.">
+    <meta name="keywords" content="Terms and conditions India Day Trip, travel booking terms, tour policies Agra, cancellation policy Taj Mahal tours">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indiadaytrip.com/terms-conditions/">
+    <meta property="og:title" content="Terms & Conditions - India Day Trip Travel Agency">
+    <meta property="og:description" content="Review the terms and conditions for booking tours with India Day Trip. Understand our policies for Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours in Agra, Delhi, and Jaipur.">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://indiadaytrip.com/terms-conditions/">
+    <meta property="twitter:title" content="Terms & Conditions - India Day Trip Travel Agency">
+    <meta property="twitter:description" content="Review the terms and conditions for booking tours with India Day Trip. Understand our policies for Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours in Agra, Delhi, and Jaipur.">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+
     <?php include '../components/links.php'; ?>
 </head>
 

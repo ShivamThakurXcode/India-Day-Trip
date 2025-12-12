@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Golden Triangle Tour with Varanasi - Spiritual Journey</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Embark on India's most iconic Golden Triangle tour enhanced with the spiritual essence of Varanasi. Experience Mughal monuments, Rajput palaces, and the sacred Ganges River.
             </p>
@@ -786,3 +784,4 @@
 </body>
 
 </html>
+

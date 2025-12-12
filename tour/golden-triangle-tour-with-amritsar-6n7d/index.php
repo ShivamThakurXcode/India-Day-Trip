@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Golden Triangle Tour with Amritsar - Sikh Heritage & Mughal Splendor</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Experience India's architectural marvels and Sikh spiritual heritage on this Golden Triangle tour extended to Amritsar, home to the magnificent Golden Temple and Wagah Border ceremony.
             </p>
@@ -824,3 +822,4 @@
 </body>
 
 </html>
+

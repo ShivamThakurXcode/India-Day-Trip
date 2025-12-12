@@ -277,9 +277,7 @@
               >
             </div>
             <h2 class="box-title">Taj Mahal Sunrise And Old Delhi Tour - A Day of Magic</h2>
-            <h4 class="tour-price">
-              <span class="currency">$25</span>/Person
-            </h4>
+            
             <p class="box-text mb-30">
               Experience the breathtaking Taj Mahal at sunrise, when the marble monument glows with ethereal beauty, followed by an exploration of Old Delhi's vibrant culture and history.
             </p>
@@ -607,3 +605,4 @@
 </body>
 
 </html>
+
