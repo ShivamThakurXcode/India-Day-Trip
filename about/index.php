@@ -88,7 +88,7 @@
     </div>
 
     <!-- About India Day Trip -->
-    <div class="about-area position-relative overflow-hidden space-top" id="about-sec">
+    <div class="about-area position-relative overflow-hidden space" id="about-sec">
         <div class="container">
             <div class="row gy-4">
 
@@ -131,74 +131,6 @@
         </div>
     </div>
 
-
-
-    <div class="sidebar-gallery-area space">
-        <div class="container-fluid">
-            <div class="slider-area">
-                <div class="swiper th-slider has-shadow"
-                    data-slider-options='{"centeredSlides":"true","breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_1.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_2.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_3.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_4.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_5.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_1.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_2.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_3.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_4.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_5.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="gallery-thumb style2 global-img"><img src="../assets/img/gallery/gallery_4_2.jpg"
-                                    alt="Gallery Image"> <a target="_blank" href="https://www.instagram.com/"
-                                    class="gallery-btn"><i class="fab fa-instagram"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <?php include '../components/footer.php'; ?>
 

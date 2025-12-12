@@ -2410,7 +2410,7 @@ input[type=time]::-webkit-calendar-picker-indicator {
     text-align: center;
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -29681,7 +29681,8 @@ span.select2-selection.select2-selection--single:focus {
 
 .tour-box.style-flex .tour-box_img {
     border-radius: 16px 0px 0 0;
-    width: 50%
+    width: 50%;
+
 }
 
 @media (max-width: 1299px) {
@@ -30045,7 +30046,8 @@ span.select2-selection.select2-selection--single:focus {
     position: relative;
     border-radius: 16px 16px 0 0;
     z-index: 2;
-    overflow: hidden
+
+    overflow: hidden;
 }
 
 @media (max-width: 991px) {
