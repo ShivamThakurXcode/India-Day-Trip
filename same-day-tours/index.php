@@ -13,17 +13,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://indiadaytrip.com/same-day-tours/">
+    <meta property="og:url" content="https://indiadaytrip.com/same-day-tours">
     <meta property="og:title" content="Same Day Tours - India Day Trip | Delhi & Agra Day Trips">
     <meta property="og:description" content="Explore our Same Day Tours from Delhi including Taj Mahal visits, Old Delhi food tasting, and private car tours. Perfect for short trips to Agra and Delhi.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/destination/d-delhi.png">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/destination/d-delhi.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiadaytrip.com/same-day-tours/">
+    <meta property="twitter:url" content="https://indiadaytrip.com/same-day-tours">
     <meta property="twitter:title" content="Same Day Tours - India Day Trip | Delhi & Agra Day Trips">
     <meta property="twitter:description" content="Explore our Same Day Tours from Delhi including Taj Mahal visits, Old Delhi food tasting, and private car tours. Perfect for short trips to Agra and Delhi.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/destination/d-delhi.png">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/destination/d-delhi.webp">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -33,7 +33,7 @@
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Same Day Tours</h1>
@@ -90,17 +90,19 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/delhi-food-taste.png" alt="Old Delhi Food Tasting Tour">
+                                            <a href="../tour/old-delhi-food-tasting-tour">
+                                                <img src="../assets/img/tours-image/delhi-food-taste.webp" alt="Old Delhi Food Tasting Tour">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Old Delhi Food Tasting Tour</a>
+                                                <a href="../tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/old-delhi-food-tasting-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -114,17 +116,19 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/private-car.png" alt="Delhi Private Tour By Car">
+                                            <a href="../tour/delhi-private-day-tour-by-car">
+                                                <img src="../assets/img/tours-image/private-car.webp" alt="Delhi Private Tour By Car">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Delhi Private Tour By Car</a>
+                                                <a href="../tour/delhi-private-day-tour-by-car">Delhi Private Tour By Car</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/delhi-private-day-tour-by-car/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -138,17 +142,19 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/taj-old-delhi.png" alt="Taj Mahal Sunrise And Old Delhi Tour">
+                                            <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">
+                                                <img src="../assets/img/tours-image/taj-old-delhi.webp" alt="Taj Mahal Sunrise And Old Delhi Tour">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Taj Mahal Sunrise And Old Delhi Tour</a>
+                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi Tour</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -162,17 +168,19 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/sunrise-taj.png" alt="Taj Mahal Sunrise Tour From Delhi">
+                                            <a href="../tour/taj-mahal-sunrise-tour-from-delhi">
+                                                <img src="../assets/img/tours-image/sunrise-taj.webp" alt="Taj Mahal Sunrise Tour From Delhi">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Taj Mahal Sunrise Tour From Delhi</a>
+                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From Delhi</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -186,17 +194,19 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/gatiman.png" alt="Taj Mahal Tour By Gatimaan Express Train">
+                                            <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">
+                                                <img src="../assets/img/tours-image/gatiman.webp" alt="Taj Mahal Tour By Gatimaan Express Train">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Taj Mahal Tour By Gatimaan Express Train</a>
+                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express Train</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -214,17 +224,19 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/delhi-food-taste.png" alt="Old Delhi Food Tasting Tour">
+                                            <a href="../tour/old-delhi-food-tasting-tour">
+                                                <img src="../assets/img/tours-image/delhi-food-taste.webp" alt="Old Delhi Food Tasting Tour">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Old Delhi Food Tasting Tour</a>
+                                                <a href="../tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/old-delhi-food-tasting-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -238,17 +250,19 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/private-car.png" alt="Delhi Private Tour By Car">
+                                            <a href="../tour/delhi-private-day-tour-by-car">
+                                                <img src="../assets/img/tours-image/private-car.webp" alt="Delhi Private Tour By Car">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Delhi Private Tour By Car</a>
+                                                <a href="../tour/delhi-private-day-tour-by-car">Delhi Private Tour By Car</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/delhi-private-day-tour-by-car/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -262,17 +276,19 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/taj-old-delhi.png" alt="Taj Mahal Sunrise And Old Delhi Tour">
+                                            <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">
+                                                <img src="../assets/img/tours-image/taj-old-delhi.webp" alt="Taj Mahal Sunrise And Old Delhi Tour">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Taj Mahal Sunrise And Old Delhi Tour</a>
+                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi Tour</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -286,17 +302,19 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/sunrise-taj.png" alt="Taj Mahal Sunrise Tour From Delhi">
+                                            <a href="../tour/taj-mahal-sunrise-tour-from-delhi">
+                                                <img src="../assets/img/tours-image/sunrise-taj.webp" alt="Taj Mahal Sunrise Tour From Delhi">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Taj Mahal Sunrise Tour From Delhi</a>
+                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From Delhi</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -310,17 +328,19 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/gatiman.png" alt="Taj Mahal Tour By Gatimaan Express Train">
+                                            <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">
+                                                <img src="../assets/img/tours-image/gatiman.webp" alt="Taj Mahal Tour By Gatimaan Express Train">
+                                            </a>
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
-                                                <a href="../to_book/index.php">Taj Mahal Tour By Gatimaan Express Train</a>
+                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express Train</a>
                                             </h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
                                                 </div>
-                                                <a href="../to_book/index.php" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
+                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
                                             </div>
                                             <div class="tour-action">
                                                 <span>
@@ -368,7 +388,7 @@
                                 <div class="recent-post">
                                     <div class="media-img">
                                         <a href="../gallery/index.php">
-                                            <img src="../assets/img/blog/recent-post-1-1.jpg" alt="Blog Image">
+                                            <img src="../assets/img/blog/recent-post-1-1.webp" alt="Blog Image">
                                         </a>
                                     </div>
                                     <div class="media-body">
@@ -385,7 +405,7 @@
                                 <div class="recent-post">
                                     <div class="media-img">
                                         <a href="../gallery/index.php">
-                                            <img src="../assets/img/blog/recent-post-1-2.jpg" alt="Blog Image">
+                                            <img src="../assets/img/blog/recent-post-1-2.webp" alt="Blog Image">
                                         </a>
                                     </div>
                                     <div class="media-body">
@@ -402,7 +422,7 @@
                                 <div class="recent-post">
                                     <div class="media-img">
                                         <a href="../gallery/index.php">
-                                            <img src="../assets/img/blog/recent-post-1-3.jpg" alt="Blog Image">
+                                            <img src="../assets/img/blog/recent-post-1-3.webp" alt="Blog Image">
                                         </a>
                                     </div>
                                     <div class="media-body">
@@ -431,7 +451,7 @@
                                 <a href="../index.php">Travel</a>
                             </div>
                         </div>
-                        <div class="widget widget_offer" data-bg-src="../assets/img/bg/widget_bg_1.jpg">
+                        <div class="widget widget_offer" data-bg-src="../assets/img/bg/widget_bg_1.webp">
                             <div class="offer-banner">
                                 <div class="offer">
                                     <h6 class="box-title">Need Help? We Are Here To Help You</h6>
@@ -450,13 +470,13 @@
                 </div>
             </div>
             <div class="shape-mockup shape1 d-none d-xxl-block" data-bottom="7%" data-right="-8%">
-                <img src="../assets/img/shape/shape_1.png" alt="shape">
+                <img src="../assets/img/shape/shape_1.webp" alt="shape">
             </div>
             <div class="shape-mockup shape2 d-none d-xl-block" data-bottom="1%" data-right="-7%">
-                <img src="../assets/img/shape/shape_2.png" alt="shape">
+                <img src="../assets/img/shape/shape_2.webp" alt="shape">
             </div>
             <div class="shape-mockup shape3 d-none d-xxl-block" data-bottom="-2%" data-right="-12%">
-                <img src="../assets/img/shape/shape_3.png" alt="shape">
+                <img src="../assets/img/shape/shape_3.webp" alt="shape">
             </div>
         </div>
     </section>

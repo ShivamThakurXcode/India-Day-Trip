@@ -13,24 +13,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
   <!-- links  -->
-  <?php include 'components/links.php'; ?>
+  <?php include '../../components/links.php'; ?>
 
 </head>
 
 <body>
 
   <!-- prelaoder -->
-  <?php include 'components/preloader.php'; ?>
+  <?php include '../../components/preloader.php'; ?>
   <!-- sidemenu -->
-  <?php include 'components/sidebar.php'; ?>
+  <?php include '../../components/sidebar.php'; ?>
 
   <!-- header  -->
 
-  <?php include 'components/header.php'; ?>
+  <?php include '../../components/header.php'; ?>
 
 
 
-  <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+  <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
     <div class="container">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title">Taj Mahal Tour by Gatimaan Express</h1>
@@ -479,7 +479,7 @@
 
   <!-- footer -->
 
-  <?php include 'components/footer.php'; ?>
+  <?php include '../../components/footer.php'; ?>
 
   <div id="login-form" class="popup-login-register mfp-hide">
     <ul class="nav" id="pills-tab" role="tablist">
@@ -539,7 +539,7 @@
 
   <!-- script  -->
 
-  <?php include 'components/script.php'; ?>
+  <?php include '../../components/script.php'; ?>
 
 </body>
 

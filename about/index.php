@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/about/">
     <meta property="og:title" content="About India Day Trip - Trusted Travel Partner in Agra">
     <meta property="og:description" content="Discover India Day Trip, your premier Agra-based travel agency specializing in Same Day Taj Mahal Tours, Agra city tours, and Golden Triangle experiences. Learn about our local expertise and commitment to showcasing India's magnificent heritage.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/normal/about_3_1.jpg">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/normal/about_3_1.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/about/">
     <meta property="twitter:title" content="About India Day Trip - Trusted Travel Partner in Agra">
     <meta property="twitter:description" content="Discover India Day Trip, your premier Agra-based travel agency specializing in Same Day Taj Mahal Tours, Agra city tours, and Golden Triangle experiences. Learn about our local expertise and commitment to showcasing India's magnificent heritage.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/normal/about_3_1.jpg">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/normal/about_3_1.webp">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -33,7 +33,7 @@
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">About India Day Trip</h1>

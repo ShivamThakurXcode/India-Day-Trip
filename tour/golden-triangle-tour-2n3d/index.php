@@ -30,7 +30,7 @@
 
 
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Golden Triangle Tour 2N3D</h1>
@@ -74,7 +74,7 @@
                   data-swiper-slide-index="3"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -90,7 +90,7 @@
                   data-swiper-slide-index="4"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -106,7 +106,7 @@
                   data-swiper-slide-index="5"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_3.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_3.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -122,7 +122,7 @@
                   data-swiper-slide-index="0"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -138,7 +138,7 @@
                   data-swiper-slide-index="1"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -154,7 +154,7 @@
                   data-swiper-slide-index="2"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_3.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_3.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
               </div>
@@ -186,7 +186,7 @@
                   data-swiper-slide-index="5"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/tour_inner_3.jpg" alt="Image" />
+                    <img src="..assets/img/tour/tour_inner_3.jpg" alt="Image" />
                   </div>
                 </div>
                 <div
@@ -197,7 +197,7 @@
                   data-swiper-slide-index="0"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -208,7 +208,7 @@
                   data-swiper-slide-index="1"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -219,7 +219,7 @@
                   data-swiper-slide-index="2"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_3.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_3.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -230,7 +230,7 @@
                   data-swiper-slide-index="3"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_1.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
                 <div
@@ -241,7 +241,7 @@
                   data-swiper-slide-index="4"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
+                    <img src="..assets/img/tour/golden_triangle_2n3d_2.jpg" alt="Golden Triangle 2N3D" />
                   </div>
                 </div>
               </div>
@@ -260,13 +260,13 @@
               data-slider-prev="#tourSlider4"
               class="slider-arrow style3 slider-prev"
             >
-              <img src="assets/img/icon/hero-arrow-left.svg" alt="" />
+              <img src="..assets/img/icon/hero-arrow-left.svg" alt="" />
             </button>
             <button
               data-slider-next="#tourSlider4"
               class="slider-arrow style3 slider-next"
             >
-              <img src="assets/img/icon/hero-arrow-right.svg" alt="" />
+              <img src="..assets/img/icon/hero-arrow-right.svg" alt="" />
             </button>
           </div>
           <div class="page-content">
@@ -454,41 +454,41 @@
             <ul>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />City Tour</a
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />City Tour</a
                 >
                 <span>(8)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Beach
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Beach
                   Tours</a
                 >
                 <span>(6)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Wildlife
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Wildlife
                   Tours</a
                 >
                 <span>(2)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />News &
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />News &
                   Tips</a
                 >
                 <span>(7)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Adventure
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Adventure
                   Tours</a
                 >
                 <span>(9)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Mountain
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Mountain
                   Tours</a
                 >
                 <span>(10)</span>
@@ -502,7 +502,7 @@
                 <div class="media-img">
                   <a href="golden-triangle-tour-3n4d.html"
                     ><img
-                      src="assets/img/blog/golden-triangle-3n4d-1.jpg"
+                      src="..assets/img/blog/golden-triangle-3n4d-1.jpg"
                       alt="Golden Triangle 3N4D Tour"
                   /></a>
                 </div>
@@ -523,7 +523,7 @@
                 <div class="media-img">
                   <a href="golden-triangle-tour-4n5d.html"
                     ><img
-                      src="assets/img/blog/golden-triangle-4n5d-1.jpg"
+                      src="..assets/img/blog/golden-triangle-4n5d-1.jpg"
                       alt="Golden Triangle 4N5D Tour"
                   /></a>
                 </div>
@@ -544,7 +544,7 @@
                 <div class="media-img">
                   <a href="from-delhi-2days-agra-and-jaipur-tour-by-car.html"
                     ><img
-                      src="assets/img/blog/agra-jaipur-1.jpg"
+                      src="..assets/img/blog/agra-jaipur-1.jpg"
                       alt="Agra Jaipur Tour"
                   /></a>
                 </div>
@@ -583,7 +583,7 @@
               <div class="offer">
                 <h6 class="box-title">Need Help? We Are Here To Help You</h6>
                 <div class="banner-logo">
-                  <img src="assets/img/logo2.svg" alt="Tourm" />
+                  <img src="..assets/img/logo2.svg" alt="Tourm" />
                 </div>
                 <div class="offer">
                   <h6 class="offer-title">You Get Online support</h6>

@@ -30,7 +30,7 @@
 
 
 
-  <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+  <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
     <div class="container">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title">Delhi Private Tour By Car</h1>
@@ -69,7 +69,7 @@
                     aria-label="4 / 6"
                     data-swiper-slide-index="3">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -84,7 +84,7 @@
                     aria-label="5 / 6"
                     data-swiper-slide-index="4">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -99,7 +99,7 @@
                   "
                     data-swiper-slide-index="5">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_3.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_3.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -114,7 +114,7 @@
                     aria-label="1 / 6"
                     data-swiper-slide-index="0">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -129,7 +129,7 @@
                     aria-label="2 / 6"
                     data-swiper-slide-index="1">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -144,7 +144,7 @@
                     aria-label="3 / 6"
                     data-swiper-slide-index="2">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_3.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_3.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                 </div>
@@ -172,7 +172,7 @@
                     style="width: 197.667px; margin-right: 24px"
                     data-swiper-slide-index="5">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/tour_inner_3.jpg" alt="Image" />
+                      <img src="..assets/img/tour/tour_inner_3.jpg" alt="Image" />
                     </div>
                   </div>
                   <div
@@ -182,7 +182,7 @@
                     aria-label="1 / 6"
                     data-swiper-slide-index="0">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -192,7 +192,7 @@
                     aria-label="2 / 6"
                     data-swiper-slide-index="1">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -202,7 +202,7 @@
                     aria-label="3 / 6"
                     data-swiper-slide-index="2">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_3.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_3.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -212,7 +212,7 @@
                     aria-label="4 / 6"
                     data-swiper-slide-index="3">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_1.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                   <div
@@ -222,7 +222,7 @@
                     aria-label="5 / 6"
                     data-swiper-slide-index="4">
                     <div class="tour-slider-img">
-                      <img src="assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
+                      <img src="..assets/img/tour/delhi_private_2.jpg" alt="Delhi Private Tour" />
                     </div>
                   </div>
                 </div>
@@ -237,12 +237,12 @@
               <button
                 data-slider-prev="#tourSlider4"
                 class="slider-arrow style3 slider-prev">
-                <img src="assets/img/icon/hero-arrow-left.svg" alt="" />
+                <img src="..assets/img/icon/hero-arrow-left.svg" alt="" />
               </button>
               <button
                 data-slider-next="#tourSlider4"
                 class="slider-arrow style3 slider-next">
-                <img src="assets/img/icon/hero-arrow-right.svg" alt="" />
+                <img src="..assets/img/icon/hero-arrow-right.svg" alt="" />
               </button>
             </div>
             <div class="page-content">
@@ -357,31 +357,31 @@
               <h3 class="widget_title">Categories</h3>
               <ul>
                 <li>
-                  <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="" />City Tour</a>
+                  <a href="blog.html"><img src="..assets/img/theme-img/map.svg" alt="" />City Tour</a>
                   <span>(8)</span>
                 </li>
                 <li>
-                  <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="" />Beach
+                  <a href="blog.html"><img src="..assets/img/theme-img/map.svg" alt="" />Beach
                     Tours</a>
                   <span>(6)</span>
                 </li>
                 <li>
-                  <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="" />Wildlife
+                  <a href="blog.html"><img src="..assets/img/theme-img/map.svg" alt="" />Wildlife
                     Tours</a>
                   <span>(2)</span>
                 </li>
                 <li>
-                  <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="" />News &
+                  <a href="blog.html"><img src="..assets/img/theme-img/map.svg" alt="" />News &
                     Tips</a>
                   <span>(7)</span>
                 </li>
                 <li>
-                  <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="" />Adventure
+                  <a href="blog.html"><img src="..assets/img/theme-img/map.svg" alt="" />Adventure
                     Tours</a>
                   <span>(9)</span>
                 </li>
                 <li>
-                  <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="" />Mountain
+                  <a href="blog.html"><img src="..assets/img/theme-img/map.svg" alt="" />Mountain
                     Tours</a>
                   <span>(10)</span>
                 </li>
@@ -393,7 +393,7 @@
                 <div class="recent-post">
                   <div class="media-img">
                     <a href="taj-mahal-tour-by-gatimaan-express-train.html"><img
-                        src="assets/img/blog/taj-mahal-1.jpg"
+                        src="..assets/img/blog/taj-mahal-1.jpg"
                         alt="Taj Mahal Tour" /></a>
                   </div>
                   <div class="media-body">
@@ -408,7 +408,7 @@
                 <div class="recent-post">
                   <div class="media-img">
                     <a href="old-delhi-food-tasting-tour.html"><img
-                        src="assets/img/blog/old-delhi-food-1.jpg"
+                        src="..assets/img/blog/old-delhi-food-1.jpg"
                         alt="Old Delhi Food Tour" /></a>
                   </div>
                   <div class="media-body">
@@ -423,7 +423,7 @@
                 <div class="recent-post">
                   <div class="media-img">
                     <a href="evening-delhi-city-tour.html"><img
-                        src="assets/img/blog/evening-delhi-1.jpg"
+                        src="..assets/img/blog/evening-delhi-1.jpg"
                         alt="Evening Delhi Tour" /></a>
                   </div>
                   <div class="media-body">
@@ -455,7 +455,7 @@
                 <div class="offer">
                   <h6 class="box-title">Need Help? We Are Here To Help You</h6>
                   <div class="banner-logo">
-                    <img src="assets/img/logo2.svg" alt="Tourm" />
+                    <img src="..assets/img/logo2.svg" alt="Tourm" />
                   </div>
                   <div class="offer">
                     <h6 class="offer-title">You Get Online support</h6>

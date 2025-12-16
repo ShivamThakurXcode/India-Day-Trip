@@ -30,7 +30,7 @@
 
 
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Taj Mahal And Agra Tour By Premium Car</h1>
@@ -74,7 +74,7 @@
                   data-swiper-slide-index="3"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -90,7 +90,7 @@
                   data-swiper-slide-index="4"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -106,7 +106,7 @@
                   data-swiper-slide-index="5"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_3.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_3.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -122,7 +122,7 @@
                   data-swiper-slide-index="0"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -138,7 +138,7 @@
                   data-swiper-slide-index="1"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -154,7 +154,7 @@
                   data-swiper-slide-index="2"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_3.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_3.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
               </div>
@@ -186,7 +186,7 @@
                   data-swiper-slide-index="5"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/tour_inner_3.jpg" alt="Image" />
+                    <img src="..assets/img/tour/tour_inner_3.jpg" alt="Image" />
                   </div>
                 </div>
                 <div
@@ -197,7 +197,7 @@
                   data-swiper-slide-index="0"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -208,7 +208,7 @@
                   data-swiper-slide-index="1"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -219,7 +219,7 @@
                   data-swiper-slide-index="2"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_3.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_3.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -230,7 +230,7 @@
                   data-swiper-slide-index="3"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_1.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
                 <div
@@ -241,7 +241,7 @@
                   data-swiper-slide-index="4"
                 >
                   <div class="tour-slider-img">
-                    <img src="assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
+                    <img src="..assets/img/tour/taj_premium_2.jpg" alt="Taj Mahal Premium Tour" />
                   </div>
                 </div>
               </div>
@@ -260,13 +260,13 @@
               data-slider-prev="#tourSlider4"
               class="slider-arrow style3 slider-prev"
             >
-              <img src="assets/img/icon/hero-arrow-left.svg" alt="" />
+              <img src="..assets/img/icon/hero-arrow-left.svg" alt="" />
             </button>
             <button
               data-slider-next="#tourSlider4"
               class="slider-arrow style3 slider-next"
             >
-              <img src="assets/img/icon/hero-arrow-right.svg" alt="" />
+              <img src="..assets/img/icon/hero-arrow-right.svg" alt="" />
             </button>
           </div>
           <div class="page-content">
@@ -387,41 +387,41 @@
             <ul>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />City Tour</a
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />City Tour</a
                 >
                 <span>(8)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Beach
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Beach
                   Tours</a
                 >
                 <span>(6)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Wildlife
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Wildlife
                   Tours</a
                 >
                 <span>(2)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />News &
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />News &
                   Tips</a
                 >
                 <span>(7)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Adventure
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Adventure
                   Tours</a
                 >
                 <span>(9)</span>
               </li>
               <li>
                 <a href="blog.html"
-                  ><img src="assets/img/theme-img/map.svg" alt="" />Mountain
+                  ><img src="..assets/img/theme-img/map.svg" alt="" />Mountain
                   Tours</a
                 >
                 <span>(10)</span>
@@ -435,7 +435,7 @@
                 <div class="media-img">
                   <a href="taj-mahal-tour-by-gatimaan-express-train.html"
                     ><img
-                      src="assets/img/blog/taj-mahal-1.jpg"
+                      src="..assets/img/blog/taj-mahal-1.jpg"
                       alt="Taj Mahal Tour"
                   /></a>
                 </div>
@@ -456,7 +456,7 @@
                 <div class="media-img">
                   <a href="from-delhi-taj-mahal-and-agra-overnight-tour.html"
                     ><img
-                      src="assets/img/blog/taj-agra-overnight-1.jpg"
+                      src="..assets/img/blog/taj-agra-overnight-1.jpg"
                       alt="Taj Mahal Agra Overnight Tour"
                   /></a>
                 </div>
@@ -477,7 +477,7 @@
                 <div class="media-img">
                   <a href="from-delhi-day-trip-to-taj-mahal-and-agra-fort-by-car.html"
                     ><img
-                      src="assets/img/blog/taj-agra-fort-1.jpg"
+                      src="..assets/img/blog/taj-agra-fort-1.jpg"
                       alt="Taj Mahal Agra Fort Tour"
                   /></a>
                 </div>
@@ -515,7 +515,7 @@
               <div class="offer">
                 <h6 class="box-title">Need Help? We Are Here To Help You</h6>
                 <div class="banner-logo">
-                  <img src="assets/img/logo2.svg" alt="Tourm" />
+                  <img src="..assets/img/logo2.svg" alt="Tourm" />
                 </div>
                 <div class="offer">
                   <h6 class="offer-title">You Get Online support</h6>

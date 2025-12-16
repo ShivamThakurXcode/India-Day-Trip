@@ -14,14 +14,14 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://indiadaytrip.com/">
+    <meta property="og:url" content="https://indiadaytrip.com">
     <meta property="og:title" content="India Day Trip - Agra Based Tour & Travel Company">
     <meta property="og:description" content="India Day Trip - Agra based tour and travel company offering Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours">
     <meta property="og:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiadaytrip.com/">
+    <meta property="twitter:url" content="https://indiadaytrip.com">
     <meta property="twitter:title" content="India Day Trip - Agra Based Tour & Travel Company">
     <meta property="twitter:description" content="India Day Trip - Agra based tour and travel company offering Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours">
     <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.webp">
@@ -304,10 +304,10 @@
                         <div class="swiper-slide" role="group" aria-label="1 / 6" data-swiper-slide-index="0"
                             style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi/"><img src="assets/img/tours-image/sunrise-taj.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi"><img src="assets/img/tours-image/sunrise-taj.webp"
                                             alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi/">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -323,10 +323,10 @@
                         <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 6"
                             data-swiper-slide-index="1" style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/"><img src="assets/img/tours-image/agra-tour-1.webp"
+                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour"><img src="assets/img/tours-image/agra-tour-1.webp"
                                             alt="Taj Mahal And Agra Overnight Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/">Taj Mahal And Agra Overnight
+                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour">Taj Mahal And Agra Overnight
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -342,10 +342,10 @@
                         <div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 6"
                             data-swiper-slide-index="2" style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d/"><img src="assets/img/tours-image/golden-tour.webp"
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d"><img src="assets/img/tours-image/golden-tour.webp"
                                             alt="Golden Triangle Tour 4N5D"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d/">Golden Triangle Tour 4N5D</a></h3>
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d">Golden Triangle Tour 4N5D</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur, India</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
@@ -360,11 +360,11 @@
                         <div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 6"
                             data-swiper-slide-index="3" style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour/"><img
+                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour"><img
                                             src="assets/img/tours-image/delhi-food-taste.webp"
                                             alt="Old Delhi Food Tasting Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour/">Old Delhi Food Tasting Tour</a>
+                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
                                     </h3>
                                     <p class="tour-location">Old Delhi</p>
                                     <div class="tour-rating">
@@ -380,10 +380,10 @@
                         <div class="swiper-slide" role="group" aria-label="5 / 6" data-swiper-slide-index="4"
                             style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/"><img src="assets/img/tours-image/gatiman.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train"><img src="assets/img/tours-image/gatiman.webp"
                                             alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -399,11 +399,11 @@
                         <div class="swiper-slide" role="group" aria-label="6 / 6" data-swiper-slide-index="5"
                             style="width: 312px; margin-right: 24px;">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/"><img
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d"><img
                                             src="assets/img/tours-image/varanashi-tour.webp"
                                             alt="Golden Triangle Tour with Varanasi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d">Golden Triangle Tour with
                                             Varanasi</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
                                     <div class="tour-rating">
@@ -628,11 +628,11 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour/"><img
+                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour"><img
                                             src="assets/img/tours-image/delhi-food-taste.webp"
                                             alt="Old Delhi Food Tasting Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour/">Old Delhi Food Tasting Tour</a>
+                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
                                     </h3>
                                     <p class="tour-location">Old Delhi</p>
                                     <div class="tour-rating">
@@ -647,10 +647,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/delhi-private-day-tour-by-car/"><img src="assets/img/tours-image/private-car.webp"
+                                <div class="tour-box_img global-img"><a href="tour/delhi-private-day-tour-by-car"><img src="assets/img/tours-image/private-car.webp"
                                             alt="Delhi Private Tour By Car"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/delhi-private-day-tour-by-car/">Delhi Private Tour By Car</a></h3>
+                                    <h3 class="box-title"><a href="tour/delhi-private-day-tour-by-car">Delhi Private Tour By Car</a></h3>
                                     <p class="tour-location">Old And New Delhi</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
@@ -664,10 +664,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/"><img src="assets/img/tours-image/taj-old-delhi.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour"><img src="assets/img/tours-image/taj-old-delhi.webp"
                                             alt="Taj Mahal Sunrise And Old Delhi Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/">Taj Mahal Sunrise And Old Delhi
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -682,10 +682,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi/"><img src="assets/img/tours-image/sunrise-taj.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi"><img src="assets/img/tours-image/sunrise-taj.webp"
                                             alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi/">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -700,10 +700,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/"><img src="assets/img/tours-image/gatiman.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train"><img src="assets/img/tours-image/gatiman.webp"
                                             alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -743,10 +743,10 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/"><img src="assets/img/tours-image/taj-old-delhi.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour"><img src="assets/img/tours-image/taj-old-delhi.webp"
                                             alt="Taj Mahal Sunrise And Old Delhi Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour/">Taj Mahal Sunrise And Old Delhi
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -761,10 +761,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi/"><img src="assets/img/tours-image/sunrise-taj.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi"><img src="assets/img/tours-image/sunrise-taj.webp"
                                             alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi/">Taj Mahal Sunrise Tour From
+                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From
                                             Delhi</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -779,10 +779,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/"><img src="assets/img/tours-image/gatiman.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train"><img src="assets/img/tours-image/gatiman.webp"
                                             alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train/">Taj Mahal Tour By Gatimaan Express
+                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express
                                             Train</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -797,10 +797,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/"><img src="assets/img/tours-image/agra-tour-1.webp"
+                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour"><img src="assets/img/tours-image/agra-tour-1.webp"
                                             alt="Taj Mahal And Agra Overnight Tour"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour/">Taj Mahal And Agra Overnight
+                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour">Taj Mahal And Agra Overnight
                                             Tour</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -815,10 +815,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars/"><img src="assets/img/tours-image/premium-car.webp"
+                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars"><img src="assets/img/tours-image/premium-car.webp"
                                             alt="Taj Mahal And Agra Tour By Premium Car"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars/">Taj Mahal And Agra Tour By Premium
+                                    <h3 class="box-title"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars">Taj Mahal And Agra Tour By Premium
                                             Car</a></h3>
                                     <p class="tour-location">Delhi Taj Mahal</p>
                                     <div class="tour-rating">
@@ -858,11 +858,11 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/"><img
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d"><img
                                             src="assets/img/tours-image/varanashi-tour.webp"
                                             alt="Golden Triangle Tour with Varanasi"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d/">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d">Golden Triangle Tour with
                                             Varanasi</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
                                     <div class="tour-rating">
@@ -877,10 +877,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-udaipur-7n8d/"><img src="assets/img/tours-image/udaipur-tour.webp"
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-udaipur-7n8d"><img src="assets/img/tours-image/udaipur-tour.webp"
                                             alt="Golden Triangle Tour with Udaipur"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-udaipur-7n8d/">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-udaipur-7n8d">Golden Triangle Tour with
                                             Udaipur</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Udaipur</p>
                                     <div class="tour-rating">
@@ -895,10 +895,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d/"><img src="assets/img/tours-image/ranthambroe.webp"
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d"><img src="assets/img/tours-image/ranthambroe.webp"
                                             alt="Golden Triangle Tour with Ranthambore"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d/">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d">Golden Triangle Tour with
                                             Ranthambore</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Ranthambore</p>
                                     <div class="tour-rating">
@@ -913,10 +913,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-amritsar-6n7d/"><img src="assets/img/tours-image/amritsar-tour.webp"
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-amritsar-6n7d"><img src="assets/img/tours-image/amritsar-tour.webp"
                                             alt="Golden Triangle Tour with Amritsar"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-amritsar-6n7d/">Golden Triangle Tour with
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-amritsar-6n7d">Golden Triangle Tour with
                                             Amritsar</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur And Amritsar</p>
                                     <div class="tour-rating">
@@ -931,10 +931,10 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d/"><img src="assets/img/tours-image/golden-tour.webp"
+                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d"><img src="assets/img/tours-image/golden-tour.webp"
                                             alt="Golden Triangle Tour 4N5D"></a></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d/">Golden Triangle Tour 4N5D</a></h3>
+                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d">Golden Triangle Tour 4N5D</a></h3>
                                     <p class="tour-location">Delhi, Agra, Jaipur, India</p>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
