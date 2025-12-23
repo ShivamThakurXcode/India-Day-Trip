@@ -27,22 +27,22 @@ if ($depth > 0) {
             <h3 class="widget_title">Recent Posts</h3>
             <div class="recent-post-wrap">
                 <div class="recent-post">
-                    <div class="media-img"><a href="<?php echo $base_path; ?>blog-details.php"><img
+                    <div class="media-img"><a href="<?php echo $base_path; ?>blog/blog-details.php?slug=best-time-to-visit-taj-mahal"><img
                                 src="<?php echo $base_path; ?>assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
                     <div class="media-body">
-                        <div class="recent-post-meta"><a href="<?php echo $base_path; ?>blog.php"><i class="far fa-calendar"></i>24 Jun ,
-                                2025</a></div>
-                        <h4 class="post-title"><a class="text-inherit" href="<?php echo $base_path; ?>blog-details.php">Best Time to Visit
+                        <div class="recent-post-meta"><a href="<?php echo $base_path; ?>blog/"><i class="far fa-calendar"></i>Sep 09,
+                                2024</a></div>
+                        <h4 class="post-title"><a class="text-inherit" href="<?php echo $base_path; ?>blog/blog-details.php?slug=best-time-to-visit-taj-mahal">Best Time to Visit
                                 Taj Mahal</a></h4>
                     </div>
                 </div>
                 <div class="recent-post">
-                    <div class="media-img"><a href="<?php echo $base_path; ?>blog-details.php"><img
+                    <div class="media-img"><a href="<?php echo $base_path; ?>blog/blog-details.php?slug=perfect-5-day-golden-triangle-itinerary"><img
                                 src="<?php echo $base_path; ?>assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
                     <div class="media-body">
-                        <div class="recent-post-meta"><a href="<?php echo $base_path; ?>blog.php"><i class="far fa-calendar"></i>22 Jun ,
-                                2025</a></div>
-                        <h4 class="post-title"><a class="text-inherit" href="<?php echo $base_path; ?>blog-details.php">Golden Triangle
+                        <div class="recent-post-meta"><a href="<?php echo $base_path; ?>blog/"><i class="far fa-calendar"></i>Sep 10,
+                                2024</a></div>
+                        <h4 class="post-title"><a class="text-inherit" href="<?php echo $base_path; ?>blog/blog-details.php?slug=perfect-5-day-golden-triangle-itinerary">Golden Triangle
                                 Itinerary Guide</a></h4>
                     </div>
                 </div>

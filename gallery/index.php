@@ -54,8 +54,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-1.webp" alt="Taj Mahal at sunrise">
-                            <a href="../assets/img/gallery/g-1.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg1.webp" alt="Taj Mahal at sunrise">
+                            <a href="../assets/img/gallery/hg1.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>
@@ -64,8 +64,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-2.webp" alt="Agra Fort architecture">
-                            <a href="../assets/img/gallery/g-2.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg2.webp" alt="Agra Fort architecture">
+                            <a href="../assets/img/gallery/hg2.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>
@@ -74,8 +74,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-3.webp" alt="Jaipur City Palace">
-                            <a href="../assets/img/gallery/g-3.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg3.webp" alt="Jaipur City Palace">
+                            <a href="../assets/img/gallery/hg3.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>
@@ -84,8 +84,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-4.webp" alt="Delhi Red Fort">
-                            <a href="../assets/img/gallery/g-4.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg4.webp" alt="Delhi Red Fort">
+                            <a href="../assets/img/gallery/hg4.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>
@@ -94,8 +94,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-5.webp" alt="Udaipur Lake Palace">
-                            <a href="../assets/img/gallery/g-5.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg5.webp" alt="Udaipur Lake Palace">
+                            <a href="../assets/img/gallery/hg5.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>
@@ -104,8 +104,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-6.webp" alt="Ranthambore Tiger Reserve">
-                            <a href="../assets/img/gallery/g-6.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg6.webp" alt="Ranthambore Tiger Reserve">
+                            <a href="../assets/img/gallery/hg6.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>
@@ -114,8 +114,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-7.webp" alt="Varanasi Ganges at dawn">
-                            <a href="../assets/img/gallery/g-7.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg7.webp" alt="Varanasi Ganges at dawn">
+                            <a href="../assets/img/gallery/hg7.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>
@@ -124,8 +124,8 @@
                 <div class="col-auto">
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/g-8.webp" alt="Amritsar Golden Temple">
-                            <a href="../assets/img/gallery/g-8.webp" class="icon-btn popup-image">
+                            <img src="../assets/img/gallery/hg8.webp" alt="Amritsar Golden Temple">
+                            <a href="../assets/img/gallery/hg8.webp" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>
                         </div>

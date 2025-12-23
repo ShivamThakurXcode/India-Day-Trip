@@ -53,6 +53,7 @@ $current_page = $_SERVER['SCRIPT_NAME'];
                                     </ul>
                                 </li>
                                 <li><a class="<?php echo ($current_page == '/gallery/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>gallery/index.php">Gallery</a></li>
+                                <li><a class="<?php echo (strpos($current_page, '/blog/') === 0) ? 'active' : ''; ?>" href="<?php echo $base_path; ?>blog/index.php">Blog</a></li>
                                 <li><a class="<?php echo ($current_page == '/contact/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>contact/index.php">Contact Us</a></li>
                             </ul>
                         </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i

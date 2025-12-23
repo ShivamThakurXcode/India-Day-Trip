@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/contact/">
     <meta property="og:title" content="Contact India Day Trip - Get in Touch for Agra Tours">
     <meta property="og:description" content="Contact India Day Trip for inquiries about Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Reach out to our Agra-based travel experts for personalized travel planning.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/bg/video_bg_1.jpg">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/bg/contact_bg_1.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/contact/">
     <meta property="twitter:title" content="Contact India Day Trip - Get in Touch for Agra Tours">
     <meta property="twitter:description" content="Contact India Day Trip for inquiries about Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Reach out to our Agra-based travel experts for personalized travel planning.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/bg/video_bg_1.jpg">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/bg/contact_bg_1.jpg">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -33,7 +33,7 @@
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Contact Us</h1>
@@ -55,8 +55,8 @@
                         <div class="about-contact-icon"><img src="../assets/img/icon/location-dot2.svg" alt=""></div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Our Address</h6>
-                            <p class="about-contact-details-text">2690 Hiltona Street Victoria</p>
-                            <p class="about-contact-details-text">Road, New York, Canada</p>
+                            <p class="about-contact-details-text">Shop No. 2, Gupta Market, Tajganj,</p>
+                            <p class="about-contact-details-text">Agra, Uttar Pradesh, India</p>
                         </div>
                     </div>
                 </div>
@@ -65,8 +65,7 @@
                         <div class="about-contact-icon"><img src="../assets/img/icon/call.svg" alt=""></div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Phone Number</h6>
-                            <p class="about-contact-details-text"><a href="tel:01234567890">+01 234 567 890</a></p>
-                            <p class="about-contact-details-text"><a href="tel:01234567890">+09 876 543 210</a></p>
+                            <p class="about-contact-details-text"><a href="tel:+918126052755">+91 81260 52755</a></p>
                         </div>
                     </div>
                 </div>
@@ -75,8 +74,7 @@
                         <div class="about-contact-icon"><img src="../assets/img/icon/mail.svg" alt=""></div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Email Address</h6>
-                            <p class="about-contact-details-text"><a href="mailto:mailinfo00@tourm.com">mailinfo00@tourm.com</a></p>
-                            <p class="about-contact-details-text"><a href="mailto:support24@tourm.com">support24@tourm.com</a></p>
+                            <p class="about-contact-details-text"><a href="mailto:info@indiadaytrip.com">info@indiadaytrip.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -98,11 +96,10 @@
                                 <div class="col-12 form-group"><input type="email" class="form-control" name="email3" id="email3" placeholder="Your Mail"> <img src="../assets/img/icon/mail.svg" alt=""></div>
                                 <div class="form-group col-12"><select name="subject" id="subject" class="form-select nice-select">
                                         <option value="Select Tour Type" selected="selected" disabled="disabled">Select Tour Type</option>
-                                        <option value="Africa Adventure">Africa Adventure</option>
-                                        <option value="Africa Wild">Africa Wild</option>
-                                        <option value="Asia">Asia</option>
-                                        <option value="Scandinavia">Scandinavia</option>
-                                        <option value="Western Europe">Western Europe</option>
+                                        <option value="Same Day Tours">Same Day Tours</option>
+                                        <option value="Taj Mahal Tours">Taj Mahal Tours</option>
+                                        <option value="Golden Triangle Tours">Golden Triangle Tours</option>
+                                        <option value="Rajasthan Tours">Rajasthan Tours</option>
                                     </select></div>
                                 <div class="form-group col-12"><textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea> <img src="../assets/img/icon/chat.svg" alt=""></div>
                                 <div class="form-btn col-12 mt-24"><button type="submit" class="th-btn style3">Send message <img src="../assets/img/icon/plane.svg" alt=""></button></div>

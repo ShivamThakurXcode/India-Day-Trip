@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/blog/">
     <meta property="og:title" content="Blog - India Day Trip">
     <meta property="og:description" content="Read our latest travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.png">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/blog/">
     <meta property="twitter:title" content="Blog - India Day Trip">
     <meta property="twitter:description" content="Read our latest travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.png">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.webp">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -33,7 +33,7 @@
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Our Blog</h1>
@@ -58,34 +58,34 @@
             <div class="row gy-30">
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-grid2 th-ani">
-                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-agra.png" alt="Best Time to Visit Taj Mahal"></div>
+                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-agra.webp" alt="Best Time to Visit Taj Mahal"></div>
                         <div class="blog-grid2_content">
                             <div class="blog-meta"><a class="author" href="#">Sep 09, 2024</a> <a href="#">6 min read</a></div>
-                            <h3 class="box-title"><a href="blog-details.php?slug=best-time-to-visit-taj-mahal">Best Time to Visit Taj Mahal: A Complete Guide</a></h3>
+                            <h3 class="box-title"><a href="best-time-to-visit-taj-mahal-a-complete-guide/">Best Time to Visit Taj Mahal: A Complete Guide</a></h3>
                             <p class="blog-text">Discover the best seasons to visit the Taj Mahal, including weather, crowds, and special events.</p>
-                            <a href="blog-details.php" class="th-btn style4 th-icon">Read More</a>
+                            <a href="best-time-to-visit-taj-mahal-a-complete-guide/" class="th-btn style4 th-icon">Read More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-grid2 th-ani">
-                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-delhi.png" alt="Must-Try Local Places & Foods in Delhi"></div>
+                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-delhi.webp" alt="Must-Try Local Places & Foods in Delhi"></div>
                         <div class="blog-grid2_content">
                             <div class="blog-meta"><a class="author" href="#">Sep 05, 2024</a> <a href="#">6 min read</a></div>
-                            <h3 class="box-title"><a href="blog-details.php?slug=must-try-local-places-foods-in-delhi">Must-Try Local Places & Foods in Delhi</a></h3>
+                            <h3 class="box-title"><a href="must-try-local-places-foods-in-delhi/">Must-Try Local Places & Foods in Delhi</a></h3>
                             <p class="blog-text">Explore Delhi's vibrant food scene and hidden gems that locals love.</p>
-                            <a href="blog-details.php" class="th-btn style4 th-icon">Read More</a>
+                            <a href="must-try-local-places-foods-in-delhi/" class="th-btn style4 th-icon">Read More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-grid2 th-ani">
-                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-tour.png" alt="Perfect 5-Day Golden Triangle Itinerary"></div>
+                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-tour.webp" alt="Perfect 5-Day Golden Triangle Itinerary"></div>
                         <div class="blog-grid2_content">
                             <div class="blog-meta"><a class="author" href="#">Sep 10, 2024</a> <a href="#">8 min read</a></div>
-                            <h3 class="box-title"><a href="blog-details.php?slug=perfect-5-day-golden-triangle-itinerary">Perfect 5-Day Golden Triangle Itinerary</a></h3>
+                            <h3 class="box-title"><a href="perfect-5-day-golden-triangle-itinerary/">Perfect 5-Day Golden Triangle Itinerary</a></h3>
                             <p class="blog-text">Plan your ideal Golden Triangle tour with this detailed 5-day itinerary covering Delhi, Agra, and Jaipur.</p>
-                            <a href="blog-details.php" class="th-btn style4 th-icon">Read More</a>
+                            <a href="perfect-5-day-golden-triangle-itinerary/" class="th-btn style4 th-icon">Read More</a>
                         </div>
                     </div>
                 </div>

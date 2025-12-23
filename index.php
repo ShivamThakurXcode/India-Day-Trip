@@ -1236,10 +1236,10 @@
                         <div class="blog-img global-img"><img src="assets/img/blog/blog-agra.webp"
                                 alt="Best Time to Visit Taj Mahal"></div>
                         <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="blog.php">Sep 09, 2024</a> <a
-                                    href="blog.php">6 min read</a></div>
-                            <h3 class="box-title"><a href="blog-details.php">Best Time to Visit Taj Mahal: A Complete
-                                    Guide</a></h3><a href="blog-details.php" class="th-btn style4 th-icon">Read
+                            <div class="blog-meta"><a class="author" href="blog/">Sep 09, 2024</a> <a
+                                    href="blog/">6 min read</a></div>
+                            <h3 class="box-title"><a href="blog/best-time-to-visit-taj-mahal-a-complete-guide/">Best Time to Visit Taj Mahal: A Complete
+                                    Guide</a></h3><a href="blog/best-time-to-visit-taj-mahal-a-complete-guide/" class="th-btn style4 th-icon">Read
                                 More</a>
                         </div>
                     </div>
@@ -1247,10 +1247,10 @@
                         <div class="blog-img global-img"><img src="assets/img/blog/blog-tour.webp"
                                 alt="Golden Triangle Itinerary"></div>
                         <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="blog.php">Sep 10, 2024</a> <a
-                                    href="blog.php">8 min read</a></div>
-                            <h3 class="box-title"><a href="blog-details.php">Perfect 5-Day Golden Triangle
-                                    Itinerary</a></h3><a href="blog-details.php" class="th-btn style4 th-icon">Read
+                            <div class="blog-meta"><a class="author" href="blog/">Sep 10, 2024</a> <a
+                                    href="blog/">8 min read</a></div>
+                            <h3 class="box-title"><a href="blog/perfect-5-day-golden-triangle-itinerary/">Perfect 5-Day Golden Triangle
+                                    Itinerary</a></h3><a href="blog/perfect-5-day-golden-triangle-itinerary/" class="th-btn style4 th-icon">Read
                                 More</a>
                         </div>
                     </div>
@@ -1260,11 +1260,11 @@
                         <div class="blog-img global-img"><img src="assets/img/blog/blog-delhi.webp"
                                 alt="Agra Local Cuisine"></div>
                         <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="blog.php">Sep 05, 2024</a> <a
-                                    href="blog.php">6 min read</a></div>
+                            <div class="blog-meta"><a class="author" href="blog/">Sep 05, 2024</a> <a
+                                    href="blog/">6 min read</a></div>
                             <h3 class="box-title">
-                                <a href="blog-details.php">Must-Try Local Places & Foods in Delhi</a>
-                            </h3><a href="blog-details.php" class="th-btn style4 th-icon">Read
+                                <a href="blog/must-try-local-places-foods-in-delhi/">Must-Try Local Places & Foods in Delhi</a>
+                            </h3><a href="blog/must-try-local-places-foods-in-delhi/" class="th-btn style4 th-icon">Read
                                 More</a>
                         </div>
                     </div>

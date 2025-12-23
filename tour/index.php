@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/tour/">
     <meta property="og:title" content="Popular Tours - India Day Trip | Taj Mahal & Golden Triangle">
     <meta property="og:description" content="Explore our popular tours including Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Book your Agra-based adventure with India Day Trip.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/destination/d-agra.png">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/destination/d-agra.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/tour/">
     <meta property="twitter:title" content="Popular Tours - India Day Trip | Taj Mahal & Golden Triangle">
     <meta property="twitter:description" content="Explore our popular tours including Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Book your Agra-based adventure with India Day Trip.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/destination/d-agra.png">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/destination/d-agra.webp">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -33,7 +33,7 @@
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Popular Tours</h1>
@@ -90,7 +90,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/delhi-food-taste.png" alt="Old Delhi Food Tasting Tour">
+                                            <img src="../assets/img/tours-image/delhi-food-taste.webp" alt="Old Delhi Food Tasting Tour">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -114,7 +114,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/private-car.png" alt="Delhi Private Tour By Car">
+                                            <img src="../assets/img/tours-image/private-car.webp" alt="Delhi Private Tour By Car">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -138,7 +138,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/taj-old-delhi.png" alt="Taj Mahal Sunrise And Old Delhi Tour">
+                                            <img src="../assets/img/tours-image/taj-old-delhi.webp" alt="Taj Mahal Sunrise And Old Delhi Tour">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -162,7 +162,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/sunrise-taj.png" alt="Taj Mahal Sunrise Tour From Delhi">
+                                            <img src="../assets/img/tours-image/sunrise-taj.webp" alt="Taj Mahal Sunrise Tour From Delhi">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -186,7 +186,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/gatiman.png" alt="Taj Mahal Tour By Gatimaan Express Train">
+                                            <img src="../assets/img/tours-image/gatiman.webp" alt="Taj Mahal Tour By Gatimaan Express Train">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -210,7 +210,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/agra-tour-1.png" alt="Taj Mahal And Agra Overnight Tour">
+                                            <img src="../assets/img/tours-image/agra-tour-1.webp" alt="Taj Mahal And Agra Overnight Tour">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -234,7 +234,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/premium-car.png" alt="Taj Mahal And Agra Tour By Premium Car">
+                                            <img src="../assets/img/tours-image/premium-car.webp" alt="Taj Mahal And Agra Tour By Premium Car">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -258,7 +258,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/golden-tour.png" alt="2 Days Agra And Jaipur Tour From Delhi">
+                                            <img src="../assets/img/tours-image/golden-tour.webp" alt="2 Days Agra And Jaipur Tour From Delhi">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -282,7 +282,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/varanashi-tour.png" alt="Golden Triangle Tour with Varanasi">
+                                            <img src="../assets/img/tours-image/varanashi-tour.webp" alt="Golden Triangle Tour with Varanasi">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -306,7 +306,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/udaipur-tour.png" alt="Golden Triangle Tour with Udaipur">
+                                            <img src="../assets/img/tours-image/udaipur-tour.webp" alt="Golden Triangle Tour with Udaipur">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -330,7 +330,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/ranthambroe.png" alt="Golden Triangle Tour with Ranthambore">
+                                            <img src="../assets/img/tours-image/ranthambroe.webp" alt="Golden Triangle Tour with Ranthambore">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -354,7 +354,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/amritsar-tour.png" alt="Golden Triangle Tour with Amritsar">
+                                            <img src="../assets/img/tours-image/amritsar-tour.webp" alt="Golden Triangle Tour with Amritsar">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -378,7 +378,7 @@
                                 <div class="col-xxl-4 col-lg-4 col-md-6">
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/golden-tour.png" alt="Golden Triangle Tour 4N5D">
+                                            <img src="../assets/img/tours-image/golden-tour.webp" alt="Golden Triangle Tour 4N5D">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -406,7 +406,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/delhi-food-taste.png" alt="Old Delhi Food Tasting Tour">
+                                            <img src="../assets/img/tours-image/delhi-food-taste.webp" alt="Old Delhi Food Tasting Tour">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -430,7 +430,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/private-car.png" alt="Delhi Private Tour By Car">
+                                            <img src="../assets/img/tours-image/private-car.webp" alt="Delhi Private Tour By Car">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -454,7 +454,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/taj-old-delhi.png" alt="Taj Mahal Sunrise And Old Delhi Tour">
+                                            <img src="../assets/img/tours-image/taj-old-delhi.webp" alt="Taj Mahal Sunrise And Old Delhi Tour">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -478,7 +478,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/sunrise-taj.png" alt="Taj Mahal Sunrise Tour From Delhi">
+                                            <img src="../assets/img/tours-image/sunrise-taj.webp" alt="Taj Mahal Sunrise Tour From Delhi">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -502,7 +502,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/gatiman.png" alt="Taj Mahal Tour By Gatimaan Express Train">
+                                            <img src="../assets/img/tours-image/gatiman.webp" alt="Taj Mahal Tour By Gatimaan Express Train">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -526,7 +526,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/agra-tour-1.png" alt="Taj Mahal And Agra Overnight Tour">
+                                            <img src="../assets/img/tours-image/agra-tour-1.webp" alt="Taj Mahal And Agra Overnight Tour">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -550,7 +550,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/premium-car.png" alt="Taj Mahal And Agra Tour By Premium Car">
+                                            <img src="../assets/img/tours-image/premium-car.webp" alt="Taj Mahal And Agra Tour By Premium Car">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -574,7 +574,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/golden-tour.png" alt="2 Days Agra And Jaipur Tour From Delhi">
+                                            <img src="../assets/img/tours-image/golden-tour.webp" alt="2 Days Agra And Jaipur Tour From Delhi">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -598,7 +598,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/varanashi-tour.png" alt="Golden Triangle Tour with Varanasi">
+                                            <img src="../assets/img/tours-image/varanashi-tour.webp" alt="Golden Triangle Tour with Varanasi">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -622,7 +622,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/udaipur-tour.png" alt="Golden Triangle Tour with Udaipur">
+                                            <img src="../assets/img/tours-image/udaipur-tour.webp" alt="Golden Triangle Tour with Udaipur">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -646,7 +646,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/ranthambroe.png" alt="Golden Triangle Tour with Ranthambore">
+                                            <img src="../assets/img/tours-image/ranthambroe.webp" alt="Golden Triangle Tour with Ranthambore">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -670,7 +670,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/amritsar-tour.png" alt="Golden Triangle Tour with Amritsar">
+                                            <img src="../assets/img/tours-image/amritsar-tour.webp" alt="Golden Triangle Tour with Amritsar">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -694,7 +694,7 @@
                                 <div class="col-12">
                                     <div class="tour-box style-flex th-ani">
                                         <div class="tour-box_img global-img">
-                                            <img src="../assets/img/tours-image/golden-tour.png" alt="Golden Triangle Tour 4N5D">
+                                            <img src="../assets/img/tours-image/golden-tour.webp" alt="Golden Triangle Tour 4N5D">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
@@ -719,7 +719,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-lg-4>
+                <div class="col-xxl-3 col-lg-4">
                     <aside class=" sidebar-area">
                     <div class="widget widget_categories">
                         <h3 class="widget_title">Tour Categories</h3>
@@ -834,13 +834,13 @@
                 </div>
             </div>
             <div class="shape-mockup shape1 d-none d-xxl-block" data-bottom="7%" data-right="-8%">
-                <img src="../assets/img/shape/shape_1.png" alt="shape">
+                <img src="../assets/img/shape/shape_1.webp" alt="shape">
             </div>
             <div class="shape-mockup shape2 d-none d-xl-block" data-bottom="1%" data-right="-7%">
-                <img src="../assets/img/shape/shape_2.png" alt="shape">
+                <img src="../assets/img/shape/shape_2.webp" alt="shape">
             </div>
             <div class="shape-mockup shape3 d-none d-xxl-block" data-bottom="-2%" data-right="-12%">
-                <img src="../assets/img/shape/shape_3.png" alt="shape">
+                <img src="../assets/img/shape/shape_3.webp" alt="shape">
             </div>
         </div>
     </section>
