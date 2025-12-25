@@ -25,10 +25,16 @@
     <meta property="twitter:description" content="Explore our Same Day Tours from Delhi including Taj Mahal visits, Old Delhi food tasting, and private car tours. Perfect for short trips to Agra and Delhi.">
     <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/destination/d-delhi.webp">
 
+    <?php
+    require_once '../config.php';
+    
+    $categoryTours = getTours('Same Day Tours');
+    ?>
+    
     <?php include '../components/links.php'; ?>
-</head>
-
-<body>
+    </head>
+    
+    <body>
     <?php include '../components/preloader.php'; ?>
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
@@ -87,270 +93,16 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade active show" id="tab-grid" role="tabpanel" aria-labelledby="tab-tour-grid">
                             <div class="row gy-24 gx-24">
-                                <div class="col-xxl-4 col-lg-4 col-md-6">
-                                    <div class="tour-box th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/old-delhi-food-tasting-tour">
-                                                <img src="../assets/img/tours-image/delhi-food-taste.webp" alt="Old Delhi Food Tasting Tour">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/old-delhi-food-tasting-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>4 Hours
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-lg-4 col-md-6">
-                                    <div class="tour-box th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/delhi-private-day-tour-by-car">
-                                                <img src="../assets/img/tours-image/private-car.webp" alt="Delhi Private Tour By Car">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/delhi-private-day-tour-by-car">Delhi Private Tour By Car</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/delhi-private-day-tour-by-car/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-lg-4 col-md-6">
-                                    <div class="tour-box th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">
-                                                <img src="../assets/img/tours-image/taj-old-delhi.webp" alt="Taj Mahal Sunrise And Old Delhi Tour">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi Tour</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-lg-4 col-md-6">
-                                    <div class="tour-box th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/taj-mahal-sunrise-tour-from-delhi">
-                                                <img src="../assets/img/tours-image/sunrise-taj.webp" alt="Taj Mahal Sunrise Tour From Delhi">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From Delhi</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-lg-4 col-md-6">
-                                    <div class="tour-box th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">
-                                                <img src="../assets/img/tours-image/gatiman.webp" alt="Taj Mahal Tour By Gatimaan Express Train">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express Train</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php foreach ($categoryTours as $tour): ?>
+                                    <?php echo renderTourCard($tour, 'grid'); ?>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tab-list" role="tabpanel" aria-labelledby="tab-tour-list">
                             <div class="row gy-30">
-                                <div class="col-12">
-                                    <div class="tour-box style-flex th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/old-delhi-food-tasting-tour">
-                                                <img src="../assets/img/tours-image/delhi-food-taste.webp" alt="Old Delhi Food Tasting Tour">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/old-delhi-food-tasting-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>4 Hours
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="tour-box style-flex th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/delhi-private-day-tour-by-car">
-                                                <img src="../assets/img/tours-image/private-car.webp" alt="Delhi Private Tour By Car">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/delhi-private-day-tour-by-car">Delhi Private Tour By Car</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/delhi-private-day-tour-by-car/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="tour-box style-flex th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">
-                                                <img src="../assets/img/tours-image/taj-old-delhi.webp" alt="Taj Mahal Sunrise And Old Delhi Tour">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi Tour</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/taj-mahal-sunrise-and-old-delhi-tour/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="tour-box style-flex th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/taj-mahal-sunrise-tour-from-delhi">
-                                                <img src="../assets/img/tours-image/sunrise-taj.webp" alt="Taj Mahal Sunrise Tour From Delhi">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From Delhi</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/taj-mahal-sunrise-tour-from-delhi/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="tour-box style-flex th-ani">
-                                        <div class="tour-box_img global-img">
-                                            <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">
-                                                <img src="../assets/img/tours-image/gatiman.webp" alt="Taj Mahal Tour By Gatimaan Express Train">
-                                            </a>
-                                        </div>
-                                        <div class="tour-content">
-                                            <h3 class="box-title">
-                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express Train</a>
-                                            </h3>
-                                            <div class="tour-rating">
-                                                <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8 Rating)</span>
-                                                </div>
-                                                <a href="../tour/taj-mahal-tour-by-gatimaan-express-train/" class="woocommerce-review-link">(<span class="count">4.8</span> Rating)</a>
-                                            </div>
-                                            <div class="tour-action">
-                                                <span>
-                                                    <i class="fa-light fa-clock"></i>1 Day
-                                                </span>
-                                                <a href="../contact.php" class="th-btn style4">Book Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php foreach ($categoryTours as $tour): ?>
+                                    <?php echo renderTourCard($tour, 'list'); ?>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>

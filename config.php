@@ -1,0 +1,41 @@
+<?php
+// Database configuration
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'india_day_trip');
+define('DB_USER', 'root'); // Change as needed
+define('DB_PASS', ''); // Change as needed
+
+try {
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+// Include utility functions
+require_once 'functions.php';
+
+// Function to get setting value
+function getSetting($key) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT setting_value FROM settings WHERE setting_key = ?");
+    $stmt->execute([$key]);
+    return $stmt->fetchColumn();
+}
+
+// Function to update setting
+function updateSetting($key, $value) {
+    global $pdo;
+    $stmt = $pdo->prepare("INSERT INTO settings (setting_key, setting_value) VALUES (?, ?) ON DUPLICATE KEY UPDATE setting_value = ?");
+    $stmt->execute([$key, $value, $value]);
+}
+
+// Function to check if admin is logged in
+function checkAdminLogin() {
+    if (!isset($_SESSION['admin_id'])) {
+        header('Location: login.php');
+        exit;
+    }
+}
+?>

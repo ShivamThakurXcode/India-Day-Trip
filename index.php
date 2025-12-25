@@ -1,3 +1,53 @@
+<?php
+require_once 'config.php';
+
+// Get tours for homepage
+$popularTours = getTours(null, 6);
+$sameDayTours = getTours('Same Day Tours', 5);
+$tajMahalTours = getTours('Taj Mahal Tours', 5);
+$goldenTriangleTours = getTours('Golden Triangle Tours', 5);
+
+// Handle routing for detail pages
+$type = $_GET['type'] ?? null;
+$slug = $_GET['slug'] ?? null;
+
+if ($type && $slug) {
+    if ($type === 'tour') {
+        // Fetch tour by slug
+        $stmt = $pdo->prepare("SELECT * FROM tours WHERE slug = ?");
+        $stmt->execute([$slug]);
+        $tour = $stmt->fetch();
+
+        if ($tour) {
+            // Update view count
+            $pdo->prepare("UPDATE tours SET view_count = view_count + 1 WHERE id = ?")->execute([$tour['id']]);
+
+            // Display tour detail page
+            include 'tour-detail.php';
+            exit;
+        }
+    } elseif ($type === 'blog') {
+        // Fetch blog by slug
+        $stmt = $pdo->prepare("SELECT * FROM blogs WHERE slug = ?");
+        $stmt->execute([$slug]);
+        $blog = $stmt->fetch();
+
+        if ($blog) {
+            // Update view count
+            $pdo->prepare("UPDATE blogs SET view_count = view_count + 1 WHERE id = ?")->execute([$blog['id']]);
+
+            // Display blog detail page
+            include 'blog-detail.php';
+            exit;
+        }
+    }
+
+    // If not found, show 404
+    include '404.php';
+    exit;
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -299,123 +349,12 @@
             <div class="slider-area tour-slider">
                 <div class="swiper th-slider has-shadow slider-drag-wrap swiper-initialized swiper-horizontal swiper-backface-hidden"
                     data-slider-options="{&quot;breakpoints&quot;:{&quot;0&quot;:{&quot;slidesPerView&quot;:1},&quot;576&quot;:{&quot;slidesPerView&quot;:&quot;1&quot;},&quot;768&quot;:{&quot;slidesPerView&quot;:&quot;2&quot;},&quot;992&quot;:{&quot;slidesPerView&quot;:&quot;2&quot;},&quot;1200&quot;:{&quot;slidesPerView&quot;:&quot;3&quot;},&quot;1300&quot;:{&quot;slidesPerView&quot;:&quot;4&quot;}}}">
-                    <div class="swiper-wrapper" id="swiper-wrapper-6b8d69212df7dd68" aria-live="off"
-                        style="transition-duration: 0ms; transform: translate3d(-672px, 0px, 0px); transition-delay: 0ms;">
-                        <div class="swiper-slide" role="group" aria-label="1 / 6" data-swiper-slide-index="0"
-                            style="width: 312px; margin-right: 24px;">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi"><img src="assets/img/tours-image/sunrise-taj.webp"
-                                            alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From
-                                            Delhi</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 Day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
+                    <div class="swiper-wrapper">
+                        <?php foreach ($popularTours as $tour): ?>
+                            <div class="swiper-slide">
+                                <?php echo renderTourCard($tour, 'swiper'); ?>
                             </div>
-                        </div>
-                        <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 6"
-                            data-swiper-slide-index="1" style="width: 312px; margin-right: 24px;">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour"><img src="assets/img/tours-image/agra-tour-1.webp"
-                                            alt="Taj Mahal And Agra Overnight Tour"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour">Taj Mahal And Agra Overnight
-                                            Tour</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 Days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 6"
-                            data-swiper-slide-index="2" style="width: 312px; margin-right: 24px;">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d"><img src="assets/img/tours-image/golden-tour.webp"
-                                            alt="Golden Triangle Tour 4N5D"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d">Golden Triangle Tour 4N5D</a></h3>
-                                    <p class="tour-location">Delhi, Agra, Jaipur, India</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 Days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 6"
-                            data-swiper-slide-index="3" style="width: 312px; margin-right: 24px;">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour"><img
-                                            src="assets/img/tours-image/delhi-food-taste.webp"
-                                            alt="Old Delhi Food Tasting Tour"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
-                                    </h3>
-                                    <p class="tour-location">Old Delhi</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>4 hours</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" role="group" aria-label="5 / 6" data-swiper-slide-index="4"
-                            style="width: 312px; margin-right: 24px;">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train"><img src="assets/img/tours-image/gatiman.webp"
-                                            alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express
-                                            Train</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 Day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" role="group" aria-label="6 / 6" data-swiper-slide-index="5"
-                            style="width: 312px; margin-right: 24px;">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d"><img
-                                            src="assets/img/tours-image/varanashi-tour.webp"
-                                            alt="Golden Triangle Tour with Varanasi"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d">Golden Triangle Tour with
-                                            Varanasi</a></h3>
-                                    <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 Days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                 </div>
@@ -626,96 +565,11 @@
                 <div class="swiper th-slider has-shadow slider-drag-wrap" id="sameDayToursSlider"
                     data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/old-delhi-food-tasting-tour"><img
-                                            src="assets/img/tours-image/delhi-food-taste.webp"
-                                            alt="Old Delhi Food Tasting Tour"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/old-delhi-food-tasting-tour">Old Delhi Food Tasting Tour</a>
-                                    </h3>
-                                    <p class="tour-location">Old Delhi</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>4 hours</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
+                        <?php foreach ($sameDayTours as $tour): ?>
+                            <div class="swiper-slide">
+                                <?php echo renderTourCard($tour, 'grid'); ?>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/delhi-private-day-tour-by-car"><img src="assets/img/tours-image/private-car.webp"
-                                            alt="Delhi Private Tour By Car"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/delhi-private-day-tour-by-car">Delhi Private Tour By Car</a></h3>
-                                    <p class="tour-location">Old And New Delhi</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour"><img src="assets/img/tours-image/taj-old-delhi.webp"
-                                            alt="Taj Mahal Sunrise And Old Delhi Tour"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi
-                                            Tour</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi"><img src="assets/img/tours-image/sunrise-taj.webp"
-                                            alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From
-                                            Delhi</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train"><img src="assets/img/tours-image/gatiman.webp"
-                                            alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express
-                                            Train</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -741,96 +595,11 @@
                 <div class="swiper th-slider has-shadow slider-drag-wrap" id="tajMahalToursSlider"
                     data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour"><img src="assets/img/tours-image/taj-old-delhi.webp"
-                                            alt="Taj Mahal Sunrise And Old Delhi Tour"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-and-old-delhi-tour">Taj Mahal Sunrise And Old Delhi
-                                            Tour</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
+                        <?php foreach ($tajMahalTours as $tour): ?>
+                            <div class="swiper-slide">
+                                <?php echo renderTourCard($tour, 'grid'); ?>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-sunrise-tour-from-delhi"><img src="assets/img/tours-image/sunrise-taj.webp"
-                                            alt="Taj Mahal Sunrise Tour From Delhi"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-sunrise-tour-from-delhi">Taj Mahal Sunrise Tour From
-                                            Delhi</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-tour-by-gatimaan-express-train"><img src="assets/img/tours-image/gatiman.webp"
-                                            alt="Taj Mahal Tour By Gatimaan Express Train"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-tour-by-gatimaan-express-train">Taj Mahal Tour By Gatimaan Express
-                                            Train</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour"><img src="assets/img/tours-image/agra-tour-1.webp"
-                                            alt="Taj Mahal And Agra Overnight Tour"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/from-delhi-taj-mahal-and-agra-overnight-tour">Taj Mahal And Agra Overnight
-                                            Tour</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars"><img src="assets/img/tours-image/premium-car.webp"
-                                            alt="Taj Mahal And Agra Tour By Premium Car"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/taj-mahal-and-agra-tour-by-premium-cars">Taj Mahal And Agra Tour By Premium
-                                            Car</a></h3>
-                                    <p class="tour-location">Delhi Taj Mahal</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>1 day</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -856,96 +625,11 @@
                 <div class="swiper th-slider has-shadow slider-drag-wrap" id="goldenTriangleToursSlider"
                     data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tours-with-varanasi-5n6d"><img
-                                            src="assets/img/tours-image/varanashi-tour.webp"
-                                            alt="Golden Triangle Tour with Varanasi"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tours-with-varanasi-5n6d">Golden Triangle Tour with
-                                            Varanasi</a></h3>
-                                    <p class="tour-location">Delhi, Agra, Jaipur And Varanasi</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
+                        <?php foreach ($goldenTriangleTours as $tour): ?>
+                            <div class="swiper-slide">
+                                <?php echo renderTourCard($tour, 'grid'); ?>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-udaipur-7n8d"><img src="assets/img/tours-image/udaipur-tour.webp"
-                                            alt="Golden Triangle Tour with Udaipur"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-udaipur-7n8d">Golden Triangle Tour with
-                                            Udaipur</a></h3>
-                                    <p class="tour-location">Delhi, Agra, Jaipur And Udaipur</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>6 days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d"><img src="assets/img/tours-image/ranthambroe.webp"
-                                            alt="Golden Triangle Tour with Ranthambore"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-ranthambore-4n5d">Golden Triangle Tour with
-                                            Ranthambore</a></h3>
-                                    <p class="tour-location">Delhi, Agra, Jaipur And Ranthambore</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-with-amritsar-6n7d"><img src="assets/img/tours-image/amritsar-tour.webp"
-                                            alt="Golden Triangle Tour with Amritsar"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-with-amritsar-6n7d">Golden Triangle Tour with
-                                            Amritsar</a></h3>
-                                    <p class="tour-location">Delhi, Agra, Jaipur And Amritsar</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><a href="tour/golden-triangle-tour-4n5d"><img src="assets/img/tours-image/golden-tour.webp"
-                                            alt="Golden Triangle Tour 4N5D"></a></div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour/golden-triangle-tour-4n5d">Golden Triangle Tour 4N5D</a></h3>
-                                    <p class="tour-location">Delhi, Agra, Jaipur, India</p>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
-                                                style="width:100%">Rated <strong class="rating">5.00</strong> out of
-                                                5</span></div>
-                                    </div>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>5 days</span> <a
-                                            href="to_book/index.php" class="th-btn style4 th-icon">Book Now</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
