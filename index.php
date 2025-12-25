@@ -563,7 +563,7 @@ if ($type && $slug) {
             </div>
             <div class="slider-area tour-slider">
                 <div class="swiper th-slider has-shadow slider-drag-wrap" id="sameDayToursSlider"
-                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                    data-slider-options='{"spaceBetween":20,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
                         <?php foreach ($sameDayTours as $tour): ?>
                             <div class="swiper-slide">
@@ -593,7 +593,7 @@ if ($type && $slug) {
             </div>
             <div class="slider-area tour-slider">
                 <div class="swiper th-slider has-shadow slider-drag-wrap" id="tajMahalToursSlider"
-                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                    data-slider-options='{"spaceBetween":20,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
                         <?php foreach ($tajMahalTours as $tour): ?>
                             <div class="swiper-slide">
@@ -623,7 +623,7 @@ if ($type && $slug) {
             </div>
             <div class="slider-area tour-slider">
                 <div class="swiper th-slider has-shadow slider-drag-wrap" id="goldenTriangleToursSlider"
-                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                    data-slider-options='{"spaceBetween":20,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
                         <?php foreach ($goldenTriangleTours as $tour): ?>
                             <div class="swiper-slide">

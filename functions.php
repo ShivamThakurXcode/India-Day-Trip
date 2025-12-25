@@ -146,7 +146,7 @@ function renderTourCard($tour, $style = 'grid') {
                 }
             </style>
             <div class='{$containerClass}'>
-                <div class='tour-card' style='height: 460px; background: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;'>
+                <div class='tour-card' style='height: 460px; min-width: 310px; background: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;'>
                     <div class='tour-card-image' style='position: relative; height: 200px; overflow: hidden;'>
                         <img src='{$imageUrl}' alt='" . htmlspecialchars($tour['title']) . "' style='width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;'>
                         <div class='tour-card-ribbon' style='position: absolute; bottom: 0; left: 0; right: 0; background: rgba(238, 238, 238, 0.95); padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; color: #333; backdrop-filter: blur(8px);'>
