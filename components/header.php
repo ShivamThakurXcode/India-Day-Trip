@@ -35,7 +35,7 @@ $current_page = $_SERVER['SCRIPT_NAME'];
             <div class="container th-container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
-                        <div class="header-logo"><a href="<?php echo $base_path; ?>index.php"><img src="<?php echo $base_path; ?>assets/img/logo/logo-header.png"
+                        <div class="header-logo"><a href="<?php echo $base_path; ?>index.php"><img src="<?php echo $base_path; ?>assets/img/logo/logo-header.webp"
                                     alt="India Day Trip" style="height: 60px; width: auto;"></a></div>
                     </div>
                     <div class="col-auto">

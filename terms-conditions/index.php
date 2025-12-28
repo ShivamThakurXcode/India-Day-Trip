@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/terms-conditions/">
     <meta property="og:title" content="Terms & Conditions - India Day Trip Travel Agency">
     <meta property="og:description" content="Review the terms and conditions for booking tours with India Day Trip. Understand our policies for Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours in Agra, Delhi, and Jaipur.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/terms-conditions/">
     <meta property="twitter:title" content="Terms & Conditions - India Day Trip Travel Agency">
     <meta property="twitter:description" content="Review the terms and conditions for booking tours with India Day Trip. Understand our policies for Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours in Agra, Delhi, and Jaipur.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.webp">
 
     <?php include '../components/links.php'; ?>
 </head>

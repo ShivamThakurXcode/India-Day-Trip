@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/gallery/">
     <meta property="og:title" content="India Day Trip Gallery - Explore Agra & Taj Mahal Photos">
     <meta property="og:description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/gallery/g-1.webp">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/gallery/hg1.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/gallery/">
     <meta property="twitter:title" content="India Day Trip Gallery - Explore Agra & Taj Mahal Photos">
     <meta property="twitter:description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/gallery/g-1.webp">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/gallery/hg1.webp">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -50,87 +50,16 @@
                 <span class="sub-title">Discover India</span>
                 <h2 class="sec-title">Capturing Moments of a Lifetime</h2>
             </div>
-            <div class="row gy-4 gallery-row4">
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg1.webp" alt="Taj Mahal at sunrise">
-                            <a href="../assets/img/gallery/hg1.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
+            <div class="row gy-4 gallery-row4" id="gallery-container">
+                <!-- Gallery images will be loaded here dynamically -->
+            </div>
+            <div id="loading-spinner" class="text-center my-4" style="display: none;">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
                 </div>
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg2.webp" alt="Agra Fort architecture">
-                            <a href="../assets/img/gallery/hg2.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg3.webp" alt="Jaipur City Palace">
-                            <a href="../assets/img/gallery/hg3.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg4.webp" alt="Delhi Red Fort">
-                            <a href="../assets/img/gallery/hg4.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg5.webp" alt="Udaipur Lake Palace">
-                            <a href="../assets/img/gallery/hg5.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg6.webp" alt="Ranthambore Tiger Reserve">
-                            <a href="../assets/img/gallery/hg6.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg7.webp" alt="Varanasi Ganges at dawn">
-                            <a href="../assets/img/gallery/hg7.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="gallery-box style5">
-                        <div class="gallery-img global-img">
-                            <img src="../assets/img/gallery/hg8.webp" alt="Amritsar Golden Temple">
-                            <a href="../assets/img/gallery/hg8.webp" class="icon-btn popup-image">
-                                <i class="fal fa-magnifying-glass-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div id="error-message" class="text-center text-danger my-4" style="display: none;">
+                Failed to load gallery images. Please try again later.
             </div>
         </div>
     </div>
@@ -144,6 +73,79 @@
     </div>
 
     <?php include '../components/script.php'; ?>
+    
+    <script>
+        // Gallery loading functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGalleryImages();
+        });
+
+        function loadGalleryImages() {
+            const container = document.getElementById('gallery-container');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const errorMessage = document.getElementById('error-message');
+
+            // Show loading spinner
+            loadingSpinner.style.display = 'block';
+            errorMessage.style.display = 'none';
+            container.innerHTML = '';
+
+            fetch('../api/gallery.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    loadingSpinner.style.display = 'none';
+                    
+                    if (data.success && data.data.length > 0) {
+                        data.data.forEach(image => {
+                            const galleryItem = createGalleryItem(image);
+                            container.appendChild(galleryItem);
+                        });
+                    } else {
+                        container.innerHTML = '<div class="col-12 text-center"><p>No gallery images available at the moment.</p></div>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading gallery:', error);
+                    loadingSpinner.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                    container.innerHTML = '<div class="col-12 text-center"><p>Unable to load gallery. Please check your internet connection and try again.</p></div>';
+                });
+        }
+
+        function createGalleryItem(image) {
+            const colDiv = document.createElement('div');
+            colDiv.className = 'col-auto';
+            
+            const galleryBox = document.createElement('div');
+            galleryBox.className = 'gallery-box style5';
+            
+            const galleryImg = document.createElement('div');
+            galleryImg.className = 'gallery-img global-img';
+            
+            const img = document.createElement('img');
+            img.src = image.url;
+            img.alt = image.alt_text || image.title || 'Gallery Image';
+            img.loading = 'lazy'; // Lazy loading for performance
+            
+            const link = document.createElement('a');
+            link.href = image.url;
+            link.className = 'icon-btn popup-image';
+            link.setAttribute('data-gallery', 'gallery');
+            link.innerHTML = '<i class="fal fa-magnifying-glass-plus"></i>';
+            
+            galleryImg.appendChild(img);
+            galleryImg.appendChild(link);
+            galleryBox.appendChild(galleryImg);
+            colDiv.appendChild(galleryBox);
+            
+            return colDiv;
+        }
+    </script>
 </body>
 
 </html>

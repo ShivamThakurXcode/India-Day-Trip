@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/privacy-policy/">
     <meta property="og:title" content="Privacy Policy - India Day Trip Travel Agency">
     <meta property="og:description" content="Read our privacy policy to understand how India Day Trip collects, uses, and protects your personal information when booking tours in Agra, Delhi, and Jaipur.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/privacy-policy/">
     <meta property="twitter:title" content="Privacy Policy - India Day Trip Travel Agency">
     <meta property="twitter:description" content="Read our privacy policy to understand how India Day Trip collects, uses, and protects your personal information when booking tours in Agra, Delhi, and Jaipur.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.png">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.webp">
 
     <?php include '../components/links.php'; ?>
 </head>

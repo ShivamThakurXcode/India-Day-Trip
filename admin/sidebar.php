@@ -2,7 +2,7 @@
 <div id="sidebar" class="admin-sidebar">
     <div class="sidebar-header">
         <div class="logo">
-            <img src="../assets/img/logo/logo-footer.png" alt="India Day Trip" class="sidebar-logo">
+            <img src="../assets/img/logo/logo-footer.webp" alt="India Day Trip" class="sidebar-logo">
         </div>
     </div>
     <div class="sidebar-separator"></div>

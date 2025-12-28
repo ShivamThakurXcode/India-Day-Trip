@@ -154,40 +154,29 @@ if (!isset($tour)) {
                                 foreach ($itinerary as $index => $day) {
                                     $dayNum = $index + 1;
                                     $active = $index === 0 ? 'active' : '';
+                                    $dayTitle = is_array($day) && isset($day['title']) ? $day['title'] : 'Day ' . $dayNum;
                                     echo '<li class="nav-item" role="presentation">';
-                                    echo '<button class="nav-link ' . $active . '" id="day-tab' . $dayNum . '" data-bs-toggle="tab" data-bs-target="#day-tab' . $dayNum . '-pane" type="button" role="tab" aria-controls="day-tab' . $dayNum . '-pane" aria-selected="' . ($index === 0 ? 'true' : 'false') . '">' . htmlspecialchars($day['title']) . '</button>';
+                                    echo '<button class="nav-link ' . $active . '" id="day-tab' . $dayNum . '" data-bs-toggle="tab" data-bs-target="#day-tab' . $dayNum . '-pane" type="button" role="tab" aria-controls="day-tab' . $dayNum . '-pane" aria-selected="' . ($index === 0 ? 'true' : 'false') . '">' . htmlspecialchars($dayTitle) . '</button>';
                                     echo '</li>';
                                 }
                                 ?>
                             </ul>
                             <div class="tab-content">
                                 <?php
-                                if ($itinerary) {
-                                    foreach ($itinerary as $index => $day) {
-                                        $dayNum = $index + 1;
-                                        $active = $index === 0 ? 'show active' : '';
-                                        echo '<div class="tab-pane fade ' . $active . '" id="day-tab' . $dayNum . '-pane" role="tabpanel" aria-labelledby="day-tab' . $dayNum . '" tabindex="0">';
-                                        echo '<div class="tour-grid-plan">';
-                                        echo '<div class="checklist">';
-                                        echo '<ul>';
-                                        foreach ($day['points'] as $point) {
-                                            echo '<li>' . htmlspecialchars($point) . '</li>';
-                                        }
-                                        echo '</ul>';
-                                        echo '</div>';
-                                        echo '</div>';
-                                        echo '</div>';
-                                    }
-                                } else {
-                                    echo '<div class="tab-pane fade show active" id="day-tab1-pane" role="tabpanel" aria-labelledby="day-tab1" tabindex="0">';
+                                foreach ($itinerary as $index => $day) {
+                                    $dayNum = $index + 1;
+                                    $active = $index === 0 ? 'show active' : '';
+                                    echo '<div class="tab-pane fade ' . $active . '" id="day-tab' . $dayNum . '-pane" role="tabpanel" aria-labelledby="day-tab' . $dayNum . '" tabindex="0">';
                                     echo '<div class="tour-grid-plan">';
                                     echo '<div class="checklist">';
                                     echo '<ul>';
-                                    echo '<li>Morning: Departure and start of the tour</li>';
-                                    echo '<li>Exploration of key attractions</li>';
-                                    echo '<li>Lunch with local cuisine</li>';
-                                    echo '<li>Afternoon activities and sightseeing</li>';
-                                    echo '<li>Evening return with memorable experiences</li>';
+                                    if (is_array($day) && isset($day['points']) && is_array($day['points'])) {
+                                        foreach ($day['points'] as $point) {
+                                            echo '<li>' . htmlspecialchars($point) . '</li>';
+                                        }
+                                    } else {
+                                        echo '<li>No itinerary details available</li>';
+                                    }
                                     echo '</ul>';
                                     echo '</div>';
                                     echo '</div>';

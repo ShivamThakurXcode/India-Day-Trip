@@ -18,7 +18,7 @@ if ($depth > 0) {
                         <div class="th-widget-about">
                             <div class="about-logo mb-3">
                                 <a href="<?php echo $base_path; ?>index.php">
-                                    <img src="<?php echo $base_path; ?>assets/img/logo/logo-footer.png" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
+                                    <img src="<?php echo $base_path; ?>assets/img/logo/logo-footer.webp" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
                                 </a>
                             </div>
                             <p class="about-text mb-4">
@@ -106,11 +106,14 @@ if ($depth > 0) {
     <div class="copyright-wrap">
         <div class="container">
             <div class="row align-items-center g-3">
-                <div class="col-lg-6 col-md-12 text-center text-md-start">
+                <div class="col-lg-4 col-md-12 text-center text-md-start">
                     <p class="copyright-text mb-0">Copyright 2025 <a href="<?php echo $base_path; ?>index.php" style="color: orange;">India Day Trip</a>. All Rights
                         Reserved.</p>
                 </div>
-                <div class="col-lg-6 col-md-12 text-center text-md-end">
+                <div class="col-lg-4 col-md-12 text-center">
+                    <p class="copyright-text mb-0">Developed by <a href="https://denexiasolution.com" target="_blank" style="color: orange;">Denexia It Solution</a></p>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center text-md-end">
                     <div class="footer-links">
                         <a href="<?php echo $base_path; ?>privacy-policy/index.php" style="color: orange;">Privacy Policy</a> |
                         <a href="<?php echo $base_path; ?>terms-conditions/index.php" style="color: orange;">Terms & Conditions</a>

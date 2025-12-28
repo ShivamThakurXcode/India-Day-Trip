@@ -1,11 +1,3 @@
-<?php
-require_once '../config.php';
-require_once '../functions.php';
-
-// Get all published blogs
-$blogs = getBlogs(null, null, 'published');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,29 +10,32 @@ $blogs = getBlogs(null, null, 'published');
     <?php include '../components/header.php'; ?>
 
     <!-- Breadcrumb -->
-    <div class="breadcrumb-area" style="background-image: url('../assets/img/bg/breadcumb-bg.webp');">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-content">
-                        <h1>Blog</h1>
-                        <ul>
-                            <li><a href="../index.php">Home</a></li>
-                            <li>Blog</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">Blog</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="../index.php">Home</a></li>
+                    <li>Blog</li>
+                </ul>
             </div>
         </div>
     </div>
 
     <!-- Blog Area -->
-    <div class="blog-area pt-120 pb-120">
+    <section class="space">
         <div class="container">
             <div class="row">
-                <?php if (empty($blogs)): ?>
+                <?php 
+                require_once '../config.php';
+                require_once '../functions.php';
+                
+                // Get all published blogs
+                $blogs = getBlogs(null, null, 'published');
+                
+                if (empty($blogs)): ?>
                     <div class="col-12">
-                        <p>No blog posts available yet.</p>
+                        <p class="text-center">No blog posts available yet.</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($blogs as $blog): ?>
@@ -48,17 +43,19 @@ $blogs = getBlogs(null, null, 'published');
                             <div class="blog-card">
                                 <?php if ($blog['featured_image']): ?>
                                     <div class="blog-card-image">
-                                        <img src="../assets/img/blog/<?php echo htmlspecialchars($blog['featured_image']); ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>">
+                                        <img src="../assets/img/blog/<?php echo htmlspecialchars($blog['featured_image']); ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>" class="w-100">
                                     </div>
                                 <?php endif; ?>
                                 <div class="blog-card-content">
-                                    <h3><a href="blog/<?php echo htmlspecialchars($blog['slug']); ?>"><?php echo htmlspecialchars($blog['title']); ?></a></h3>
+                                    <h3 class="blog-title">
+                                        <a href="blog/<?php echo htmlspecialchars($blog['slug']); ?>"><?php echo htmlspecialchars($blog['title']); ?></a>
+                                    </h3>
                                     <div class="blog-meta">
-                                        <span>By <?php echo htmlspecialchars($blog['author']); ?></span>
-                                        <span><?php echo date('M d, Y', strtotime($blog['publication_date'])); ?></span>
+                                        <span class="blog-author">By <?php echo htmlspecialchars($blog['author']); ?></span>
+                                        <span class="blog-date"><?php echo date('M d, Y', strtotime($blog['publication_date'])); ?></span>
                                     </div>
-                                    <p><?php echo htmlspecialchars($blog['excerpt'] ?: substr(strip_tags($blog['content']), 0, 150) . '...'); ?></p>
-                                    <a href="blog/<?php echo htmlspecialchars($blog['slug']); ?>" class="read-more">Read More</a>
+                                    <p class="blog-excerpt"><?php echo htmlspecialchars($blog['excerpt'] ?: substr(strip_tags($blog['content']), 0, 150) . '...'); ?></p>
+                                    <a href="blog/<?php echo htmlspecialchars($blog['slug']); ?>" class="th-btn style3 th-icon">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +63,7 @@ $blogs = getBlogs(null, null, 'published');
                 <?php endif; ?>
             </div>
         </div>
-    </div>
+    </section>
 
     <?php include '../components/footer.php'; ?>
     <?php include '../components/script.php'; ?>

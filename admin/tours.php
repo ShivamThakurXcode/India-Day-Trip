@@ -581,11 +581,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
         function openEditModal(id) {
             $.get('get_tour.php?id=' + id, function(data) {
                 try {
-                    var tour = JSON.parse(data);
-                    if (tour.success === false) {
-                        alert(tour.message);
+                    var response = JSON.parse(data);
+                    if (response.success === false) {
+                        alert(response.message);
                         return;
                     }
+                    var tour = response.data;
                     $('#tourId').val(tour.id);
                     $('input[name="title"]').val(tour.title);
                     $('input[name="slug"]').val(tour.slug);
@@ -645,7 +646,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text"><i class="fas fa-star"></i></span>';
                 html += '</div>';
-                html += '<input type="text" class="form-control" value="' + item + '" onchange="updateHighlight(' + index + ', this.value)">';
+                html += '<input type="text" class="form-control" value="' + item.replace(/"/g, '"') + '" onchange="updateHighlight(' + index + ', this.value)">';
                 html += '<div class="input-group-append">';
                 html += '<button type="button" class="btn btn-outline-danger" onclick="deleteHighlight(' + index + ')"><i class="fas fa-trash"></i></button>';
                 html += '</div>';
@@ -684,7 +685,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text"><i class="fas fa-check-circle"></i></span>';
                 html += '</div>';
-                html += '<input type="text" class="form-control" value="' + item + '" onchange="updateIncluded(' + index + ', this.value)">';
+                html += '<input type="text" class="form-control" value="' + item.replace(/"/g, '"') + '" onchange="updateIncluded(' + index + ', this.value)">';
                 html += '<div class="input-group-append">';
                 html += '<button type="button" class="btn btn-outline-danger" onclick="deleteIncluded(' + index + ')"><i class="fas fa-trash"></i></button>';
                 html += '</div>';
@@ -723,7 +724,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text"><i class="fas fa-times-circle"></i></span>';
                 html += '</div>';
-                html += '<input type="text" class="form-control" value="' + item + '" onchange="updateExcluded(' + index + ', this.value)">';
+                html += '<input type="text" class="form-control" value="' + item.replace(/"/g, '"') + '" onchange="updateExcluded(' + index + ', this.value)">';
                 html += '<div class="input-group-append">';
                 html += '<button type="button" class="btn btn-outline-danger" onclick="deleteExcluded(' + index + ')"><i class="fas fa-trash"></i></button>';
                 html += '</div>';

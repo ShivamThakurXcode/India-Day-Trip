@@ -12,7 +12,7 @@ if ($depth > 0) {
     <div class="sidemenu-content"><button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
         <div class="widget">
             <div class="th-widget-about">
-                <div class="about-logo"><a href="<?php echo $base_path; ?>index.php"><img src="<?php echo $base_path; ?>assets/img/logo/logo-header.png"
+                <div class="about-logo"><a href="<?php echo $base_path; ?>index.php"><img src="<?php echo $base_path; ?>assets/img/logo/logo-header.webp"
                             alt="India Day Trip" style="height: 50px; width: auto;"></a>
                 </div>
                 <p class="about-text">India Day Trip is an Agra-based tour and travel company specializing in Same

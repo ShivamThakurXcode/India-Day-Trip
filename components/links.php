@@ -1,5 +1,5 @@
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon.png">
-<link rel="shortcut icon" type="image/png" href="assets/img/favicons/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon,webp">
+<link rel="shortcut icon" type="image/png" href="assets/img/favicons/favicon,webp">
 
 <link rel="manifest" href="assets/img/favicons/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
