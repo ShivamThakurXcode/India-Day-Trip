@@ -1,8 +1,30 @@
 <?php
-if (!isset($blog)) {
+require_once 'config.php';
+require_once 'functions.php';
+
+// Get blog slug from URL
+$slug = $_GET['slug'] ?? null;
+
+if (!$slug) {
     header('Location: index.php');
     exit;
 }
+
+// Fetch blog by slug
+$stmt = $pdo->prepare("SELECT b.*, c.name as category_name FROM blogs b LEFT JOIN categories c ON b.category_id = c.id WHERE b.slug = ? AND b.status = 'published'");
+$stmt->execute([$slug]);
+$blog = $stmt->fetch();
+
+if (!$blog) {
+    header('Location: 404.php');
+    exit;
+}
+
+// Update view count
+$pdo->prepare("UPDATE blogs SET view_count = view_count + 1 WHERE id = ?")->execute([$blog['id']]);
+
+// Get recent blogs
+$recentBlogs = getBlogs(null, 5);
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -23,7 +45,7 @@ if (!isset($blog)) {
     <meta property="og:title" content="<?php echo htmlspecialchars($blog['title']); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars(substr(strip_tags($blog['content']), 0, 160)); ?>">
     <?php if ($blog['featured_image']): ?>
-        <meta property="og:image" content="https://indiadaytrip.com/assets/img/blogs/<?php echo $blog['featured_image']; ?>">
+        <meta property="og:image" content="https://indiadaytrip.com/assets/img/blog/<?php echo $blog['featured_image']; ?>">
     <?php endif; ?>
 
     <!-- Twitter -->
@@ -32,7 +54,7 @@ if (!isset($blog)) {
     <meta property="twitter:title" content="<?php echo htmlspecialchars($blog['title']); ?>">
     <meta property="twitter:description" content="<?php echo htmlspecialchars(substr(strip_tags($blog['content']), 0, 160)); ?>">
     <?php if ($blog['featured_image']): ?>
-        <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/blogs/<?php echo $blog['featured_image']; ?>">
+        <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/blog/<?php echo $blog['featured_image']; ?>">
     <?php endif; ?>
 
     <?php include 'components/links.php'; ?>
@@ -52,7 +74,7 @@ if (!isset($blog)) {
                     <article class="blog-post">
                         <?php if ($blog['featured_image']): ?>
                             <div class="blog-featured-image">
-                                <img src="assets/img/blogs/<?php echo $blog['featured_image']; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>" class="img-fluid">
+                                <img src="assets/img/blog/<?php echo $blog['featured_image']; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>" class="img-fluid">
                             </div>
                         <?php endif; ?>
 

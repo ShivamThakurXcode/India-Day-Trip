@@ -29,7 +29,10 @@ CREATE TABLE tours (
     title VARCHAR(255) NOT NULL,
     slug VARCHAR(255) UNIQUE NOT NULL,
     description TEXT,
-    itinerary TEXT,
+    highlights JSON, -- array of highlight strings
+    included JSON, -- array of included items
+    excluded JSON, -- array of excluded items
+    itinerary JSON, -- array of days with points
     pricing DECIMAL(10,2),
     images JSON, -- array of image paths
     dates JSON, -- array of available dates
@@ -51,15 +54,35 @@ CREATE TABLE blogs (
     title VARCHAR(255) NOT NULL,
     slug VARCHAR(255) UNIQUE NOT NULL,
     content LONGTEXT,
+    excerpt TEXT,
     author VARCHAR(100),
     publication_date DATE,
     tags JSON, -- array of tags
-    categories JSON, -- array of category names
+    category_id INT,
     featured_image VARCHAR(255),
+    status ENUM('draft', 'published') DEFAULT 'draft',
     view_count INT DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_slug (slug)
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL,
+    INDEX idx_slug (slug),
+    INDEX idx_status (status),
+    INDEX idx_category (category_id)
+);
+
+-- Comments table for blogs
+CREATE TABLE blog_comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    blog_id INT NOT NULL,
+    author_name VARCHAR(100) NOT NULL,
+    author_email VARCHAR(100),
+    content TEXT NOT NULL,
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (blog_id) REFERENCES blogs(id) ON DELETE CASCADE,
+    INDEX idx_blog_id (blog_id),
+    INDEX idx_status (status)
 );
 
 -- Settings table for website settings
@@ -69,6 +92,16 @@ CREATE TABLE settings (
     setting_value TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Gallery images table
+CREATE TABLE gallery_images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    filename VARCHAR(255) NOT NULL,
+    title VARCHAR(255),
+    tags JSON,
+    alt_text VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Insert default admin user (password: admin123 - hashed)

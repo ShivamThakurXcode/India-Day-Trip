@@ -22,14 +22,14 @@ if (!isset($tour)) {
     <meta property="og:url" content="https://indiadaytrip.com/tour/<?php echo $tour['slug']; ?>">
     <meta property="og:title" content="<?php echo htmlspecialchars($tour['title']); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars(substr($tour['description'], 0, 160)); ?>">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/tours/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.jpg'; ?>">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.jpg'; ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/tour/<?php echo $tour['slug']; ?>">
     <meta property="twitter:title" content="<?php echo htmlspecialchars($tour['title']); ?>">
     <meta property="twitter:description" content="<?php echo htmlspecialchars(substr($tour['description'], 0, 160)); ?>">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/tours/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.jpg'; ?>">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.jpg'; ?>">
 
     <?php include 'components/links.php'; ?>
 </head>
@@ -40,88 +40,280 @@ if (!isset($tour)) {
 
     <?php include 'components/header.php'; ?>
 
-    <!-- Tour Detail Section -->
-    <section class="space-top space-bottom">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title"><?php echo htmlspecialchars($tour['title']); ?></h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="index.php">Home</a></li>
+                    <li><?php echo htmlspecialchars($tour['title']); ?></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="space arrow-wrap">
+        <div class="container shape-mockup-wrap">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="tour-detail">
-                        <h1 class="tour-title"><?php echo htmlspecialchars($tour['title']); ?></h1>
-
+                <div class="col-xxl-9 col-lg-8">
+                    <div class="tour-page-single">
                         <?php if ($tour['images']): ?>
-                            <div class="tour-gallery">
+                            <div class="slider-area tour-slider1">
+                                <div class="swiper th-slider mb-4 swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden" id="tourSlider4" data-slider-options='{"effect":"fade","loop":false,"thumbs":{"swiper":".tour-thumb-slider"},"autoplayDisableOnInteraction":"true"}'>
+                                    <div class="swiper-wrapper" id="swiper-wrapper-tour-main" aria-live="off">
+                                        <?php
+                                        $images = json_decode($tour['images'], true);
+                                        foreach ($images as $index => $image): ?>
+                                            <div class="swiper-slide <?php echo $index === 0 ? 'swiper-slide-active' : ''; ?>" style="width: 641px; opacity: <?php echo $index === 0 ? '1' : '0'; ?>; transform: translate3d(<?php echo -$index * 641; ?>px, 0px, 0px); transition-duration: 0ms;" role="group" aria-label="<?php echo $index + 1; ?> / <?php echo count($images); ?>" data-swiper-slide-index="<?php echo $index; ?>">
+                                                <div class="tour-slider-img">
+                                                    <img src="../assets/img/<?php echo $image; ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>" style="width: 100%; height: auto;" />
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                                </div>
+                                <div class="swiper th-slider tour-thumb-slider swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden swiper-thumbs" data-slider-options='{"effect":"slide","loop":true,"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}},"autoplayDisableOnInteraction":"true"}'>
+                                    <div class="swiper-wrapper" id="swiper-wrapper-tour-thumb" aria-live="off">
+                                        <?php foreach ($images as $index => $image): ?>
+                                            <div class="swiper-slide <?php echo $index === 0 ? 'swiper-slide-thumb-active' : ''; ?>" role="group" aria-label="<?php echo $index + 1; ?> / <?php echo count($images); ?>" style="width: 197.667px; margin-right: 24px" data-swiper-slide-index="<?php echo $index; ?>">
+                                                <div class="tour-slider-img">
+                                                    <img src="../assets/img/<?php echo $image; ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>" />
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                                </div>
+                                <button data-slider-prev="#tourSlider4" class="slider-arrow style3 slider-prev">
+                                    <img src="../assets/img/icon/hero-arrow-left.svg" alt="" />
+                                </button>
+                                <button data-slider-next="#tourSlider4" class="slider-arrow style3 slider-next">
+                                    <img src="../assets/img/icon/hero-arrow-right.svg" alt="" />
+                                </button>
+                            </div>
+                        <?php endif; ?>
+                        <div class="page-content">
+                            <div class="page-meta mb-45">
+                                <a class="page-tag" href="tour.php">Featured</a>
+                                <span class="ratting"><i class="fa-sharp fa-solid fa-star"></i><span><?php echo number_format($tour['rating'], 1); ?></span></span>
+                            </div>
+                            <div class="tour-meta mb-30" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="location" style="display: inline-block; padding: 8px 12px; background: #f8f9fa; border-radius: 20px; font-size: 14px;"><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($tour['location']); ?></span>
+                                <span class="duration" style="display: inline-block; padding: 8px 12px; background: #f8f9fa; border-radius: 20px; font-size: 14px;"><i class="fas fa-clock"></i> <?php echo htmlspecialchars($tour['duration']); ?></span>
+                                <?php if ($tour['pricing']): ?>
+                                    <span class="price" style="display: inline-block; padding: 8px 12px; background: #28a745; color: white; border-radius: 20px; font-size: 14px;"><i class="fas fa-rupee-sign"></i> <?php echo number_format($tour['pricing'], 2); ?></span>
+                                <?php endif; ?>
+                            </div>
+                            <h2 class="box-title"><?php echo htmlspecialchars($tour['title']); ?></h2>
+
+                            <p class="box-text mb-30"><?php echo nl2br(htmlspecialchars($tour['description'])); ?></p>
+
+                            <h2 class="box-title">Highlights</h2>
+                            <p class="box-text mb-30">Experience the magic of this tour with key highlights designed for memorable adventures.</p>
+                            <div class="checklist mb-50">
+                                <ul>
+                                    <?php
+                                    $highlights = json_decode($tour['highlights'] ?? '[]', true) ?: [];
+                                    foreach ($highlights as $highlight) {
+                                        echo '<li>' . htmlspecialchars($highlight) . '</li>';
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+
+                            <h2 class="box-title">Included and Excluded</h2>
+                            <p class="blog-text mb-35">Everything you need for a seamless experience is included. Focus on enjoying while we handle the logistics.</p>
+                            <div class="destination-checklist">
+                                <div class="checklist style2 style4">
+                                    <ul>
+                                        <?php
+                                        $included = json_decode($tour['included'] ?? '[]', true) ?: [];
+                                        foreach ($included as $item) {
+                                            echo '<li>' . htmlspecialchars($item) . '</li>';
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                                <div class="checklist style5">
+                                    <ul>
+                                        <?php
+                                        $excluded = json_decode($tour['excluded'] ?? '[]', true) ?: [];
+                                        foreach ($excluded as $item) {
+                                            echo '<li>' . htmlspecialchars($item) . '</li>';
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3 class="page-title mt-50 mb-0">Tour Plan</h3>
+                            <ul class="nav nav-tabs tour-tab mt-10" role="tablist">
                                 <?php
-                                $images = json_decode($tour['images'], true);
-                                foreach ($images as $image): ?>
-                                    <img src="assets/img/tours/<?php echo $image; ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>" class="img-fluid mb-3">
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endif; ?>
-
-                        <div class="tour-meta">
-                            <span class="location"><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($tour['location']); ?></span>
-                            <span class="duration"><i class="fas fa-clock"></i> <?php echo htmlspecialchars($tour['duration']); ?></span>
-                            <?php if ($tour['pricing']): ?>
-                                <span class="price"><i class="fas fa-rupee-sign"></i> <?php echo number_format($tour['pricing'], 2); ?></span>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="tour-description">
-                            <h3>Description</h3>
-                            <p><?php echo nl2br(htmlspecialchars($tour['description'])); ?></p>
-                        </div>
-
-                        <?php if ($tour['itinerary']): ?>
-                            <div class="tour-itinerary">
-                                <h3>Itinerary</h3>
-                                <div><?php echo nl2br(htmlspecialchars($tour['itinerary'])); ?></div>
-                            </div>
-                        <?php endif; ?>
-
-                        <div class="tour-rating">
-                            <div class="star-rating">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
-                                    <i class="fas fa-star <?php echo $i <= $tour['rating'] ? 'filled' : ''; ?>"></i>
-                                <?php endfor; ?>
-                                <span><?php echo number_format($tour['rating'], 1); ?> / 5.0</span>
+                                $itinerary = json_decode($tour['itinerary'] ?? '[]', true) ?: [];
+                                foreach ($itinerary as $index => $day) {
+                                    $dayNum = $index + 1;
+                                    $active = $index === 0 ? 'active' : '';
+                                    echo '<li class="nav-item" role="presentation">';
+                                    echo '<button class="nav-link ' . $active . '" id="day-tab' . $dayNum . '" data-bs-toggle="tab" data-bs-target="#day-tab' . $dayNum . '-pane" type="button" role="tab" aria-controls="day-tab' . $dayNum . '-pane" aria-selected="' . ($index === 0 ? 'true' : 'false') . '">' . htmlspecialchars($day['title']) . '</button>';
+                                    echo '</li>';
+                                }
+                                ?>
+                            </ul>
+                            <div class="tab-content">
+                                <?php
+                                if ($itinerary) {
+                                    foreach ($itinerary as $index => $day) {
+                                        $dayNum = $index + 1;
+                                        $active = $index === 0 ? 'show active' : '';
+                                        echo '<div class="tab-pane fade ' . $active . '" id="day-tab' . $dayNum . '-pane" role="tabpanel" aria-labelledby="day-tab' . $dayNum . '" tabindex="0">';
+                                        echo '<div class="tour-grid-plan">';
+                                        echo '<div class="checklist">';
+                                        echo '<ul>';
+                                        foreach ($day['points'] as $point) {
+                                            echo '<li>' . htmlspecialchars($point) . '</li>';
+                                        }
+                                        echo '</ul>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                    }
+                                } else {
+                                    echo '<div class="tab-pane fade show active" id="day-tab1-pane" role="tabpanel" aria-labelledby="day-tab1" tabindex="0">';
+                                    echo '<div class="tour-grid-plan">';
+                                    echo '<div class="checklist">';
+                                    echo '<ul>';
+                                    echo '<li>Morning: Departure and start of the tour</li>';
+                                    echo '<li>Exploration of key attractions</li>';
+                                    echo '<li>Lunch with local cuisine</li>';
+                                    echo '<li>Afternoon activities and sightseeing</li>';
+                                    echo '<li>Evening return with memorable experiences</li>';
+                                    echo '</ul>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4">
-                    <div class="tour-sidebar">
-                        <div class="booking-card">
-                            <h3>Book This Tour</h3>
-                            <div class="tour-price">
-                                <?php if ($tour['pricing']): ?>
-                                    <span class="price">₹<?php echo number_format($tour['pricing'], 2); ?></span>
-                                <?php else: ?>
-                                    <span class="price">Price on Request</span>
-                                <?php endif; ?>
-                            </div>
-                            <div class="availability">
-                                <span>Available Spots: <?php echo $tour['availability']; ?></span>
-                            </div>
-                            <a href="to_book/index.php" class="btn btn-primary btn-block">Book Now</a>
-                        </div>
-
-                        <div class="tour-info">
-                            <h4>Tour Information</h4>
+                <div class="col-xxl-3 col-lg-4">
+                    <aside class="sidebar-area">
+                        <div class="widget widget_categories">
+                            <h3 class="widget_title">Categories</h3>
                             <ul>
-                                <li><strong>Location:</strong> <?php echo htmlspecialchars($tour['location']); ?></li>
-                                <li><strong>Duration:</strong> <?php echo htmlspecialchars($tour['duration']); ?></li>
-                                <li><strong>Rating:</strong> <?php echo number_format($tour['rating'], 1); ?>/5</li>
-                                <li><strong>Views:</strong> <?php echo $tour['view_count']; ?></li>
+                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />City Tour</a><span>(8)</span></li>
+                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Beach Tours</a><span>(6)</span></li>
+                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Wildlife Tours</a><span>(2)</span></li>
+                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />News & Tips</a><span>(7)</span></li>
+                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Adventure Tours</a><span>(9)</span></li>
+                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Mountain Tours</a><span>(10)</span></li>
                             </ul>
                         </div>
-                    </div>
+                        <div class="widget">
+                            <h3 class="widget_title">Related Tours</h3>
+                            <div class="recent-post-wrap">
+                                <!-- Related tours would be fetched dynamically here -->
+                                <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="golden-triangle-tour.html"><img src="../assets/img/blog/golden-triangle-1.jpg" alt="Golden Triangle Tour" /></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="post-title"><a class="text-inherit" href="golden-triangle-tour.html">Golden Triangle Tour: Delhi, Agra, Jaipur</a></h4>
+                                        <div class="recent-post-meta"><a href="tour.php"><i class="fa-regular fa-calendar"></i>22/6/ 2025</a></div>
+                                    </div>
+                                </div>
+                                <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="agra-fort-tour.html"><img src="../assets/img/blog/agra-fort-1.jpg" alt="Agra Fort Tour" /></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="post-title"><a class="text-inherit" href="agra-fort-tour.html">Agra Fort and Fatehpur Sikri Day Tour</a></h4>
+                                        <div class="recent-post-meta"><a href="tour.php"><i class="fa-regular fa-calendar"></i>25/6/ 2025</a></div>
+                                    </div>
+                                </div>
+                                <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="same-day-agra-tour.html"><img src="../assets/img/blog/same-day-agra-1.jpg" alt="Same Day Agra Tour" /></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="post-title"><a class="text-inherit" href="same-day-agra-tour.html">Same Day Agra Tour from Delhi</a></h4>
+                                        <div class="recent-post-meta"><a href="tour.php"><i class="fa-regular fa-calendar"></i>27/6/ 2025</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget_tag_cloud">
+                            <h3 class="widget_title">Popular Tags</h3>
+                            <div class="tagcloud">
+                                <a href="tour.php"><?php echo htmlspecialchars($tour['location']); ?></a>
+                                <a href="tour.php"><?php echo htmlspecialchars($tour['duration']); ?></a>
+                                <a href="tour.php">India</a>
+                                <a href="tour.php">Travel</a>
+                                <a href="tour.php">Adventure</a>
+                            </div>
+                        </div>
+                        <div class="widget widget_offer background-image" style="background-image: url('assets/img/bg/widget_bg_1.jpg');">
+                            <div class="offer-banner">
+                                <div class="offer">
+                                    <h6 class="box-title">Need Help? We Are Here To Help You</h6>
+                                    <div class="banner-logo">
+                                        <img src="../assets/img/logo2.svg" alt="Tourm" />
+                                    </div>
+                                    <div class="offer">
+                                        <h6 class="offer-title">You Get Online support</h6>
+                                        <a class="offter-num" href="+256214203215">+256 214 203 215</a>
+                                    </div>
+                                    <a href="contact.php" class="th-btn style2 th-icon">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </div>
     </section>
 
     <?php include 'components/footer.php'; ?>
+
+    <div id="login-form" class="popup-login-register mfp-hide">
+        <ul class="nav" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation"><button class="nav-menu" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Login</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-menu active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">Register</button></li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <h3 class="box-title mb-30">Sign in to your account</h3>
+                <div class="th-login-form">
+                    <form action="https://html.themehour.net/tourm/demo/mail.php" method="POST" class="login-form ajax-contact">
+                        <div class="row">
+                            <div class="form-group col-12"><label>Username or email</label> <input type="text" class="form-control" name="email" id="email" required="required"></div>
+                            <div class="form-group col-12"><label>Password</label> <input type="password" class="form-control" name="pasword" id="pasword" required="required"></div>
+                            <div class="form-btn mb-20 col-12"><button class="th-btn btn-fw th-radius2">Send Message</button></div>
+                        </div>
+                        <div id="forgot_url"><a href="my-account.php">Forgot password?</a></div>
+                        <p class="form-messages mb-0 mt-3"></p>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade active show" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <h3 class="th-form-title mb-30">Sign in to your account</h3>
+                <form action="https://html.themehour.net/tourm/demo/mail.php" method="POST" class="login-form ajax-contact">
+                    <div class="row">
+                        <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control" name="usename" id="usename" required="required"></div>
+                        <div class="form-group col-12"><label>First name*</label> <input type="text" class="form-control" name="firstname" id="firstname" required="required"></div>
+                        <div class="form-group col-12"><label>Last name*</label> <input type="text" class="form-control" name="lastname" id="lastname" required="required"></div>
+                        <div class="form-group col-12"><label for="new_email">Your email*</label> <input type="text" class="form-control" name="new_email" id="new_email" required="required"></div>
+                        <div class="form-group col-12"><label for="new_email_confirm">Confirm email*</label> <input type="text" class="form-control" name="new_email_confirm" id="new_email_confirm" required="required"></div>
+                        <div class="statement"><span class="register-notes">A password will be emailed to you.</span></div>
+                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button></div>
+                    </div>
+                    <p class="form-messages mb-0 mt-3"></p>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <?php include 'components/script.php'; ?>
 </body>

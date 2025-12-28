@@ -1,107 +1,74 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<?php
+require_once '../config.php';
+require_once '../functions.php';
 
+// Get all published blogs
+$blogs = getBlogs(null, null, 'published');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - India Day Trip</title>
-    <meta name="author" content="India Day Trip">
-    <meta name="description" content="Read our latest travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
-    <meta name="keywords" content="travel blog, India travel tips, Taj Mahal guide, Delhi tours, Agra travel">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://indiadaytrip.com/blog/">
-    <meta property="og:title" content="Blog - India Day Trip">
-    <meta property="og:description" content="Read our latest travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiadaytrip.com/blog/">
-    <meta property="twitter:title" content="Blog - India Day Trip">
-    <meta property="twitter:description" content="Read our latest travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.webp">
-
     <?php include '../components/links.php'; ?>
 </head>
-
 <body>
-    <?php include '../components/preloader.php'; ?>
-    <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-area" style="background-image: url('../assets/img/bg/breadcumb-bg.webp');">
         <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Our Blog</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="../index.php">Home</a></li>
-                    <li>Blog</li>
-                </ul>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-content">
+                        <h1>Blog</h1>
+                        <ul>
+                            <li><a href="../index.php">Home</a></li>
+                            <li>Blog</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <section class="overflow-hidden space-bottom pt-5">
+    <!-- Blog Area -->
+    <div class="blog-area pt-120 pb-120">
         <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-end mb-4">
-                <div class="col-lg">
-                    <div class="title-area text-center text-lg-start">
-                        <span class="sub-title">Travel Tips & Insights</span>
-                        <h2 class="sec-title">Latest from Our Blog</h2>
+            <div class="row">
+                <?php if (empty($blogs)): ?>
+                    <div class="col-12">
+                        <p>No blog posts available yet.</p>
                     </div>
-                </div>
-            </div>
-            <div class="row gy-30">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-grid2 th-ani">
-                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-agra.webp" alt="Best Time to Visit Taj Mahal"></div>
-                        <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="#">Sep 09, 2024</a> <a href="#">6 min read</a></div>
-                            <h3 class="box-title"><a href="best-time-to-visit-taj-mahal-a-complete-guide/">Best Time to Visit Taj Mahal: A Complete Guide</a></h3>
-                            <p class="blog-text">Discover the best seasons to visit the Taj Mahal, including weather, crowds, and special events.</p>
-                            <a href="best-time-to-visit-taj-mahal-a-complete-guide/" class="th-btn style4 th-icon">Read More</a>
+                <?php else: ?>
+                    <?php foreach ($blogs as $blog): ?>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="blog-card">
+                                <?php if ($blog['featured_image']): ?>
+                                    <div class="blog-card-image">
+                                        <img src="../assets/img/blog/<?php echo htmlspecialchars($blog['featured_image']); ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>">
+                                    </div>
+                                <?php endif; ?>
+                                <div class="blog-card-content">
+                                    <h3><a href="blog/<?php echo htmlspecialchars($blog['slug']); ?>"><?php echo htmlspecialchars($blog['title']); ?></a></h3>
+                                    <div class="blog-meta">
+                                        <span>By <?php echo htmlspecialchars($blog['author']); ?></span>
+                                        <span><?php echo date('M d, Y', strtotime($blog['publication_date'])); ?></span>
+                                    </div>
+                                    <p><?php echo htmlspecialchars($blog['excerpt'] ?: substr(strip_tags($blog['content']), 0, 150) . '...'); ?></p>
+                                    <a href="blog/<?php echo htmlspecialchars($blog['slug']); ?>" class="read-more">Read More</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-grid2 th-ani">
-                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-delhi.webp" alt="Must-Try Local Places & Foods in Delhi"></div>
-                        <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="#">Sep 05, 2024</a> <a href="#">6 min read</a></div>
-                            <h3 class="box-title"><a href="must-try-local-places-foods-in-delhi/">Must-Try Local Places & Foods in Delhi</a></h3>
-                            <p class="blog-text">Explore Delhi's vibrant food scene and hidden gems that locals love.</p>
-                            <a href="must-try-local-places-foods-in-delhi/" class="th-btn style4 th-icon">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-grid2 th-ani">
-                        <div class="blog-img global-img"><img src="../assets/img/blog/blog-tour.webp" alt="Perfect 5-Day Golden Triangle Itinerary"></div>
-                        <div class="blog-grid2_content">
-                            <div class="blog-meta"><a class="author" href="#">Sep 10, 2024</a> <a href="#">8 min read</a></div>
-                            <h3 class="box-title"><a href="perfect-5-day-golden-triangle-itinerary/">Perfect 5-Day Golden Triangle Itinerary</a></h3>
-                            <p class="blog-text">Plan your ideal Golden Triangle tour with this detailed 5-day itinerary covering Delhi, Agra, and Jaipur.</p>
-                            <a href="perfect-5-day-golden-triangle-itinerary/" class="th-btn style4 th-icon">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
-    </section>
+    </div>
 
     <?php include '../components/footer.php'; ?>
-
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
-    </div>
-
     <?php include '../components/script.php'; ?>
 </body>
-
 </html>

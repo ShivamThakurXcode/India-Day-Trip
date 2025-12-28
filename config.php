@@ -31,11 +31,4 @@ function updateSetting($key, $value) {
     $stmt->execute([$key, $value, $value]);
 }
 
-// Function to check if admin is logged in
-function checkAdminLogin() {
-    if (!isset($_SESSION['admin_id'])) {
-        header('Location: login.php');
-        exit;
-    }
-}
 ?>
