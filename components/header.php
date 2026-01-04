@@ -31,30 +31,30 @@ $current_page = $_SERVER['SCRIPT_NAME'];
         </div>
     </div>
     <div class="sticky-wrapper">
-        <div class="menu-area" data-bg-src="<?php echo $base_path; ?>assets/img/bg/line-pattern.png">
+        <div class="menu-area" data-bg-src="<?php echo $base_path; ?>../assets/img/bg/line-pattern.png">
             <div class="container th-container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
-                        <div class="header-logo"><a href="<?php echo $base_path; ?>index.php"><img src="<?php echo $base_path; ?>assets/img/logo/logo-header.webp"
+                        <div class="header-logo"><a href="<?php echo $base_path; ?>index.php"><img src="<?php echo $base_path; ?>../assets/img/logo/logo-header.webp"
                                     alt="India Day Trip" style="height: 60px; width: auto;"></a></div>
                     </div>
                     <div class="col-auto">
                         <nav class="main-menu d-none d-xl-inline-block">
                             <ul>
-                                <li><a class="<?php echo ($current_page == '/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>index.php">Home</a></li>
-                                <li><a class="<?php echo ($current_page == '/about/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>about/index.php">About</a></li>
+                                <li><a class="<?php echo ($current_page == '/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../index.php">Home</a></li>
+                                <li><a class="<?php echo ($current_page == '../about/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../about/index.php">About</a></li>
                                 <li class="menu-item-has-children"><a class="<?php echo (in_array($current_page, ['/tour/index.php', '/same-day-tours/index.php', '/taj-mahal-tours/index.php', '/golden-triangle-tours/index.php', '/rajasthan-tour-packages/index.php'])) ? 'active' : ''; ?>" href="#">Tours</a>
                                     <ul class="sub-menu">
-                                        <li><a class="<?php echo ($current_page == '/tour/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>tour/index.php">All Tours</a></li>
-                                        <li><a class="<?php echo ($current_page == '/same-day-tours/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>same-day-tours/index.php">Same Day Tours</a></li>
-                                        <li><a class="<?php echo ($current_page == '/taj-mahal-tours/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>taj-mahal-tours/index.php">Taj Mahal Tours</a></li>
-                                        <li><a class="<?php echo ($current_page == '/golden-triangle-tours/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>golden-triangle-tours/index.php">Golden Triangle Tours</a></li>
-                                        <li><a class="<?php echo ($current_page == '/rajasthan-tour-packages/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>rajasthan-tour-packages/index.php">Rajasthan Tours</a></li>
+                                        <li><a class="<?php echo ($current_page == '/tour/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../tour/index.php">All Tours</a></li>
+                                        <li><a class="<?php echo ($current_page == '/same-day-tours/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../same-day-tours/index.php">Same Day Tours</a></li>
+                                        <li><a class="<?php echo ($current_page == '/taj-mahal-tours/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../taj-mahal-tours/index.php">Taj Mahal Tours</a></li>
+                                        <li><a class="<?php echo ($current_page == '/golden-triangle-tours/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../golden-triangle-tours/index.php">Golden Triangle Tours</a></li>
+                                        <li><a class="<?php echo ($current_page == '/rajasthan-tour-packages/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../rajasthan-tour-packages/index.php">Rajasthan Tours</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="<?php echo ($current_page == '/gallery/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>gallery/index.php">Gallery</a></li>
-                                <li><a class="<?php echo (strpos($current_page, '/blog/') === 0) ? 'active' : ''; ?>" href="<?php echo $base_path; ?>blog/index.php">Blog</a></li>
-                                <li><a class="<?php echo ($current_page == '/contact/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>contact/index.php">Contact Us</a></li>
+                                <li><a class="<?php echo ($current_page == '/gallery/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../gallery/index.php">Gallery</a></li>
+                                <li><a class="<?php echo (strpos($current_page, '/blog/') === 0) ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../blog/index.php">Blog</a></li>
+                                <li><a class="<?php echo ($current_page == '/contact/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../contact/index.php">Contact Us</a></li>
                             </ul>
                         </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
                                 class="far fa-bars"></i></button>

@@ -240,6 +240,33 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
         }
         exit;
     }
+
+    if (isset($_POST['action']) && $_POST['action'] == 'bulk_delete') {
+        try {
+            $ids = json_decode($_POST['ids'], true);
+            if (is_array($ids)) {
+                foreach ($ids as $id) {
+                    $stmt = $pdo->prepare("SELECT filename FROM gallery_images WHERE id = ?");
+                    $stmt->execute([$id]);
+                    $image = $stmt->fetch();
+                    if ($image) {
+                        $file_path = "../assets/img/gallery/" . $image['filename'];
+                        if (file_exists($file_path)) {
+                            unlink($file_path);
+                        }
+                        $stmt = $pdo->prepare("DELETE FROM gallery_images WHERE id = ?");
+                        $stmt->execute([$id]);
+                    }
+                }
+                echo json_encode(['success' => true, 'message' => 'Images deleted successfully!']);
+            } else {
+                echo json_encode(['success' => false, 'message' => 'Invalid IDs']);
+            }
+        } catch (Exception $e) {
+            echo json_encode(['success' => false, 'message' => 'Error: ' . $e->getMessage()]);
+        }
+        exit;
+    }
 }
 
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])) {
@@ -557,15 +584,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    try {
-                        var res = JSON.parse(response);
-                        alert(res.message);
-                        if (res.success) {
-                            $('#galleryModal').modal('hide');
-                            location.reload();
-                        }
-                    } catch (e) {
-                        console.error('Error parsing response:', response);
+                    if (response && response.success) {
+                        alert(response.message);
+                        $('#galleryModal').modal('hide');
+                        location.reload();
+                    } else {
+                        console.error('Invalid response:', response);
                         alert('Server returned invalid response. Please check the console for details.');
                     }
                 },
@@ -778,14 +802,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                             ids: ids
                         },
                         success: function(response) {
-                            try {
-                                var res = JSON.parse(response);
-                                alert(res.message);
-                                if (res.success) {
-                                    location.reload();
-                                }
-                            } catch (e) {
-                                console.error('Error parsing response:', response);
+                            if (response && response.success) {
+                                alert(response.message);
+                                location.reload();
+                            } else {
+                                console.error('Invalid response:', response);
                                 alert('Server returned invalid response.');
                             }
                         },

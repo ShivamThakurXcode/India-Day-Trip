@@ -18,7 +18,7 @@ if ($depth > 0) {
                         <div class="th-widget-about">
                             <div class="about-logo mb-3">
                                 <a href="<?php echo $base_path; ?>index.php">
-                                    <img src="<?php echo $base_path; ?>assets/img/logo/logo-footer.webp" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
+                                    <img src="<?php echo $base_path; ?>../assets/img/logo/logo-footer.webp" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
                                 </a>
                             </div>
                             <p class="about-text mb-4">
@@ -78,19 +78,19 @@ if ($depth > 0) {
                         <h3 class="widget_title">Get In Touch</h3>
                         <div class="">
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/location-dot.svg" alt="Location"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/location-dot.svg" alt="Location"></div>
                                 <div class="details">
                                     <p class="mb-0">Shop No. 2, Gupta Market, Tajganj, Agra, Uttar Pradesh, India</p>
                                 </div>
                             </div>
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/phone.svg" alt="Phone"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/phone.svg" alt="Phone"></div>
                                 <div class="details">
                                     <p class="mb-0"><a href="tel:+918126052755" class="info-box_link">+91 81260 52755</a></p>
                                 </div>
                             </div>
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/envelope.svg" alt="Email"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/envelope.svg" alt="Email"></div>
                                 <div class="details">
                                     <p class="mb-0"><a href="mailto:info@indiadaytrip.com"
                                             class="info-box_link">info@indiadaytrip.com</a></p>

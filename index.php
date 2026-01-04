@@ -698,9 +698,9 @@ if ($type && $slug) {
                 </div>
             </div>
             <div class="shape-mockup d-none d-xl-block" style="top: -25%; left: 0%;"><img
-                    src="assets/img/shape/line.webp" alt="shape"></div>
+                    src="assets/img/shape/line.png" alt="shape"></div>
             <div class="shape-mockup movingX d-none d-xl-block" style="top: 30%; left: -3%;"><img class="gmovingX"
-                    src="assets/img/shape/shape_4.webp" alt="shape"></div>
+                    src="assets/img/shape/shape_4.png" alt="shape"></div>
         </div>
     </div>
 
@@ -896,9 +896,9 @@ if ($type && $slug) {
             </div>
         </div>
         <div class="shape-mockup d-none d-xl-block" data-bottom="-2%" data-right="0%"><img
-                src="assets/img/shape/line2.webp" alt="shape"></div>
+                src="assets/img/shape/line2.png" alt="shape"></div>
         <div class="shape-mockup movingX d-none d-xl-block" data-top="30%" data-left="5%"><img
-                src="assets/img/shape/shape_7.webp" alt="shape"></div>
+                src="assets/img/shape/shape_7.png" alt="shape"></div>
     </section>
 
     <section class="overflow-hidden space-bottom pt-5">

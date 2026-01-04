@@ -54,45 +54,35 @@ if (!isset($tour)) {
 
     <section class="space arrow-wrap">
         <div class="container shape-mockup-wrap">
+            <?php if ($tour['images']): ?>
+                <div class="slider-area tour-slider1 mb-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="tour-slider-img">
+                                <img src="../assets/img/<?php echo json_decode($tour['images'], true)[0]; ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>" style="width: 100%; height: auto;" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <?php
+                                $images = json_decode($tour['images'], true);
+                                $gridImages = array_slice($images, 1, 4); // Next 4 images
+                                foreach ($gridImages as $image): ?>
+                                    <div class="col-6 mb-2">
+                                        <div class="tour-slider-img">
+                                            <img src="../assets/img/<?php echo $image; ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>" style="width: 100%; height: auto;" />
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-xxl-9 col-lg-8">
                     <div class="tour-page-single">
-                        <?php if ($tour['images']): ?>
-                            <div class="slider-area tour-slider1">
-                                <div class="swiper th-slider mb-4 swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden" id="tourSlider4" data-slider-options='{"effect":"fade","loop":false,"thumbs":{"swiper":".tour-thumb-slider"},"autoplayDisableOnInteraction":"true"}'>
-                                    <div class="swiper-wrapper" id="swiper-wrapper-tour-main" aria-live="off">
-                                        <?php
-                                        $images = json_decode($tour['images'], true);
-                                        foreach ($images as $index => $image): ?>
-                                            <div class="swiper-slide <?php echo $index === 0 ? 'swiper-slide-active' : ''; ?>" style="width: 641px; opacity: <?php echo $index === 0 ? '1' : '0'; ?>; transform: translate3d(<?php echo -$index * 641; ?>px, 0px, 0px); transition-duration: 0ms;" role="group" aria-label="<?php echo $index + 1; ?> / <?php echo count($images); ?>" data-swiper-slide-index="<?php echo $index; ?>">
-                                                <div class="tour-slider-img">
-                                                    <img src="../assets/img/<?php echo $image; ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>" style="width: 100%; height: auto;" />
-                                                </div>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                </div>
-                                <div class="swiper th-slider tour-thumb-slider swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden swiper-thumbs" data-slider-options='{"effect":"slide","loop":true,"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}},"autoplayDisableOnInteraction":"true"}'>
-                                    <div class="swiper-wrapper" id="swiper-wrapper-tour-thumb" aria-live="off">
-                                        <?php foreach ($images as $index => $image): ?>
-                                            <div class="swiper-slide <?php echo $index === 0 ? 'swiper-slide-thumb-active' : ''; ?>" role="group" aria-label="<?php echo $index + 1; ?> / <?php echo count($images); ?>" style="width: 197.667px; margin-right: 24px" data-swiper-slide-index="<?php echo $index; ?>">
-                                                <div class="tour-slider-img">
-                                                    <img src="../assets/img/<?php echo $image; ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>" />
-                                                </div>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                </div>
-                                <button data-slider-prev="#tourSlider4" class="slider-arrow style3 slider-prev">
-                                    <img src="../assets/img/icon/hero-arrow-left.svg" alt="" />
-                                </button>
-                                <button data-slider-next="#tourSlider4" class="slider-arrow style3 slider-next">
-                                    <img src="../assets/img/icon/hero-arrow-right.svg" alt="" />
-                                </button>
-                            </div>
-                        <?php endif; ?>
+                          <h2 class="box-title"><?php echo htmlspecialchars($tour['title']); ?></h2>
                         <div class="page-content">
                             <div class="page-meta mb-45">
                                 <a class="page-tag" href="tour.php">Featured</a>
@@ -105,7 +95,7 @@ if (!isset($tour)) {
                                     <span class="price" style="display: inline-block; padding: 8px 12px; background: #28a745; color: white; border-radius: 20px; font-size: 14px;"><i class="fas fa-rupee-sign"></i> <?php echo number_format($tour['pricing'], 2); ?></span>
                                 <?php endif; ?>
                             </div>
-                            <h2 class="box-title"><?php echo htmlspecialchars($tour['title']); ?></h2>
+                          
 
                             <p class="box-text mb-30"><?php echo nl2br(htmlspecialchars($tour['description'])); ?></p>
 
@@ -189,17 +179,6 @@ if (!isset($tour)) {
                 </div>
                 <div class="col-xxl-3 col-lg-4">
                     <aside class="sidebar-area">
-                        <div class="widget widget_categories">
-                            <h3 class="widget_title">Categories</h3>
-                            <ul>
-                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />City Tour</a><span>(8)</span></li>
-                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Beach Tours</a><span>(6)</span></li>
-                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Wildlife Tours</a><span>(2)</span></li>
-                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />News & Tips</a><span>(7)</span></li>
-                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Adventure Tours</a><span>(9)</span></li>
-                                <li><a href="tour.php"><img src="../assets/img/theme-img/map.svg" alt="" />Mountain Tours</a><span>(10)</span></li>
-                            </ul>
-                        </div>
                         <div class="widget">
                             <h3 class="widget_title">Related Tours</h3>
                             <div class="recent-post-wrap">
@@ -232,8 +211,27 @@ if (!isset($tour)) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="widget widget_tag_cloud">
+                       </div>
+                       <div class="widget">
+                           <h3 class="widget_title">Trusted by Travelers</h3>
+                           <div class="tripadvisor-box">
+                               <div class="d-flex align-items-center">
+                                   <img src="../assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="width: 40px; height: 40px; margin-right: 10px;" />
+                                   <div>
+                                       <div class="rating">
+                                           <i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>
+                                           <span>4.8/5</span>
+                                       </div>
+                                       <p class="mb-0">Based on 500+ reviews</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Popular Tags</h3>
                             <div class="tagcloud">
                                 <a href="tour.php"><?php echo htmlspecialchars($tour['location']); ?></a>

@@ -1,12 +1,17 @@
 <?php
+ob_start();
 session_start();
 require_once '../config.php';
 checkAdminLogin();
 
  $message = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    header('Content-Type: application/json');
+ 
+ if (isset($_SESSION['message'])) {
+     $message = $_SESSION['message'];
+     unset($_SESSION['message']);
+ }
+ 
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $id = $_POST['id'] ?? null;
         $title = trim($_POST['title']);
@@ -51,17 +56,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($id) {
             $stmt = $pdo->prepare("UPDATE tours SET title = ?, slug = ?, description = ?, highlights = ?, included = ?, excluded = ?, itinerary = ?, pricing = ?, duration = ?, availability = ?, category_id = ?, location = ?, images = ? WHERE id = ?");
             $stmt->execute([$title, $slug, $description, json_encode($highlights), json_encode($included), json_encode($excluded), json_encode($itinerary), $pricing, $duration, $availability, $category_id, $location, $images_json, $id]);
-            $message = 'Tour updated successfully!';
+            $_SESSION['message'] = 'Tour updated successfully!';
         } else {
             $stmt = $pdo->prepare("INSERT INTO tours (title, slug, description, highlights, included, excluded, itinerary, pricing, duration, availability, category_id, location, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([$title, $slug, $description, json_encode($highlights), json_encode($included), json_encode($excluded), json_encode($itinerary), $pricing, $duration, $availability, $category_id, $location, $images_json]);
-            $message = 'Tour added successfully!';
+            $_SESSION['message'] = 'Tour added successfully!';
         }
-        echo json_encode(['success' => true, 'message' => $message]);
     } catch (Exception $e) {
-        error_log('Tour save error: ' . $e->getMessage());
-        echo json_encode(['success' => false, 'message' => 'Error: ' . $e->getMessage()]);
+        $_SESSION['message'] = 'Error: ' . $e->getMessage();
     }
+    header('Location: tours.php');
     exit;
 }
 
@@ -347,7 +351,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
             </button>
           </div>
           <div class="modal-body">
-            <form id="tourForm" method="POST" enctype="multipart/form-data">
+            <form id="tourForm" method="POST" enctype="multipart/form-data" onsubmit="updateHiddenFields()">
               <input type="hidden" name="id" id="tourId">
               <input type="hidden" name="current_images" id="currentImagesInput">
               <input type="hidden" name="cropped_images" id="croppedImagesInput">
@@ -530,7 +534,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" onclick="$('#tourModal').modal('hide')">Cancel</button>
-            <button type="button" id="saveTourBtn" class="btn btn-success">Save Tour</button>
+            <button type="submit" form="tourForm" class="btn btn-success">Save Tour</button>
           </div>
         </div>
       </div>
@@ -571,6 +575,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
             renderItinerary();
         }
 
+        // Initialize all arrays to prevent undefined errors
         var currentImages = [];
         var croppedImages = [];
         var highlights = [];
@@ -581,42 +586,111 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
         function openEditModal(id) {
             $.get('get_tour.php?id=' + id, function(data) {
                 try {
-                    var response = JSON.parse(data);
+                    var response;
+                    // Handle both string and object responses
+                    if (typeof data === 'string') {
+                        try {
+                            response = JSON.parse(data);
+                        } catch(e) {
+                            alert('Error parsing server response: ' + e.message);
+                            return;
+                        }
+                    } else {
+                        response = data;
+                    }
+                    
                     if (response.success === false) {
-                        alert(response.message);
+                        alert(response.message || 'Tour not found');
                         return;
                     }
+                    
+                    if (!response.data) {
+                        alert('No tour data received');
+                        return;
+                    }
+                    
                     var tour = response.data;
-                    $('#tourId').val(tour.id);
-                    $('input[name="title"]').val(tour.title);
-                    $('input[name="slug"]').val(tour.slug);
-                    $('textarea[name="description"]').val(tour.description);
-                    $('input[name="pricing"]').val(tour.pricing);
-                    $('input[name="duration"]').val(tour.duration);
-                    $('input[name="availability"]').val(tour.availability);
-                    $('select[name="category_id"]').val(tour.category_id);
-                    $('input[name="location"]').val(tour.location);
-                    try { highlights = JSON.parse(tour.highlights || '[]'); } catch(e) { highlights = []; }
-                    try { included = JSON.parse(tour.included || '[]'); } catch(e) { included = []; }
-                    try { excluded = JSON.parse(tour.excluded || '[]'); } catch(e) { excluded = []; }
-                    try { itinerary = JSON.parse(tour.itinerary || '[]'); } catch(e) { itinerary = []; }
+                    
+                    // Initialize all arrays to prevent undefined errors
+                    highlights = [];
+                    included = [];
+                    excluded = [];
+                    itinerary = [];
+                    currentImages = [];
+                    
+                    // Set form values
+                    $('#tourId').val(tour.id || '');
+                    $('input[name="title"]').val(tour.title || '');
+                    $('input[name="slug"]').val(tour.slug || '');
+                    $('textarea[name="description"]').val(tour.description || '');
+                    $('input[name="pricing"]').val(tour.pricing || '');
+                    $('input[name="duration"]').val(tour.duration || '');
+                    $('input[name="availability"]').val(tour.availability || '');
+                    $('select[name="category_id"]').val(tour.category_id || '');
+                    $('input[name="location"]').val(tour.location || '');
+                    
+                    // Safely parse JSON fields with fallbacks
+                    try {
+                        highlights = JSON.parse(tour.highlights || '[]');
+                        if (!Array.isArray(highlights)) highlights = [];
+                    } catch(e) {
+                        highlights = [];
+                        console.warn('Failed to parse highlights:', e.message);
+                    }
+                    
+                    try {
+                        included = JSON.parse(tour.included || '[]');
+                        if (!Array.isArray(included)) included = [];
+                    } catch(e) {
+                        included = [];
+                        console.warn('Failed to parse included:', e.message);
+                    }
+                    
+                    try {
+                        excluded = JSON.parse(tour.excluded || '[]');
+                        if (!Array.isArray(excluded)) excluded = [];
+                    } catch(e) {
+                        excluded = [];
+                        console.warn('Failed to parse excluded:', e.message);
+                    }
+                    
+                    try {
+                        itinerary = JSON.parse(tour.itinerary || '[]');
+                        if (!Array.isArray(itinerary)) itinerary = [];
+                    } catch(e) {
+                        itinerary = [];
+                        console.warn('Failed to parse itinerary:', e.message);
+                    }
+                    
+                    try {
+                        currentImages = JSON.parse(tour.images || '[]');
+                        if (!Array.isArray(currentImages)) currentImages = [];
+                    } catch(e) {
+                        currentImages = [];
+                        console.warn('Failed to parse images:', e.message);
+                    }
+                    
+                    // Render all sections
                     renderHighlights();
                     renderIncluded();
                     renderExcluded();
                     renderItinerary();
-                    // images
-                    try { currentImages = JSON.parse(tour.images || '[]'); } catch(e) { currentImages = []; }
+                    
+                    // Reset cropped images
                     croppedImages = [];
                     $('#currentImagesInput').val(JSON.stringify(currentImages));
                     $('#croppedImagesInput').val('[]');
                     renderCurrentImages();
+                    
                     $('#tourModalLabel').text('Edit Tour');
                     $('#tourModal').modal('show');
                 } catch(e) {
-                    alert('Error parsing tour data: ' + e.message);
+                    console.error('Error in openEditModal:', e);
+                    alert('Error processing tour data: ' + e.message);
                 }
-            }).fail(function() {
-                alert('Error loading tour data.');
+            }).fail(function(xhr, status, error) {
+                console.error('AJAX error:', status, error);
+                alert('Error loading tour data. Please try again.');
             });
         }
 
@@ -646,7 +720,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text"><i class="fas fa-star"></i></span>';
                 html += '</div>';
-                html += '<input type="text" class="form-control" value="' + item.replace(/"/g, '"') + '" onchange="updateHighlight(' + index + ', this.value)">';
+                html += '<input type="text" class="form-control" value="' + (item || '').replace(/"/g, '"') + '" onchange="updateHighlight(' + index + ', this.value)">';
                 html += '<div class="input-group-append">';
                 html += '<button type="button" class="btn btn-outline-danger" onclick="deleteHighlight(' + index + ')"><i class="fas fa-trash"></i></button>';
                 html += '</div>';
@@ -685,7 +759,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text"><i class="fas fa-check-circle"></i></span>';
                 html += '</div>';
-                html += '<input type="text" class="form-control" value="' + item.replace(/"/g, '"') + '" onchange="updateIncluded(' + index + ', this.value)">';
+                html += '<input type="text" class="form-control" value="' + (item || '').replace(/"/g, '"') + '" onchange="updateIncluded(' + index + ', this.value)">';
                 html += '<div class="input-group-append">';
                 html += '<button type="button" class="btn btn-outline-danger" onclick="deleteIncluded(' + index + ')"><i class="fas fa-trash"></i></button>';
                 html += '</div>';
@@ -724,7 +798,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text"><i class="fas fa-times-circle"></i></span>';
                 html += '</div>';
-                html += '<input type="text" class="form-control" value="' + item.replace(/"/g, '"') + '" onchange="updateExcluded(' + index + ', this.value)">';
+                html += '<input type="text" class="form-control" value="' + (item || '').replace(/"/g, '"') + '" onchange="updateExcluded(' + index + ', this.value)">';
                 html += '<div class="input-group-append">';
                 html += '<button type="button" class="btn btn-outline-danger" onclick="deleteExcluded(' + index + ')"><i class="fas fa-trash"></i></button>';
                 html += '</div>';
@@ -764,7 +838,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 html += '<div class="input-group-prepend">';
                 html += '<span class="input-group-text"><i class="fas fa-calendar-day"></i></span>';
                 html += '</div>';
-                html += '<input type="text" class="form-control" placeholder="Day Title" value="' + day.title.replace(/"/g, '"') + '" onchange="updateDayTitle(' + dayIndex + ', this.value)">';
+                html += '<input type="text" class="form-control" placeholder="Day Title" value="' + (day.title || '').replace(/"/g, '"') + '" onchange="updateDayTitle(' + dayIndex + ', this.value)">';
                 html += '<div class="input-group-append">';
                 html += '<button type="button" class="btn btn-outline-danger" onclick="deleteDay(' + dayIndex + ')"><i class="fas fa-trash"></i></button>';
                 html += '</div>';
@@ -777,7 +851,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                     html += '<div class="input-group-prepend">';
                     html += '<span class="input-group-text"><i class="fas fa-map-pin"></i></span>';
                     html += '</div>';
-                    html += '<input type="text" class="form-control" value="' + point.replace(/"/g, '"') + '" onchange="updatePoint(' + dayIndex + ', ' + pointIndex + ', this.value)">';
+                    html += '<input type="text" class="form-control" value="' + (point || '').replace(/"/g, '"') + '" onchange="updatePoint(' + dayIndex + ', ' + pointIndex + ', this.value)">';
                     html += '<div class="input-group-append">';
                     html += '<button type="button" class="btn btn-outline-danger" onclick="deletePoint(' + dayIndex + ', ' + pointIndex + ')"><i class="fas fa-trash"></i></button>';
                     html += '</div>';
@@ -921,49 +995,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 $('input[name="slug"]').val(slug);
             });
 
-            $('#saveTourBtn').click(function() {
-                var $btn = $(this);
-                var originalText = $btn.text();
-                $btn.prop('disabled', true).text('Saving...');
-                
-                // Update hidden fields with current data before submitting
-                $('#highlightsInput').val(JSON.stringify(highlights));
-                $('#includedInput').val(JSON.stringify(included));
-                $('#excludedInput').val(JSON.stringify(excluded));
-                $('#itineraryInput').val(JSON.stringify(itinerary));
-                
-                var formData = new FormData($('#tourForm')[0]);
-                $.ajax({
-                    url: 'tours.php',
-                    type: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    timeout: 10000, // 10 seconds
-                    success: function(response) {
-                        try {
-                            var res = JSON.parse(response);
-                            alert(res.message);
-                            $btn.prop('disabled', false).text(originalText);
-                            if (res.success) {
-                                $('#tourModal').modal('hide');
-                                location.reload();
-                            }
-                        } catch (e) {
-                            alert('Invalid response from server.');
-                            $btn.prop('disabled', false).text(originalText);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        if (status === 'timeout') {
-                            alert('Request timed out. Please try again.');
-                        } else {
-                            alert('An error occurred while saving: ' + error);
-                        }
-                        $btn.prop('disabled', false).text(originalText);
-                    }
-                });
-            });
         });
 
         // Enhanced Color Switcher Fix
@@ -1013,6 +1044,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                 $(".color-scheme-wrap").toggleClass("active");
             });
         });
+
+        function updateHiddenFields() {
+            $('#highlightsInput').val(JSON.stringify(highlights));
+            $('#includedInput').val(JSON.stringify(included));
+            $('#excludedInput').val(JSON.stringify(excluded));
+            $('#itineraryInput').val(JSON.stringify(itinerary));
+            return true;
+        }
     </script>
 </body>
 </html>
