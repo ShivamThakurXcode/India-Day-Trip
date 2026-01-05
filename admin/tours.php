@@ -657,6 +657,16 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                     try {
                         itinerary = JSON.parse(tour.itinerary || '[]');
                         if (!Array.isArray(itinerary)) itinerary = [];
+                        // Normalize itinerary to array of objects
+                        itinerary = itinerary.map(function(day) {
+                            if (typeof day === 'string') {
+                                return {title: day, points: []};
+                            } else if (day && typeof day === 'object' && day.title) {
+                                return day;
+                            } else {
+                                return {title: 'Day', points: []};
+                            }
+                        });
                     } catch(e) {
                         itinerary = [];
                         console.warn('Failed to parse itinerary:', e.message);
