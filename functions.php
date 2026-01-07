@@ -74,7 +74,7 @@ function getDBConnection() {
  */
 function renderTourCard($tour, $style = 'grid') {
     $containerClass = ($style === 'swiper') ? '' : "col-xxl-4 col-lg-4 col-md-6 mb-4";
-    $imagePath = $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.jpg';
+    $imagePath = $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.webp';
     $imageUrl = "../assets/img/{$imagePath}";
     $detailUrl = "../tour/{$tour['slug']}";
     $rating = number_format($tour['rating'], 1);
@@ -219,11 +219,11 @@ function getTours($category = null, $limit = null) {
  * @param string $style 'grid' or 'list' for different layouts
  * @return string HTML for the blog card
  */
-function renderBlogCard($blog, $style = 'grid') {
+function renderBlogCard($blog, $style = 'grid', $detailUrlPrefix = 'blog/') {
     $containerClass = ($style === 'swiper') ? '' : "col-xxl-4 col-lg-4 col-md-6 mb-4";
-    $imagePath = $blog['featured_image'] ?: 'default.jpg';
+    $imagePath = $blog['featured_image'] ?: 'default.webp';
     $imageUrl = "../assets/img/blog/{$imagePath}";
-    $detailUrl = "blog/{$blog['slug']}";
+    $detailUrl = $detailUrlPrefix . $blog['slug'];
     $excerpt = $blog['excerpt'] ?: substr(strip_tags($blog['content']), 0, 150) . '...';
 
     $html = "<style>

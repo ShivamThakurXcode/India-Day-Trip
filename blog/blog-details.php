@@ -4,26 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Blog Details - India Day Trip</title>
+    <title><?php echo htmlspecialchars($blog['title'] ?? 'Blog Details'); ?> - India Day Trip</title>
     <meta name="author" content="India Day Trip">
-    <meta name="description" content="Read detailed travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
+    <meta name="description" content="<?php echo htmlspecialchars(substr(strip_tags($blog['content'] ?? ''), 0, 160)); ?>">
     <meta name="keywords" content="travel blog, India travel tips, Taj Mahal guide, Delhi tours, Agra travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://indiadaytrip.com/blog/blog-details.php">
-    <meta property="og:title" content="Blog Details - India Day Trip">
-    <meta property="og:description" content="Read detailed travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.webp">
+    <meta property="og:url" content="https://indiadaytrip.com/blog/blog-details.php?slug=<?php echo $slug; ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($blog['title'] ?? 'Blog Details'); ?> - India Day Trip">
+    <meta property="og:description" content="<?php echo htmlspecialchars(substr(strip_tags($blog['content'] ?? ''), 0, 160)); ?>">
+    <meta property="og:image" content="https://indiadaytrip.com<?php echo $blog['image'] ?? '/assets/img/blog/blog-agra.webp'; ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiadaytrip.com/blog/blog-details.php">
-    <meta property="twitter:title" content="Blog Details - India Day Trip">
-    <meta property="twitter:description" content="Read detailed travel tips, insights, and guides about India, Taj Mahal, Delhi, Agra, and more.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/blog/blog-agra.webp">
+    <meta property="twitter:url" content="https://indiadaytrip.com/blog/blog-details.php?slug=<?php echo $slug; ?>">
+    <meta property="twitter:title" content="<?php echo htmlspecialchars($blog['title'] ?? 'Blog Details'); ?> - India Day Trip">
+    <meta property="twitter:description" content="<?php echo htmlspecialchars(substr(strip_tags($blog['content'] ?? ''), 0, 160)); ?>">
+    <meta property="twitter:image" content="https://indiadaytrip.com<?php echo $blog['image'] ?? '/assets/img/blog/blog-agra.webp'; ?>">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -34,7 +34,18 @@
     <?php include '../components/header.php'; ?>
 
     <?php
+    require_once '../config.php';
+    require_once '../functions.php';
+
     $slug = isset($_GET['slug']) ? $_GET['slug'] : '';
+
+    // Try to fetch from database first
+    $dbBlog = null;
+    if ($slug) {
+        $stmt = $pdo->prepare("SELECT * FROM blogs WHERE slug = ? AND status = 'published'");
+        $stmt->execute([$slug]);
+        $dbBlog = $stmt->fetch();
+    }
 
     $blogs = [
         'best-time-to-visit-taj-mahal' => [
@@ -159,12 +170,20 @@
         ]
     ];
 
-    if (!isset($blogs[$slug])) {
+    if ($dbBlog) {
+        $blog = [
+            'title' => $dbBlog['title'],
+            'date' => date('M d, Y', strtotime($dbBlog['publication_date'])),
+            'read_time' => '5 min read', // Default
+            'image' => '../assets/img/blog/' . ($dbBlog['featured_image'] ?: 'default.webp'),
+            'content' => $dbBlog['content']
+        ];
+    } elseif (isset($blogs[$slug])) {
+        $blog = $blogs[$slug];
+    } else {
         header("Location: index.php");
         exit;
     }
-
-    $blog = $blogs[$slug];
     ?>
 
     <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">

@@ -22,14 +22,14 @@ if (!isset($tour)) {
     <meta property="og:url" content="https://indiadaytrip.com/tour/<?php echo $tour['slug']; ?>">
     <meta property="og:title" content="<?php echo htmlspecialchars($tour['title']); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars(substr($tour['description'], 0, 160)); ?>">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.jpg'; ?>">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.webp'; ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/tour/<?php echo $tour['slug']; ?>">
     <meta property="twitter:title" content="<?php echo htmlspecialchars($tour['title']); ?>">
     <meta property="twitter:description" content="<?php echo htmlspecialchars(substr($tour['description'], 0, 160)); ?>">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.jpg'; ?>">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.webp'; ?>">
 
     <?php include 'components/links.php'; ?>
 </head>
@@ -82,20 +82,33 @@ if (!isset($tour)) {
             <div class="row">
                 <div class="col-xxl-9 col-lg-8">
                     <div class="tour-page-single">
-                          <h2 class="box-title"><?php echo htmlspecialchars($tour['title']); ?></h2>
+                        <h2 class="box-title"><?php echo htmlspecialchars($tour['title']); ?></h2>
                         <div class="page-content">
                             <div class="page-meta mb-45">
                                 <a class="page-tag" href="tour.php">Featured</a>
                                 <span class="ratting"><i class="fa-sharp fa-solid fa-star"></i><span><?php echo number_format($tour['rating'], 1); ?></span></span>
                             </div>
-                            <div class="tour-meta mb-30" style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span class="location" style="display: inline-block; padding: 8px 12px; background: #f8f9fa; border-radius: 20px; font-size: 14px;"><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($tour['location']); ?></span>
-                                <span class="duration" style="display: inline-block; padding: 8px 12px; background: #f8f9fa; border-radius: 20px; font-size: 14px;"><i class="fas fa-clock"></i> <?php echo htmlspecialchars($tour['duration']); ?></span>
-                                <?php if ($tour['pricing']): ?>
-                                    <span class="price" style="display: inline-block; padding: 8px 12px; background: #28a745; color: white; border-radius: 20px; font-size: 14px;"><i class="fas fa-rupee-sign"></i> <?php echo number_format($tour['pricing'], 2); ?></span>
+
+                            <div class="tour-snapshot">
+                                
+                                <div class="tour-snap-wrapp">
+                                         <div class="tour-snap">
+                                        <?php if ($tour['pricing']): ?>
+                                            <div class="icon"><i class="fas fa-rupee-sign"></i></div>
+                                            <span class="price" > <span class="title">Price:</span><?php echo number_format($tour['pricing'], 2); ?></span>
                                 <?php endif; ?>
+                                    </div>
+                                    <div class="tour-snap">
+                                        <div class="icon"><i class="fa-light fa-clock"></i></div>
+                                        <div class="content"><span class="title">Duration:</span> <span><?php echo htmlspecialchars($tour['duration']); ?></span></div>
+                                    </div>
+                                    <div class="tour-snap">
+                                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                                        <div class="content"><span class="title">Location:</span> <?php echo htmlspecialchars($tour['location']); ?></div>
+                                    </div>
+                               
+                                </div>
                             </div>
-                          
 
                             <p class="box-text mb-30"><?php echo nl2br(htmlspecialchars($tour['description'])); ?></p>
 
@@ -179,59 +192,29 @@ if (!isset($tour)) {
                 </div>
                 <div class="col-xxl-3 col-lg-4">
                     <aside class="sidebar-area">
+
+
                         <div class="widget">
-                            <h3 class="widget_title">Related Tours</h3>
-                            <div class="recent-post-wrap">
-                                <!-- Related tours would be fetched dynamically here -->
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="golden-triangle-tour.html"><img src="../assets/img/blog/golden-triangle-1.jpg" alt="Golden Triangle Tour" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="golden-triangle-tour.html">Golden Triangle Tour: Delhi, Agra, Jaipur</a></h4>
-                                        <div class="recent-post-meta"><a href="tour.php"><i class="fa-regular fa-calendar"></i>22/6/ 2025</a></div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="agra-fort-tour.html"><img src="../assets/img/blog/agra-fort-1.jpg" alt="Agra Fort Tour" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="agra-fort-tour.html">Agra Fort and Fatehpur Sikri Day Tour</a></h4>
-                                        <div class="recent-post-meta"><a href="tour.php"><i class="fa-regular fa-calendar"></i>25/6/ 2025</a></div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="same-day-agra-tour.html"><img src="../assets/img/blog/same-day-agra-1.jpg" alt="Same Day Agra Tour" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="same-day-agra-tour.html">Same Day Agra Tour from Delhi</a></h4>
-                                        <div class="recent-post-meta"><a href="tour.php"><i class="fa-regular fa-calendar"></i>27/6/ 2025</a></div>
+                            <h3 class="widget_title">Trusted by Travelers</h3>
+                            <div class="tripadvisor-box">
+                                <div class="d-flex align-items-center">
+                                    <img src="../assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="width: 40px; height: 40px; margin-right: 10px;" />
+                                
+                                    <div>
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <span>4.8/5</span>
+                                        </div>
+                                        <p class="mb-0">Based on 500+ reviews</p>
                                     </div>
                                 </div>
                             </div>
-                       </div>
-                       <div class="widget">
-                           <h3 class="widget_title">Trusted by Travelers</h3>
-                           <div class="tripadvisor-box">
-                               <div class="d-flex align-items-center">
-                                   <img src="../assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="width: 40px; height: 40px; margin-right: 10px;" />
-                                   <div>
-                                       <div class="rating">
-                                           <i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>
-                                           <span>4.8/5</span>
-                                       </div>
-                                       <p class="mb-0">Based on 500+ reviews</p>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="widget widget_tag_cloud">
+                        </div>
+                        <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Popular Tags</h3>
                             <div class="tagcloud">
                                 <a href="tour.php"><?php echo htmlspecialchars($tour['location']); ?></a>
@@ -241,18 +224,18 @@ if (!isset($tour)) {
                                 <a href="tour.php">Adventure</a>
                             </div>
                         </div>
-                        <div class="widget widget_offer background-image" style="background-image: url('assets/img/bg/widget_bg_1.jpg');">
+                        <div class="widget widget_offer background-image" style="background-image: url('../assets/img/bg/widget_bg_1.webp');">
                             <div class="offer-banner">
                                 <div class="offer">
                                     <h6 class="box-title">Need Help? We Are Here To Help You</h6>
                                     <div class="banner-logo">
-                                        <img src="../assets/img/logo2.svg" alt="Tourm" />
+                                        <img src="../assets/img/logo/logo-header.webp" alt="Tourm" />
                                     </div>
                                     <div class="offer">
                                         <h6 class="offer-title">You Get Online support</h6>
-                                        <a class="offter-num" href="+256214203215">+256 214 203 215</a>
+                                        <a class="offter-num" href="+918126052755">+91 8126052755</a>
                                     </div>
-                                    <a href="contact.php" class="th-btn style2 th-icon">Read More</a>
+                                    <a href="contact.php" class="th-btn style2 th-icon">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -304,4 +287,5 @@ if (!isset($tour)) {
 
     <?php include 'components/script.php'; ?>
 </body>
+
 </html>

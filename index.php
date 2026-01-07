@@ -334,7 +334,7 @@ if ($type && $slug) {
 
     <!-- Most Popular Tour -->
     <section class="tour-area position-relative bg-top-center overflow-hidden space background-image arrow-wrap"
-        id="service-sec" style="background-image: url(&quot;assets/img/bg/tour_bg_1.jpg&quot;);">
+        id="service-sec" style="background-image: url(&quot;assets/img/bg/tour_bg_1.webp&quot;);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -698,9 +698,9 @@ if ($type && $slug) {
                 </div>
             </div>
             <div class="shape-mockup d-none d-xl-block" style="top: -25%; left: 0%;"><img
-                    src="assets/img/shape/line.png" alt="shape"></div>
+                    src="assets/img/shape/line.webp" alt="shape"></div>
             <div class="shape-mockup movingX d-none d-xl-block" style="top: 30%; left: -3%;"><img class="gmovingX"
-                    src="assets/img/shape/shape_4.png" alt="shape"></div>
+                    src="assets/img/shape/shape_4.webp" alt="shape"></div>
         </div>
     </div>
 
@@ -718,7 +718,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Maria Doe</h3><span
@@ -740,7 +740,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Andrew Simon</h3><span
@@ -762,7 +762,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Alex Jordan</h3><span
@@ -784,7 +784,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Maria Doe</h3><span
@@ -806,7 +806,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Angelina Rose</h3><span
@@ -828,7 +828,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Maria Doe</h3><span
@@ -850,7 +850,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_2.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Andrew Simon</h3><span
@@ -872,7 +872,7 @@ if ($type && $slug) {
                             <div class="testi-card">
                                 <div class="testi-card_wrapper">
                                     <div class="testi-card_profile">
-                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.jpg"
+                                        <div class="testi-card_avater"><img src="assets/img/testimonial/testi_1_1.webp"
                                                 alt="testimonial"></div>
                                         <div class="media-body">
                                             <h3 class="box-title">Alex Jordan</h3><span
@@ -896,9 +896,9 @@ if ($type && $slug) {
             </div>
         </div>
         <div class="shape-mockup d-none d-xl-block" data-bottom="-2%" data-right="0%"><img
-                src="assets/img/shape/line2.png" alt="shape"></div>
+                src="assets/img/shape/line2.webp" alt="shape"></div>
         <div class="shape-mockup movingX d-none d-xl-block" data-top="30%" data-left="5%"><img
-                src="assets/img/shape/shape_7.png" alt="shape"></div>
+                src="assets/img/shape/shape_7.webp" alt="shape"></div>
     </section>
 
     <section class="overflow-hidden space-bottom pt-5">

@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/to_book/">
     <meta property="og:title" content="Book Now - India Day Trip | Reserve Your Agra Tour">
     <meta property="og:description" content="Book your tour with India Day Trip. Choose from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Secure online booking for Agra, Delhi, and Jaipur adventures.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.png">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/to_book/">
     <meta property="twitter:title" content="Book Now - India Day Trip | Reserve Your Agra Tour">
     <meta property="twitter:description" content="Book your tour with India Day Trip. Choose from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Secure online booking for Agra, Delhi, and Jaipur adventures.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.png">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/hero/hero-agra.webp">
 
     <?php include '../components/links.php'; ?>
 </head>

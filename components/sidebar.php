@@ -28,7 +28,7 @@ if ($depth > 0) {
             <div class="recent-post-wrap">
                 <div class="recent-post">
                     <div class="media-img"><a href="<?php echo $base_path; ?>blog/blog-details.php?slug=best-time-to-visit-taj-mahal"><img
-                                src="<?php echo $base_path; ?>assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
+                                src="<?php echo $base_path; ?>assets/img/blog/recent-post-1-1.webp" alt="Blog Image"></a></div>
                     <div class="media-body">
                         <div class="recent-post-meta"><a href="<?php echo $base_path; ?>blog/"><i class="far fa-calendar"></i>Sep 09,
                                 2024</a></div>
@@ -38,7 +38,7 @@ if ($depth > 0) {
                 </div>
                 <div class="recent-post">
                     <div class="media-img"><a href="<?php echo $base_path; ?>blog/blog-details.php?slug=perfect-5-day-golden-triangle-itinerary"><img
-                                src="<?php echo $base_path; ?>assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
+                                src="<?php echo $base_path; ?>assets/img/blog/recent-post-1-2.webp" alt="Blog Image"></a></div>
                     <div class="media-body">
                         <div class="recent-post-meta"><a href="<?php echo $base_path; ?>blog/"><i class="far fa-calendar"></i>Sep 10,
                                 2024</a></div>

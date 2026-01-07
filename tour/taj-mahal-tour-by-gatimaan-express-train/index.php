@@ -70,7 +70,7 @@
                     aria-label="4 / 6"
                     data-swiper-slide-index="3">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_1.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_1.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -85,7 +85,7 @@
                     aria-label="5 / 6"
                     data-swiper-slide-index="4">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_2.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_2.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -100,7 +100,7 @@
                   "
                     data-swiper-slide-index="5">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_3.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_3.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -115,7 +115,7 @@
                     aria-label="1 / 6"
                     data-swiper-slide-index="0">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_1.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_1.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -130,7 +130,7 @@
                     aria-label="2 / 6"
                     data-swiper-slide-index="1">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_2.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_2.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -145,7 +145,7 @@
                     aria-label="3 / 6"
                     data-swiper-slide-index="2">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_3.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_3.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                 </div>
@@ -173,7 +173,7 @@
                     style="width: 197.667px; margin-right: 24px"
                     data-swiper-slide-index="5">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/tour_inner_3.jpg" alt="Image" />
+                      <img src="..assets/img/tour/tour_inner_3.webp" alt="Image" />
                     </div>
                   </div>
                   <div
@@ -183,7 +183,7 @@
                     aria-label="1 / 6"
                     data-swiper-slide-index="0">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_1.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_1.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -193,7 +193,7 @@
                     aria-label="2 / 6"
                     data-swiper-slide-index="1">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_2.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_2.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -203,7 +203,7 @@
                     aria-label="3 / 6"
                     data-swiper-slide-index="2">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_3.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_3.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -213,7 +213,7 @@
                     aria-label="4 / 6"
                     data-swiper-slide-index="3">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_1.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_1.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                   <div
@@ -223,7 +223,7 @@
                     aria-label="5 / 6"
                     data-swiper-slide-index="4">
                     <div class="tour-slider-img">
-                      <img src="..assets/img/tour/taj_mahal_2.jpg" alt="Taj Mahal" />
+                      <img src="..assets/img/tour/taj_mahal_2.webp" alt="Taj Mahal" />
                     </div>
                   </div>
                 </div>
@@ -395,7 +395,7 @@
                 <div class="recent-post">
                   <div class="media-img">
                     <a href="golden-triangle-tour.html"><img
-                        src="..assets/img/blog/golden-triangle-1.jpg"
+                        src="..assets/img/blog/golden-triangle-1.webp"
                         alt="Golden Triangle Tour" /></a>
                   </div>
                   <div class="media-body">
@@ -410,7 +410,7 @@
                 <div class="recent-post">
                   <div class="media-img">
                     <a href="agra-fort-tour.html"><img
-                        src="..assets/img/blog/agra-fort-1.jpg"
+                        src="..assets/img/blog/agra-fort-1.webp"
                         alt="Agra Fort Tour" /></a>
                   </div>
                   <div class="media-body">
@@ -425,7 +425,7 @@
                 <div class="recent-post">
                   <div class="media-img">
                     <a href="same-day-agra-tour.html"><img
-                        src="..assets/img/blog/same-day-agra-1.jpg"
+                        src="..assets/img/blog/same-day-agra-1.webp"
                         alt="Same Day Agra Tour" /></a>
                   </div>
                   <div class="media-body">
@@ -451,7 +451,7 @@
             <div
               class="widget widget_offer background-image"
               style="
-              background-image: url(&quot;assets/img/bg/widget_bg_1.jpg&quot;);
+              background-image: url(&quot;assets/img/bg/widget_bg_1.webp&quot;);
             ">
               <div class="offer-banner">
                 <div class="offer">

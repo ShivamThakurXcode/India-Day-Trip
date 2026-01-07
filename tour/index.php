@@ -134,62 +134,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="widget">
-                        <h3 class="widget_title">Recent Posts</h3>
-                        <div class="recent-post-wrap">
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="../gallery/index.php">
-                                        <img src="../assets/img/blog/recent-post-1-1.jpg" alt="Blog Image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title">
-                                        <a class="text-inherit" href="../gallery/index.php">Best Time to Visit Taj Mahal</a>
-                                    </h4>
-                                    <div class="recent-post-meta">
-                                        <a href="../index.php">
-                                            <i class="fa-regular fa-calendar"></i>22/6/ 2025
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="../gallery/index.php">
-                                        <img src="../assets/img/blog/recent-post-1-2.jpg" alt="Blog Image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title">
-                                        <a class="text-inherit" href="../gallery/index.php">Delhi Street Food Guide</a>
-                                    </h4>
-                                    <div class="recent-post-meta">
-                                        <a href="../index.php">
-                                            <i class="fa-regular fa-calendar"></i>25/6/ 2025
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="../gallery/index.php">
-                                        <img src="../assets/img/blog/recent-post-1-3.jpg" alt="Blog Image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title">
-                                        <a class="text-inherit" href="../gallery/index.php">Golden Triangle Itinerary</a>
-                                    </h4>
-                                    <div class="recent-post-meta">
-                                        <a href="../index.php">
-                                            <i class="fa-regular fa-calendar"></i>27/6/ 2025
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="widget widget_tag_cloud">
                         <h3 class="widget_title">Popular Tags</h3>
                         <div class="tagcloud">
@@ -203,21 +148,7 @@
                             <a href="../index.php">Travel</a>
                         </div>
                     </div>
-                    <div class="widget widget_offer" data-bg-src="../assets/img/bg/widget_bg_1.jpg">
-                        <div class="offer-banner">
-                            <div class="offer">
-                                <h6 class="box-title">Need Help? We Are Here To Help You</h6>
-                                <div class="banner-logo">
-                                    <img src="../assets/img/logo2.svg" alt="Tourm">
-                                </div>
-                                <div class="offer">
-                                    <h6 class="offer-title">You Get Online support</h6>
-                                    <a class="offter-num" href="%2b256214203215.html">+256 214 203 215</a>
-                                </div>
-                                <a href="../contact/index.php" class="th-btn style2 th-icon">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    
                     </aside>
                 </div>
             </div>

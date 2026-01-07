@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://indiadaytrip.com/contact/">
     <meta property="og:title" content="Contact India Day Trip - Get in Touch for Agra Tours">
     <meta property="og:description" content="Contact India Day Trip for inquiries about Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Reach out to our Agra-based travel experts for personalized travel planning.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/bg/contact_bg_1.jpg">
+    <meta property="og:image" content="https://indiadaytrip.com/assets/img/bg/contact_bg_1.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://indiadaytrip.com/contact/">
     <meta property="twitter:title" content="Contact India Day Trip - Get in Touch for Agra Tours">
     <meta property="twitter:description" content="Contact India Day Trip for inquiries about Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Reach out to our Agra-based travel experts for personalized travel planning.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/bg/contact_bg_1.jpg">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/bg/contact_bg_1.webp">
 
     <?php include '../components/links.php'; ?>
 </head>
@@ -81,7 +81,7 @@
             </div>
         </div>
     </div>
-    <div class="space-extra2-top space-extra2-bottom" data-bg-src="../assets/img/bg/video_bg_1.jpg">
+    <div class="space-extra2-top space-extra2-bottom" data-bg-src="../assets/img/bg/video_bg_1.webp">
         <div class="container">
             <div class="row flex-row-reverse justify-content-center align-items-center">
                 <div class="col-lg-6">

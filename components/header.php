@@ -31,7 +31,7 @@ $current_page = $_SERVER['SCRIPT_NAME'];
         </div>
     </div>
     <div class="sticky-wrapper">
-        <div class="menu-area" data-bg-src="<?php echo $base_path; ?>../assets/img/bg/line-pattern.png">
+        <div class="menu-area" data-bg-src="<?php echo $base_path; ?>../assets/img/bg/line-pattern.webp">
             <div class="container th-container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">

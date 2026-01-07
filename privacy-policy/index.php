@@ -33,7 +33,7 @@
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
 
-    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.jpg">
+    <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Privacy Policy</h1>
