@@ -1,16 +1,16 @@
 <?php
 // Database configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'u615191172_india_day_trip');
-define('DB_USER', 'u615191172_developer'); // Change as needed
-define('DB_PASS', '8958Shivay'); // Change as needed
-
-
-
 // define('DB_HOST', 'localhost');
-// define('DB_NAME', 'india_day_trip');
-// define('DB_USER', 'root'); // Change as needed
-// define('DB_PASS', ''); // Change as needed
+// define('DB_NAME', 'u615191172_india_day_trip');
+// define('DB_USER', 'u615191172_developer'); // Change as needed
+// define('DB_PASS', '8958Shivay'); // Change as needed
+
+
+
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'india_day_trip');
+define('DB_USER', 'root'); // Change as needed
+define('DB_PASS', ''); // Change as needed
 
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);

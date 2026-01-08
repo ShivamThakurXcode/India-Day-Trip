@@ -123,114 +123,70 @@ if ($type && $slug) {
     <?php include 'components/header.php'; ?>
 
 
-    <div class="hero-2" id="hero">
-        <div class="hero2-overlay" data-bg-src="assets/img/bg/line-pattern.webp"></div>
-        <div class="swiper hero-slider-2" id="heroSlide2">
+    <div class="th-hero-wrapper hero-1" id="hero">
+        <div class="swiper th-slider hero-slider-1 swiper-fade" id="heroSlide1" data-slider-options='{"effect":"fade","menu": ["","",""],"heroSlide1": {"swiper-container": {"pagination": {"el": ".swiper-pagination", "clickable": true }}}}'>
             <div class="swiper-wrapper">
-                <div class="swiper-slide hero-agra">
+                <div class="swiper-slide">
                     <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="assets/img/hero/hero-agra.webp"></div>
+                        <div class="th-hero-bg background-image" style="background-image: url('assets/img/hero/hero-agra.webp');"></div>
                         <div class="container">
-                            <div class="hero-style2">
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Discover <span
-                                        class="hero-text">The Beauty of Agra</span></h1>
-                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Experience the wonder of the Taj Mahal with Agra's trusted travel experts.</p>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="tour/index.php" class="th-btn white-btn th-icon">Explore Agra
-                                        Tours</a>
+                            <div class="hero-style1">
+                                <span class="sub-title style1 slideinup" data-ani="slideinup" data-ani-delay="0.2s">Get unforgettable pleasure with us</span>
+                                <h1 class="hero-title slideinup" data-ani="slideinup" data-ani-delay="0.4s">Discover The Beauty of Agra</h1>
+                                <div class="btn-group slideinup" data-ani="slideinup" data-ani-delay="0.6s">
+                                    <a href="tour/index.php" class="th-btn th-icon">Explore Tours</a>
+                                    <a href="about.php" class="th-btn style2 th-icon">Our Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="swiper-slide hero-delhi">
+                <div class="swiper-slide">
                     <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="assets/img/hero/hero-delhi.webp"></div>
+                        <div class="th-hero-bg background-image" style="background-image: url('assets/img/hero/hero-delhi.webp');"></div>
                         <div class="container">
-                            <div class="hero-style2">
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Explore <span
-                                        class="hero-text">The Heart of Delhi</span></h1>
-                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Experience Delhi's rich history and vibrant culture with India Day Trip.</p>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="tour/index.php" class="th-btn white-btn th-icon">Explore Delhi
-                                        Tours</a></div>
+                            <div class="hero-style1">
+                                <span class="sub-title style1 slideinup" data-ani="slideinup" data-ani-delay="0.2s">Get unforgettable pleasure with us</span>
+                                <h1 class="hero-title slideinup" data-ani="slideinup" data-ani-delay="0.4s">Explore The Heart of Delhi</h1>
+                                <div class="btn-group slideinup" data-ani="slideinup" data-ani-delay="0.6s">
+                                    <a href="tour/index.php" class="th-btn th-icon">Explore Tours</a>
+                                    <a href="about.php" class="th-btn style2 th-icon">Our Services</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="swiper-slide hero-jaipur">
+                <div class="swiper-slide">
                     <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="assets/img/hero/hero-jaipur.webp"></div>
+                        <div class="th-hero-bg background-image" style="background-image: url('assets/img/hero/hero-jaipur.webp');"></div>
                         <div class="container">
-                            <div class="hero-style2">
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Experience <span
-                                        class="hero-text">The Pink City of Jaipur</span></h1>
-                                <p class="hero-desc" data-ani="slideinup" data-ani-delay="0.5s">Discover Jaipur's royal charm and vibrant bazaars.</p>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a
-                                        href="tour/index.php" class="th-btn white-btn th-icon">Explore
-                                        Jaipur
-                                        Tours</a></div>
+                            <div class="hero-style1">
+                                <span class="sub-title style1 slideinup" data-ani="slideinup" data-ani-delay="0.2s">Get unforgettable pleasure with us</span>
+                                <h1 class="hero-title slideinup" data-ani="slideinup" data-ani-delay="0.4s">Experience The Pink City of Jaipur</h1>
+                                <div class="btn-group slideinup" data-ani="slideinup" data-ani-delay="0.6s">
+                                    <a href="tour/index.php" class="th-btn th-icon">Explore Tours</a>
+                                    <a href="about.php" class="th-btn style2 th-icon">Our Services</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="th-swiper-custom">
-                <div class="swiper-pagination"></div>
-                <div class="hero-icon"><button data-slider-prev="#heroSlide2, #heroSlide3"
-                        class="hero-arrow slider-prev"><img src="assets/img/icon/hero-arrow-left.svg" alt=""></button>
-                    <button data-slider-next="#heroSlide2, #heroSlide3" class="hero-arrow slider-next"><img
-                            src="assets/img/icon/hero-arrow-right.svg" alt=""></button>
+                <button data-slider-prev="#heroSlide1" class="slider-arrow slider-prev">
+                    <img src="assets/img/icon/right-arrow.svg" alt="">
+                </button>
+                <div class="slider-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                    <span class="swiper-pagination-bullet"></span>
                 </div>
+                <button data-slider-next="#heroSlide1" class="slider-arrow slider-next">
+                    <img src="assets/img/icon/left-arrow.svg" alt="">
+                </button>
             </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
-        <div class="swiper heroThumbs style2" id="heroSlide3">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="hero-card">
-                            <div class="hero-img"><img src="assets/img/hero/hero-agra.webp" alt="Agra Tour"></div>
-                            <div class="hero-card_content">
-                                <h3 class="box-title">Agra Day Tour</h3>
-                                <span><i
-                                        class="fa-light fa-clock"></i>1 Day</span> <a href="same-day-tours.php"
-                                    class="th-btn style2">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="hero-card">
-                            <div class="hero-img"><img src="assets/img/hero/hero-delhi.webp" alt="Delhi Tour"></div>
-                            <div class="hero-card_content">
-                                <h3 class="box-title">Delhi City Tour</h3>
-                                <span><i
-                                        class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.php"
-                                    class="th-btn style2">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="hero-card">
-                            <div class="hero-img"><img src="assets/img/hero/hero-jaipur.webp" alt="Jaipur Tour"></div>
-                            <div class="hero-card_content">
-                                <h3 class="box-title">Jaipur Heritage Tour</h3>
-                                <span><i
-                                        class="fa-light fa-clock"></i>1 Day</span> <a href="golden-triangle-tours.php"
-                                    class="th-btn style2">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-down"><a href="#destination-sec" class="scroll-wrap"><span><img
-                        src="assets/img/icon/down-arrow.svg" alt=""></span>Scroll Down</a></div>
     </div>
 
     <section class="category-area bg-top-center background-image" style="background-image: url(&quot;assets/img/bg/category_bg_1.webp&quot;);">

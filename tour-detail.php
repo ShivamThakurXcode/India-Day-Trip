@@ -198,10 +198,10 @@ if (!isset($tour)) {
                             <h3 class="widget_title">Trusted by Travelers</h3>
                             <div class="tripadvisor-box">
                                 <div class="d-flex align-items-center">
-                                    <img src="../assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="width: 40px; height: 40px; margin-right: 10px;" />
+                                    <img src="../assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="width: 40px;  height: 40px; margin-right: 10px; color: green;" />
                                 
                                     <div>
-                                        <div class="rating">
+                                        <div style="color: orange;" class="rating">
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -240,6 +240,28 @@ if (!isset($tour)) {
                             </div>
                         </div>
                     </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tours -->
+    <section class="space-bottom">
+        <div class="container">
+            <div class="title-area text-center mb-4">
+                <h3 class="sec-title">Related Tours</h3>
+            </div>
+            <div class="slider-area tour-slider">
+                <div class="swiper th-slider has-shadow slider-drag-wrap" data-slider-options='{"loop": true, "breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                    <div class="swiper-wrapper">
+                        <?php
+                        $relatedTours = getTours($tour['category_name'], 6, $tour['id']);
+                        foreach ($relatedTours as $relatedTour): ?>
+                            <div class="swiper-slide">
+                                <?php echo renderTourCard($relatedTour, 'swiper'); ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>

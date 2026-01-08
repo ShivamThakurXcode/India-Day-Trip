@@ -148,11 +148,13 @@ function renderTourCard($tour, $style = 'grid') {
             <div class='{$containerClass}'>
                 <div class='tour-card' style='height: 460px; min-width: 310px; background: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;'>
                     <div class='tour-card-image' style='position: relative; height: 200px; overflow: hidden;'>
-                        <img src='{$imageUrl}' alt='" . htmlspecialchars($tour['title']) . "' style='width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;'>
+                        <a href='{$detailUrl}' style='display: block; height: 100%;'>
+                            <img src='{$imageUrl}' alt='" . htmlspecialchars($tour['title']) . "' style='width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;'>
+                        </a>
                         <div class='tour-card-ribbon' style='position: absolute; bottom: 0; left: 0; right: 0; background: rgba(238, 238, 238, 0.15); padding: 2px 12px; display: flex; justify-content: space-between; align-items: center; color: #ffffffff; backdrop-filter: blur(8px);'>
                             <span style='font-size: 14px; width: fit-content;'><i class='fa-light fa-clock' style='margin-right: 5px;'></i>" . htmlspecialchars($tour['duration']) . "</span>
                             <span class='tour-card-location' style='font-size: 14px; width: fit-content; max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;' ><i class='fa-solid fa-map-marker-alt' style='margin-right: 5px;'></i>" . htmlspecialchars($tour['location']) . "</span>
-                          
+
                         </div>
                     </div>
                     <div class='tour-card-content' style='padding: 16px; height: calc(100% - 200px); display: flex; flex-direction: column;'>
@@ -188,9 +190,10 @@ function renderTourCard($tour, $style = 'grid') {
  *
  * @param string $category Category name or null for all
  * @param int $limit Number of tours to fetch
+ * @param int $exclude_id Tour ID to exclude
  * @return array Array of tours
  */
-function getTours($category = null, $limit = null) {
+function getTours($category = null, $limit = null, $exclude_id = null) {
     global $pdo;
 
     $query = "SELECT t.*, c.name as category_name FROM tours t LEFT JOIN categories c ON t.category_id = c.id WHERE 1=1";
@@ -199,6 +202,11 @@ function getTours($category = null, $limit = null) {
     if ($category) {
         $query .= " AND c.name = ?";
         $params[] = $category;
+    }
+
+    if ($exclude_id) {
+        $query .= " AND t.id != ?";
+        $params[] = $exclude_id;
     }
 
     $query .= " ORDER BY t.created_at DESC";
