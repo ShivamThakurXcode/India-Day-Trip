@@ -189,6 +189,82 @@ if ($type && $slug) {
         </div>
     </div>
 
+    <div class="booking-sec">
+        <div class="container">
+            <form action="search-tours.php" method="GET" class="booking-form" id="tourSearchForm">
+                <div class="input-wrap">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="form-group col-md-6 col-lg-auto">
+                            <div class="icon"><i class="fa-light fa-route"></i></div>
+                            <div class="search-input">
+                                <label>Location</label>
+                                <select name="location" id="location" class="form-select custom-select">
+                                    <option value="">All Locations</option>
+                                    <option value="agra">Agra</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="jaipur">Jaipur</option>
+                                    <option value="varanasi">Varanasi</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="udaipur">Udaipur</option>
+                                    <option value="amritsar">Amritsar</option>
+                                    <option value="pushkar">Pushkar</option>
+                                    <option value="ranthambore">Ranthambore</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-auto">
+                            <div class="icon">
+                                <i class="fa-regular fa-person-hiking"></i>
+                            </div>
+                            <div class="search-input">
+                                <label>Tour Type</label>
+                                <select name="tourType" id="tourType" class="form-select custom-select">
+                                    <option value="">All Types</option>
+                                    <option value="same-day">Same Day Tour</option>
+                                    <option value="taj-mahal">Taj Mahal Tour</option>
+                                    <option value="golden-triangle">Golden Triangle</option>
+                                    <option value="rajasthan">Rajasthan Tour</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-auto">
+                            <div class="icon"><i class="fa-light fa-clock"></i></div>
+                            <div class="search-input">
+                                <label>Duration</label>
+                                <select name="duration" id="duration" class="form-select custom-select">
+                                    <option value="">Any Duration</option>
+                                    <option value="1">1 Day</option>
+                                    <option value="2">2 Days</option>
+                                    <option value="3">3 Days</option>
+                                    <option value="4">4 Days</option>
+                                    <option value="5">5 Days</option>
+                                    <option value="6">6 Days</option>
+                                    <option value="7">7 Days</option>
+                                    <option value="8">8 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-auto">
+                            <div class="icon">
+                                <i class="fa-light fa-search"></i>
+                            </div>
+                            <div class="search-input">
+                                <label>Search Tours</label>
+                                <input type="text" name="search" id="search" class="form-control" placeholder="Search by tour name...">
+                            </div>
+                        </div>
+                        <div class="form-btn col-md-12 col-lg-auto">
+                            <button type="submit" class="th-btn">
+                                <i class="fas fa-search"></i> Search Tours
+                            </button>
+                        </div>
+                    </div>
+                    <p class="form-messages mb-0 mt-3"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <section class="category-area bg-top-center background-image" style="background-image: url(&quot;assets/img/bg/category_bg_1.webp&quot;);">
         <div class="container th-container">
             <div class="title-area text-center">

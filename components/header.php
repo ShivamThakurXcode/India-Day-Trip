@@ -52,7 +52,7 @@ $current_page = $_SERVER['SCRIPT_NAME'];
                                         <li><a class="<?php echo ($current_page == '/rajasthan-tour-packages/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../rajasthan-tour-packages/index.php">Rajasthan Tours</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="<?php echo ($current_page == '/gallery/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../gallery/index.php">Gallery</a></li>
+                                <li><a class="<?php echo ($current_page == '/search-tours.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../search-tours.php">Search Tours</a></li>
                                 <li><a class="<?php echo (strpos($current_page, '/blog/') === 0) ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../blog/index.php">Blog</a></li>
                                 <li><a class="<?php echo ($current_page == '/contact/index.php') ? 'active' : ''; ?>" href="<?php echo $base_path; ?>../contact/index.php">Contact Us</a></li>
                             </ul>

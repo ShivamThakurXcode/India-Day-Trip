@@ -19763,7 +19763,7 @@ span.select2-selection.select2-selection--single:focus {
     display: -ms-flexbox;
     display: flex;
     gap: 16px;
-    max-width: 400px
+    max-width: fit-content;
 }
 
 .about-item:not(:last-child) {

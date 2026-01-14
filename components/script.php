@@ -10,11 +10,16 @@
 <script src="../assets/js/circle-progress.js"></script>
 <script src="../assets/js/matter.min.js"></script>
 <script src="../assets/js/matterjs-custom.js"></script>
-<script src="../assets/js/nice-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-nice-select@1.1.0/js/jquery.nice-select.min.js"></script>
 <script src="../assets/js/main.js"></script>
 <script>
     // Enhanced Color Switcher Fix
     jQuery(document).ready(function($) {
+        // Initialize nice-select
+        setTimeout(function() {
+            $('.nice-select').niceSelect();
+        }, 100);
+
         // Initialize color buttons with their colors
         $(".color-switch-btns button").each(function() {
             const $button = $(this);

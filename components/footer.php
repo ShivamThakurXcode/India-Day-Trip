@@ -18,7 +18,7 @@ if ($depth > 0) {
                         <div class="th-widget-about">
                             <div class="about-logo mb-3">
                                 <a href="<?php echo $base_path; ?>index.php">
-                                    <img src="<?php echo $base_path; ?>../assets/img/logo/logo-footer.webp" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
+                                    <img src="<?php echo $base_path; ?>assets/img/logo/logo-footer.webp" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
                                 </a>
                             </div>
                             <p class="about-text mb-4">
@@ -78,25 +78,51 @@ if ($depth > 0) {
                         <h3 class="widget_title">Get In Touch</h3>
                         <div class="">
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/location-dot.svg" alt="Location"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/location-dot.svg" alt="Location"></div>
                                 <div class="details">
                                     <p class="mb-0">Shop No. 2, Gupta Market, Tajganj, Agra, Uttar Pradesh, India</p>
                                 </div>
                             </div>
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/phone.svg" alt="Phone"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/phone.svg" alt="Phone"></div>
                                 <div class="details">
                                     <p class="mb-0"><a href="tel:+918126052755" class="info-box_link">+91 81260 52755</a></p>
                                 </div>
                             </div>
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/envelope.svg" alt="Email"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/envelope.svg" alt="Email"></div>
                                 <div class="details">
                                     <p class="mb-0"><a href="mailto:info@indiadaytrip.com"
                                             class="info-box_link">info@indiadaytrip.com</a></p>
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Payment Methods and Trust Badges -->
+    <div class="payment-trust-wrap  py-3">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="payment-methods text-start mb-3 mb-lg-0">
+                        <h6 class="text-white mb-3">Accepted Payment Methods</h6>
+                        <div class="d-flex justify-content-start align-items-center gap-3">
+                            <i class="fab fa-cc-visa fa-2x text-white" title="Visa"></i>
+                            <i class="fab fa-cc-mastercard fa-2x text-white" title="Mastercard"></i>
+                            <i class="fab fa-cc-paypal fa-2x text-white" title="PayPal"></i>
+                            <i class="fab fa-cc-apple-pay fa-2x text-white" title="Apple Pay"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-4">
+                    <div class="trust-badges text-center">
+                        <div class="d-flex justify-content-center align-items-center gap-3">
+                            <img src="<?php echo $base_path; ?>assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="height: 80px; filter:invert(1); width: auto;">
+                            <span class="text-white text-start">Trusted by <br> Travelers Worldwide</span>
                         </div>
                     </div>
                 </div>

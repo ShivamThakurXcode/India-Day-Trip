@@ -202,7 +202,7 @@ function renderTourCard($tour, $style = 'grid') {
  * @param string $orderby Sort order
  * @return array Array of tours
  */
-function getTours($category = null, $limit = null, $exclude_id = null, $search = null, $orderby = null) {
+function getTours($category = null, $limit = null, $exclude_id = null, $search = null, $orderby = null, $location = null, $duration = null, $price_min = null, $price_max = null, $rating = null) {
     global $pdo;
 
     $query = "SELECT t.*, c.name as category_name FROM tours t LEFT JOIN categories c ON t.category_id = c.id WHERE 1=1";
@@ -222,6 +222,31 @@ function getTours($category = null, $limit = null, $exclude_id = null, $search =
         $query .= " AND (t.title LIKE ? OR t.description LIKE ?)";
         $params[] = '%' . $search . '%';
         $params[] = '%' . $search . '%';
+    }
+
+    if ($location) {
+        $query .= " AND t.location = ?";
+        $params[] = $location;
+    }
+
+    if ($duration) {
+        $query .= " AND t.duration LIKE ?";
+        $params[] = '%' . $duration . '%';
+    }
+
+    if ($price_min !== null) {
+        $query .= " AND t.pricing >= ?";
+        $params[] = $price_min;
+    }
+
+    if ($price_max !== null) {
+        $query .= " AND t.pricing <= ?";
+        $params[] = $price_max;
+    }
+
+    if ($rating) {
+        $query .= " AND t.rating >= ?";
+        $params[] = $rating;
     }
 
     $orderClause = " ORDER BY t.created_at DESC";
