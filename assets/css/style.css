@@ -9654,10 +9654,19 @@ ol.wp-block-rss {
     position: relative;
     background-color: var(--title-color);
     background-position: left top;
-    padding: 80px 0;
+    padding: 210px 0;
+
     overflow: hidden;
-    aspect-ratio: 5/1;
+    aspect-ratio: 3/1;
     text-align: center
+}
+
+.breadcumb-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(17, 61, 72, 0.506), rgba(9, 14, 83, 0.388));
+    z-index: 0
 }
 
 @media (max-width: 1199px) {

@@ -23,7 +23,7 @@ try {
 // Include utility functions
 require_once 'functions.php';
 
-// Function to get setting value
+// Function to get setting value 
 function getSetting($key) {
     global $pdo;
     $stmt = $pdo->prepare("SELECT setting_value FROM settings WHERE setting_key = ?");

@@ -1018,9 +1018,11 @@ if (!isset($tour)) {
                     foreach ($relatedTours as $relatedTour): ?>
                         <div class="col-md-6 col-lg-4">
                             <div class="related-tour-card">
+                                <a href="../tour/<?php echo $relatedTour['slug']; ?>">
                                 <div class="tour-img">
                                     <img src="../assets/img/<?php echo json_decode($relatedTour['images'], true)[0] ?? 'default.webp'; ?>" alt="<?php echo htmlspecialchars($relatedTour['title']); ?>">
                                 </div>
+                                
                                 <div class="tour-content">
                                     <h3 class="tour-title"><?php echo htmlspecialchars($relatedTour['title']); ?></h3>
                                     <p class="tour-destination"><?php echo htmlspecialchars($relatedTour['location']); ?></p>
@@ -1030,8 +1032,9 @@ if (!isset($tour)) {
                                             <span><?php echo number_format($relatedTour['rating'], 1); ?> (<?php echo $relatedTour['reviews'] ?? '0'; ?>+)</span>
                                         </div>
                                     </div>
-                                    <a href="tour/<?php echo $relatedTour['slug']; ?>" class="th-btn style3">View Details</a>
+                                    <a href="../tour/<?php echo $relatedTour['slug']; ?>" class="th-btn style3">View Details</a>
                                 </div>
+                                </a>
                             </div>
                         </div>
                     <?php endforeach; ?>

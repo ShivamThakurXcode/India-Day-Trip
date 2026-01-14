@@ -73,7 +73,14 @@ function getDBConnection() {
  * @return string HTML for the tour card
  */
 function renderTourCard($tour, $style = 'grid') {
-    $containerClass = ($style === 'swiper') ? '' : "col-xxl-4 col-lg-4 col-md-6 mb-4";
+    $containerClass = '';
+    if ($style === 'list') {
+        $containerClass = 'col-12';
+    } elseif ($style === 'grid') {
+        $containerClass = "col-xxl-4 col-lg-4 col-md-6 mb-4";
+    } elseif ($style === 'swiper') {
+        $containerClass = '';
+    }
     $imagePath = $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.webp';
     $imageUrl = "../assets/img/{$imagePath}";
     $detailUrl = "../tour/{$tour['slug']}";
@@ -146,7 +153,7 @@ function renderTourCard($tour, $style = 'grid') {
                 }
             </style>
             <div class='{$containerClass}'>
-                <div class='tour-card' style='height: 460px; min-width: 310px; background: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;'>
+                <div class='tour-card" . ($style === 'list' ? ' style-flex' : '') . "' style='height: 460px; min-width: 310px; background: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;'>
                     <div class='tour-card-image' style='position: relative; height: 200px; overflow: hidden;'>
                         <a href='{$detailUrl}' style='display: block; height: 100%;'>
                             <img src='{$imageUrl}' alt='" . htmlspecialchars($tour['title']) . "' style='width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;'>
@@ -191,9 +198,11 @@ function renderTourCard($tour, $style = 'grid') {
  * @param string $category Category name or null for all
  * @param int $limit Number of tours to fetch
  * @param int $exclude_id Tour ID to exclude
+ * @param string $search Search term
+ * @param string $orderby Sort order
  * @return array Array of tours
  */
-function getTours($category = null, $limit = null, $exclude_id = null) {
+function getTours($category = null, $limit = null, $exclude_id = null, $search = null, $orderby = null) {
     global $pdo;
 
     $query = "SELECT t.*, c.name as category_name FROM tours t LEFT JOIN categories c ON t.category_id = c.id WHERE 1=1";
@@ -209,7 +218,35 @@ function getTours($category = null, $limit = null, $exclude_id = null) {
         $params[] = $exclude_id;
     }
 
-    $query .= " ORDER BY t.created_at DESC";
+    if ($search) {
+        $query .= " AND (t.title LIKE ? OR t.description LIKE ?)";
+        $params[] = '%' . $search . '%';
+        $params[] = '%' . $search . '%';
+    }
+
+    $orderClause = " ORDER BY t.created_at DESC";
+    if ($orderby) {
+        switch ($orderby) {
+            case 'popularity':
+                $orderClause = " ORDER BY t.rating DESC";
+                break;
+            case 'rating':
+                $orderClause = " ORDER BY t.rating DESC";
+                break;
+            case 'date':
+                $orderClause = " ORDER BY t.created_at DESC";
+                break;
+            case 'price':
+                $orderClause = " ORDER BY t.pricing ASC";
+                break;
+            case 'price-desc':
+                $orderClause = " ORDER BY t.pricing DESC";
+                break;
+            default:
+                $orderClause = " ORDER BY t.created_at DESC";
+        }
+    }
+    $query .= $orderClause;
 
     if ($limit) {
         $query .= " LIMIT " . (int)$limit;
