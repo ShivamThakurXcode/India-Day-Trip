@@ -107,22 +107,32 @@ if ($depth > 0) {
     <div class="payment-trust-wrap  py-3">
         <div class="container">
             <div class="row align-items-center justify-content-center">
-                <div class="col-lg-6 col-md-8">
+                <div class="col-lg-4 col-md-4">
                     <div class="payment-methods text-start mb-3 mb-lg-0">
                         <h6 class="text-white mb-3">Accepted Payment Methods</h6>
                         <div class="d-flex justify-content-start align-items-center gap-3">
                             <i class="fab fa-cc-visa fa-2x text-white" title="Visa"></i>
                             <i class="fab fa-cc-mastercard fa-2x text-white" title="Mastercard"></i>
+                            <i class="fab fa-cc-amex fa-2x text-white" title="American Express"></i>
+                            <i class="fab fa-cc-discover fa-2x text-white" title="Discover"></i>
                             <i class="fab fa-cc-paypal fa-2x text-white" title="PayPal"></i>
+                            <i class="fab fa-google-pay fa-2x text-white" title="Google Pay"></i>
                             <i class="fab fa-cc-apple-pay fa-2x text-white" title="Apple Pay"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-4">
+                <div class="col-lg-4 col-md-4">
                     <div class="trust-badges text-center">
                         <div class="d-flex justify-content-center align-items-center gap-3">
-                            <img src="<?php echo $base_path; ?>assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="height: 80px; filter:invert(1); width: auto;">
+                            <img src="<?php echo $base_path; ?>assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="height: 80px; width: auto;">
                             <span class="text-white text-start">Trusted by <br> Travelers Worldwide</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="payment-on-arrival text-center">
+                        <div class="border border-white border-2" style="border-style: dashed; padding: 10px; border-radius: 5px;">
+                            <p class="text-white mb-0">We also accept payment on arrival</p>
                         </div>
                     </div>
                 </div>

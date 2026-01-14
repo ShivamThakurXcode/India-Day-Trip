@@ -3,9 +3,9 @@ require_once 'config.php';
 
 // Get tours for homepage
 $popularTours = getTours(null, 6);
-$sameDayTours = getTours('Same Day Tours', 5);
-$tajMahalTours = getTours('Taj Mahal Tours', 5);
-$goldenTriangleTours = getTours('Golden Triangle Tours', 5);
+$sameDayTours = getTours('Same Day Tours', 4);
+$tajMahalTours = getTours('Taj Mahal Tours', 4);
+$goldenTriangleTours = getTours('Golden Triangle Tours', 8);
 
 // Handle routing for detail pages
 $type = $_GET['type'] ?? null;
@@ -389,6 +389,78 @@ if ($type && $slug) {
                         <?php endforeach; ?>
                     </div>
                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Trending Tours -->
+    <section class="tour-area3 position-relative bg-top-center overflow-hidden space background-image arrow-wrap" id="service-sec" style="background-image: url(&quot;assets/img/bg/tour_bg_1.webp&quot;);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="title-area text-center">
+                        <span class="sub-title">Based on user booking package.</span>
+                        <h2 class="sec-title">Our Trending Tours </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="nav nav-tabs tour-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link th-btn active" id="nav-step1-tab" data-bs-toggle="tab" data-bs-target="#nav-step1" type="button">
+                    <img src="assets/img/icon/tour_icon_1.svg" alt="Taj Mahal Tour">Taj Mahal
+                    Tour
+                </button>
+                <button class="nav-link th-btn" id="nav-step2-tab" data-bs-toggle="tab" data-bs-target="#nav-step2" type="button">
+                    <img src="assets/img/icon/tour_icon_2.svg" alt="Same Day Tour">Same Day
+                    Tour
+                </button>
+                <button class="nav-link th-btn" id="nav-step3-tab" data-bs-toggle="tab" data-bs-target="#nav-step3" type="button">
+                    <img src="assets/img/icon/tour_icon_3.svg" alt="Golden Triangle Tour">Golden
+                    Triangle Tour
+                </button>
+            </div>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade active show" id="nav-step1" role="tabpanel">
+                    <div class="slider-area tour-slider slider-drag-wrap">
+                        <div class="swiper th-slider has-shadow" data-slider-options='{"spaceBetween":20,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                            <div class="swiper-wrapper">
+                                <?php foreach ($tajMahalTours as $tour): ?>
+                                    <div class="swiper-slide">
+                                        <?php echo renderTourCard($tour, 'swiper'); ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-step2" role="tabpanel">
+                    <div class="slider-area tour-slider slider-drag-wrap">
+                        <div class="swiper th-slider has-shadow" data-slider-options='{"spaceBetween":20,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                            <div class="swiper-wrapper">
+                                <?php foreach ($sameDayTours as $tour): ?>
+                                    <div class="swiper-slide">
+                                        <?php echo renderTourCard($tour, 'swiper'); ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-step3" role="tabpanel">
+                    <div class="slider-area tour-slider slider-drag-wrap">
+                        <div class="swiper th-slider has-shadow" data-slider-options='{"spaceBetween":20,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                            <div class="swiper-wrapper">
+                                <?php foreach ($goldenTriangleTours as $tour): ?>
+                                    <div class="swiper-slide">
+                                        <?php echo renderTourCard($tour, 'swiper'); ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
