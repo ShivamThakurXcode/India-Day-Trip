@@ -90,14 +90,14 @@
                         <div class="tab-pane fade active show" id="tab-grid" role="tabpanel" aria-labelledby="tab-tour-grid">
                             <div class="row gy-24 gx-24">
                                 <?php foreach ($categoryTours as $tour): ?>
-                                    <?php echo renderTourCard($tour, 'grid'); ?>
+                                    <div class="col-xxl-4 col-lg-4 col-md-6 mb-4"><?php echo renderTourCard($tour); ?></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tab-list" role="tabpanel" aria-labelledby="tab-tour-list">
                             <div class="row gy-30">
                                 <?php foreach ($categoryTours as $tour): ?>
-                                    <?php echo renderTourCard($tour, 'list'); ?>
+                                    <div class="col-12"><?php echo renderTourCard($tour); ?></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>

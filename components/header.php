@@ -67,4 +67,6 @@ $current_page = $_SERVER['SCRIPT_NAME'];
             </div>
         </div>
     </div>
-</header>
+    </header>
+    
+    <?php include 'fixed-buttons.php'; ?>

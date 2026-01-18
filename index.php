@@ -384,7 +384,7 @@ if ($type && $slug) {
                     <div class="swiper-wrapper">
                         <?php foreach ($popularTours as $tour): ?>
                             <div class="swiper-slide">
-                                <?php echo renderTourCard($tour, 'swiper'); ?>
+                                <?php echo renderTourCard($tour); ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -426,7 +426,7 @@ if ($type && $slug) {
                             <div class="swiper-wrapper">
                                 <?php foreach ($tajMahalTours as $tour): ?>
                                     <div class="swiper-slide">
-                                        <?php echo renderTourCard($tour, 'swiper'); ?>
+                                        <?php echo renderTourCard($tour); ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -440,7 +440,7 @@ if ($type && $slug) {
                             <div class="swiper-wrapper">
                                 <?php foreach ($sameDayTours as $tour): ?>
                                     <div class="swiper-slide">
-                                        <?php echo renderTourCard($tour, 'swiper'); ?>
+                                        <?php echo renderTourCard($tour); ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -454,7 +454,7 @@ if ($type && $slug) {
                             <div class="swiper-wrapper">
                                 <?php foreach ($goldenTriangleTours as $tour): ?>
                                     <div class="swiper-slide">
-                                        <?php echo renderTourCard($tour, 'swiper'); ?>
+                                        <?php echo renderTourCard($tour); ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -671,7 +671,7 @@ if ($type && $slug) {
                     <div class="swiper-wrapper">
                         <?php foreach ($sameDayTours as $tour): ?>
                             <div class="swiper-slide">
-                                <?php echo renderTourCard($tour, 'grid'); ?>
+                                <?php echo renderTourCard($tour); ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -701,7 +701,7 @@ if ($type && $slug) {
                     <div class="swiper-wrapper">
                         <?php foreach ($tajMahalTours as $tour): ?>
                             <div class="swiper-slide">
-                                <?php echo renderTourCard($tour, 'grid'); ?>
+                                <?php echo renderTourCard($tour); ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -731,7 +731,7 @@ if ($type && $slug) {
                     <div class="swiper-wrapper">
                         <?php foreach ($goldenTriangleTours as $tour): ?>
                             <div class="swiper-slide">
-                                <?php echo renderTourCard($tour, 'grid'); ?>
+                                <?php echo renderTourCard($tour); ?>
                             </div>
                         <?php endforeach; ?>
                     </div>

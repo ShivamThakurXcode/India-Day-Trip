@@ -178,7 +178,7 @@ $filterSummary = implode(', ', $filters);
                         </div>
                         <div class="row gy-24 gx-24">
                             <?php foreach ($tours as $tour): ?>
-                                <?php echo renderTourCard($tour, 'grid'); ?>
+                                <div class="col-xxl-4 col-lg-4 col-md-6 mb-4"><?php echo renderTourCard($tour); ?></div>
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
