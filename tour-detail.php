@@ -5,31 +5,14 @@ if (!isset($tour)) {
 }
 ?>
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 
-<head>
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php echo htmlspecialchars($tour['title']); ?> - India Day Trip</title>
     <meta name="author" content="India Day Trip">
-    <meta name="description" content="<?php echo htmlspecialchars(substr($tour['description'], 0, 160)); ?>">
-    <meta name="keywords" content="India Day Trip, <?php echo htmlspecialchars($tour['title']); ?>, <?php echo htmlspecialchars($tour['location']); ?>">
-    <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://indiadaytrip.com/tour/<?php echo $tour['slug']; ?>">
-    <meta property="og:title" content="<?php echo htmlspecialchars($tour['title']); ?>">
-    <meta property="og:description" content="<?php echo htmlspecialchars(substr($tour['description'], 0, 160)); ?>">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.webp'; ?>">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiadaytrip.com/tour/<?php echo $tour['slug']; ?>">
-    <meta property="twitter:title" content="<?php echo htmlspecialchars($tour['title']); ?>">
-    <meta property="twitter:description" content="<?php echo htmlspecialchars(substr($tour['description'], 0, 160)); ?>">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/<?php echo $tour['images'] ? json_decode($tour['images'], true)[0] : 'default.webp'; ?>">
+    <?php renderTourSEOHead($tour); ?>
 
     <?php include 'components/links.php'; ?>
 
@@ -38,11 +21,9 @@ if (!isset($tour)) {
 
         /* Hero Section Enhancements */
         .tour-hero {
-            background: linear-gradient(135deg, rgba(17, 61, 72, 0.8), rgba(26, 168, 203, 0.8));
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            padding: 120px 0;
             position: relative;
         }
 
@@ -53,7 +34,7 @@ if (!isset($tour)) {
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(3, 2, 19, 0.7), rgba(1, 1, 17, 0.5));
+
             z-index: 1;
         }
 
@@ -76,11 +57,11 @@ if (!isset($tour)) {
         }
 
         .breadcumb-title {
-            color: white;
-            font-size: 3.5rem;
+            color: #113D48;
+            font-size: 2rem !important;
             font-weight: 700;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+
         }
 
         .hero-meta {
@@ -88,20 +69,18 @@ if (!isset($tour)) {
             gap: 30px;
             flex-wrap: wrap;
             margin-top: 30px;
-            justify-content: center;
+            justify-content: start;
         }
 
         .hero-meta-item {
             display: flex;
             align-items: center;
             gap: 10px;
-            color: white;
             font-size: 16px;
             font-weight: 500;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 50px;
-            padding: 10px 15px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -128,6 +107,7 @@ if (!isset($tour)) {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -150,14 +130,10 @@ if (!isset($tour)) {
         }
 
         /* Gallery Section */
-        .tour-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .tour-gallery img {
+        .tour-gallery-single img,
+        .tour-gallery-two img,
+        .gallery-left img,
+        .gallery-right img {
             width: 100%;
             height: auto;
             object-fit: cover;
@@ -166,8 +142,116 @@ if (!isset($tour)) {
             cursor: pointer;
         }
 
-        .tour-gallery img:hover {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        .tour-gallery-single img:hover,
+        .tour-gallery-two img:hover,
+        .gallery-left img:hover,
+        .gallery-right img:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .tour-gallery-single {
+            margin-top: 20px;
+        }
+
+        .tour-gallery-two {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tour-gallery-two img {
+            width: 50%;
+        }
+
+        .tour-gallery-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-img:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-large {
+            grid-column: 1;
+            grid-row: 1 / 3;
+            min-height: 520px;
+        }
+
+        .gallery-small:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+            min-height: 250px;
+        }
+
+        .gallery-small:nth-child(3) {
+            grid-column: 2;
+            grid-row: 2;
+            min-height: 250px;
+        }
+
+        .image-pill {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 1px solid white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 10;
+        }
+
+        .image-pill:hover {
+            transform: scale(1.05);
+        }
+
+        .image-pill i {
+            font-size: 14px;
+        }
+
+        .gallery-modal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            z-index: 800;
+        }
+
+        .gallery-modal-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-modal-img:hover {
+            transform: scale(1.05);
         }
 
         /* Highlights Section */
@@ -178,7 +262,7 @@ if (!isset($tour)) {
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             margin-bottom: 20px;
         }
@@ -236,7 +320,7 @@ if (!isset($tour)) {
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
             border-left: 5px solid #1CA8CB;
         }
@@ -255,7 +339,7 @@ if (!isset($tour)) {
             justify-content: center;
             font-weight: bold;
             font-size: 18px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .itinerary-step h4 {
@@ -298,22 +382,12 @@ if (!isset($tour)) {
         }
 
         /* Related Tours */
-        .bg-light {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
-        }
-
         .related-tour-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #113d487a;
             height: 100%;
-        }
-
-        .related-tour-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
         .tour-img {
@@ -326,11 +400,6 @@ if (!isset($tour)) {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .related-tour-card:hover .tour-img img {
-            transform: scale(1.1);
         }
 
         .tour-content {
@@ -342,11 +411,6 @@ if (!isset($tour)) {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .related-tour-card:hover .tour-title {
-            color: #1CA8CB;
         }
 
         .tour-destination {
@@ -378,12 +442,13 @@ if (!isset($tour)) {
         .sec-title {
             color: #113D48;
             font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 1.5rem !important;
+            margin-bottom: 25px;
             position: relative;
+            letter-spacing: -0.5px;
         }
 
-        .sec-title::after {
+        /* .sec-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -392,6 +457,27 @@ if (!isset($tour)) {
             height: 4px;
             background: linear-gradient(45deg, #1CA8CB, #113D48);
             border-radius: 2px;
+        } */
+
+        /* Button Styling to Match Theme */
+        .th-btn {
+            background-color: #113D48;
+            border: none;
+            color: #ffffff;
+        }
+
+        .th-btn:hover,
+        .th-btn.active {
+            background-color: #1CA8CB;
+            color: #ffffff;
+        }
+
+        .th-btn:before {
+            background-color: #1CA8CB;
+        }
+
+        .th-btn:hover:before {
+            background-color: #113D48;
         }
 
         /* Improved Overview Section */
@@ -401,7 +487,7 @@ if (!isset($tour)) {
             border-radius: 15px;
             margin-top: 20px;
             border-left: 5px solid #1CA8CB;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .tour-highlight h4 {
@@ -419,110 +505,120 @@ if (!isset($tour)) {
             border-radius: 15px;
             transition: all 0.4s ease;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .tour-gallery img:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Better Highlights */
+        /* Better Highlights - Compact Version */
         .highlight-row {
             display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 25px;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
-            margin-bottom: 20px;
-            border: 1px solid rgba(28, 168, 203, 0.1);
+            margin-bottom: 12px;
+            border: 1px solid rgba(28, 168, 203, 0.08);
         }
 
         .highlight-row:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-color: rgba(28, 168, 203, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-color: rgba(28, 168, 203, 0.2);
         }
 
         .highlight-icon {
             flex-shrink: 0;
-            width: 70px;
-            height: 70px;
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, #1CA8CB, #113D48);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 28px;
-            box-shadow: 0 6px 20px rgba(28, 168, 203, 0.3);
+            font-size: 20px;
+            box-shadow: 0 3px 10px rgba(28, 168, 203, 0.25);
         }
 
         .highlight-content h4 {
             color: #113D48;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 0;
             font-weight: 600;
+            line-height: 1.4;
         }
 
-        /* Enhanced Tour Info */
+        /* Enhanced Tour Info - Compact */
         .tour-info-list .info-item {
             background: linear-gradient(135deg, #f8f9fa, #ffffff);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(28, 168, 203, 0.1);
+            border: 1px solid rgba(28, 168, 203, 0.08);
         }
 
         .tour-info-list .info-item:hover {
             background: linear-gradient(135deg, #ffffff, #f0f8ff);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-color: rgba(28, 168, 203, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-color: rgba(28, 168, 203, 0.15);
         }
 
         .info-icon {
             color: #1CA8CB;
-            font-size: 28px;
+            font-size: 22px;
             background: rgba(28, 168, 203, 0.1);
-            padding: 10px;
+            padding: 8px;
             border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .info-content h6 {
             color: #113D48;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1rem;
+            margin-bottom: 4px;
             font-weight: 600;
         }
 
-        /* Improved Itinerary */
-        .itinerary-step {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            position: relative;
-            border-left: 6px solid #1CA8CB;
-            transition: all 0.3s ease;
+        .info-content p {
+            font-size: 0.9rem;
+            color: #6E7070;
+            margin: 0;
         }
 
-        .itinerary-step:hover {
-            transform: translateX(5px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        /* Improved Itinerary - Compact */
+        .itinerary-step {
+            background: #f8f9fa;
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border-left: 5px solid #1CA8CB;
+            transition: all 0.3s ease;
+            border: 0.5px solid #113d487a;
         }
+
+
 
         .itinerary-step-number {
             position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 50px;
-            height: 50px;
+            top: -12px;
+            left: -12px;
+            width: 38px;
+            height: 38px;
             background: linear-gradient(135deg, #1CA8CB, #113D48);
             color: white;
             border-radius: 50%;
@@ -530,32 +626,55 @@ if (!isset($tour)) {
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 20px;
-            box-shadow: 0 6px 20px rgba(28, 168, 203, 0.3);
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(28, 168, 203, 0.25);
         }
 
         .itinerary-step h4 {
             color: #113D48;
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            margin-top: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            margin-top: 5px;
             font-weight: 600;
         }
 
-        /* Enhanced Inclusions/Exclusions */
+        .exclusion-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .inclusion-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .itinerary-step p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Enhanced Inclusions/Exclusions - Compact */
         .inclusion-list li,
         .exclusion-list li {
-            padding: 12px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #e9ecef;
             position: relative;
-            padding-left: 35px;
-            transition: all 0.3s ease;
+            padding-left: 30px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .inclusion-list li:last-child,
+        .exclusion-list li:last-child {
+            border-bottom: none;
         }
 
         .inclusion-list li:hover,
         .exclusion-list li:hover {
-            background: rgba(28, 168, 203, 0.05);
-            padding-left: 40px;
+            background: rgba(28, 168, 203, 0.03);
+            padding-left: 35px;
         }
 
         .inclusion-list li::before {
@@ -564,15 +683,17 @@ if (!isset($tour)) {
             left: 0;
             color: #28a745;
             font-weight: bold;
-            font-size: 20px;
-            background: rgba(40, 167, 69, 0.1);
-            padding: 5px;
+            font-size: 14px;
+            background: rgba(40, 167, 69, 0.12);
+            padding: 4px;
             border-radius: 50%;
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .exclusion-list li::before {
@@ -581,32 +702,25 @@ if (!isset($tour)) {
             left: 0;
             color: #dc3545;
             font-weight: bold;
-            font-size: 20px;
-            background: rgba(220, 53, 69, 0.1);
-            padding: 5px;
+            font-size: 14px;
+            background: rgba(220, 53, 69, 0.12);
+            padding: 4px;
             border-radius: 50%;
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         /* Better Related Tours */
         .related-tour-card {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
             height: 100%;
-            border: 1px solid rgba(28, 168, 203, 0.1);
-        }
-
-        .related-tour-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            border-color: rgba(28, 168, 203, 0.3);
         }
 
         .tour-img {
@@ -619,11 +733,6 @@ if (!isset($tour)) {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.4s ease;
-        }
-
-        .related-tour-card:hover .tour-img img {
-            transform: scale(1.1);
         }
 
         .tour-content {
@@ -635,11 +744,6 @@ if (!isset($tour)) {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .related-tour-card:hover .tour-title {
-            color: #1CA8CB;
         }
 
         .tour-destination {
@@ -669,7 +773,7 @@ if (!isset($tour)) {
             color: #FFB539;
         }
 
-  
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .breadcumb-title {
@@ -680,48 +784,80 @@ if (!isset($tour)) {
                 gap: 20px;
             }
 
-            .tour-gallery {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            .tour-gallery-two {
+                flex-direction: column;
                 gap: 15px;
             }
 
-            .tour-gallery img {
-                height: auto;
+            .tour-gallery-two img {
+                width: 100%;
+            }
+
+            .tour-gallery-main {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 15px;
+            }
+
+            .gallery-large {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .gallery-small:nth-child(2) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .gallery-small:nth-child(3) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .gallery-modal-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 10px;
             }
 
             .highlight-row {
                 flex-direction: column;
                 text-align: center;
-                padding: 20px;
+                padding: 15px;
             }
 
             .highlight-icon {
                 align-self: center;
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
-            }
-
-            .itinerary-step {
-                padding: 25px;
-            }
-
-            .itinerary-step-number {
                 width: 45px;
                 height: 45px;
                 font-size: 18px;
             }
 
-            .related-tour-card {
-                margin-bottom: 20px;
+            .highlight-content h4 {
+                font-size: 1rem;
+            }
+
+            .itinerary-step {
+                padding: 20px;
+            }
+
+            .itinerary-step-number {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+                top: -10px;
+                left: -10px;
+            }
+
+            .itinerary-step h4 {
+                font-size: 1.15rem;
             }
 
             .sec-title {
-                font-size: 2rem;
+                font-size: 1.4rem;
             }
 
             .tour-info-list .info-item {
-                padding: 20px;
+                padding: 15px;
             }
         }
 
@@ -735,12 +871,39 @@ if (!isset($tour)) {
                 gap: 15px;
             }
 
-            .tour-gallery {
-                grid-template-columns: 1fr;
+            .tour-gallery-two {
+                flex-direction: column;
+                gap: 15px;
             }
 
-            .tour-gallery img {
-                height: auto;
+            .tour-gallery-two img {
+                width: 100%;
+            }
+
+            .tour-gallery-main {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 15px;
+            }
+
+            .gallery-large {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .gallery-small:nth-child(2) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .gallery-small:nth-child(3) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .gallery-modal-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
             }
 
             .highlight-row {
@@ -760,7 +923,7 @@ if (!isset($tour)) {
             }
 
             .sec-title {
-                font-size: 1.8rem;
+                font-size: 1.2rem;
             }
 
             .tour-info-list .info-item {
@@ -776,6 +939,305 @@ if (!isset($tour)) {
                 font-size: 1.1rem;
             }
         }
+
+        /* Modal Z-Index Fix */
+        .modal {
+            z-index: 10000;
+            margin: auto auto;
+        }
+
+        /* Main Tour Slider Styles */
+        .tour-main-slider {
+            padding: 0;
+        }
+
+        .tour-slider-main {
+            overflow: hidden;
+        }
+
+        .slider-image-wrapper {
+            position: relative;
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-image:hover {
+            transform: scale(1.05);
+        }
+
+        .tour-slider-main .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            color: #113D48;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .tour-slider-main .slider-arrow:hover {
+            background: #1CA8CB;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .tour-slider-main .slider-prev {
+            left: 20px;
+        }
+
+        .tour-slider-main .slider-next {
+            right: 20px;
+        }
+
+        /* Slider responsive */
+        @media (max-width: 768px) {
+            .slider-image-wrapper {
+                height: 300px;
+            }
+
+            .tour-slider-main .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .tour-slider-main .slider-prev {
+                left: 10px;
+            }
+
+            .tour-slider-main .slider-next {
+                right: 10px;
+            }
+        }
+
+        /* Query Booking Form Styles - Sidebar */
+        .sidebar-form-wrapper {
+            margin-top: 0;
+        }
+
+        .booking-form-sidebar .booking-form-wrapper {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(28, 168, 203, 0.15);
+        }
+
+        .booking-form-sidebar h4 {
+            margin-bottom: 8px !important;
+        }
+
+        .booking-form-sidebar .form-control,
+        .booking-form-sidebar .form-select {
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .booking-form-sidebar .form-control:focus,
+        .booking-form-sidebar .form-select:focus {
+            border-color: #1CA8CB;
+            box-shadow: 0 0 0 0.2rem rgba(28, 168, 203, 0.15);
+            outline: none;
+        }
+
+        .booking-form-sidebar .th-btn {
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .booking-form-sidebar .th-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(28, 168, 203, 0.3);
+        }
+
+        @media (max-width: 992px) {
+            .sidebar-form-wrapper {
+                position: relative !important;
+                top: 0 !important;
+                margin-top: 30px;
+            }
+        }
+
+        .booking-form .form-group {
+            margin-bottom: 0;
+        }
+
+        .booking-form .form-control {
+            width: 100%;
+            padding: 14px 16px 14px 48px;
+            font-size: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            background: #fff;
+            transition: all 0.3s ease;
+            position: relative;
+            height: 52px;
+        }
+
+        .booking-form .form-control:focus {
+            border-color: #1CA8CB;
+            box-shadow: 0 0 0 0.25rem rgba(28, 168, 203, 0.15);
+            outline: none;
+        }
+
+        .booking-form .form-control::placeholder {
+            color: #999;
+            opacity: 1;
+            font-weight: 500;
+        }
+
+        .booking-form .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-size: 1rem;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .booking-form textarea.form-control {
+            height: auto;
+            min-height: 120px;
+            padding-top: 14px;
+        }
+
+        .booking-form .textarea-icon {
+            top: 16px;
+            transform: none;
+        }
+
+        .booking-form .form-label {
+            display: block;
+            font-weight: 600;
+            color: #113D48;
+            font-size: 0.9rem;
+        }
+
+        .booking-form .form-select {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 52px;
+        }
+
+        .booking-form .form-select:focus {
+            border-color: #1CA8CB;
+            box-shadow: 0 0 0 0.25rem rgba(28, 168, 203, 0.15);
+            outline: none;
+        }
+
+        .booking-form .btn-lg {
+            padding: 16px 48px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .booking-form .th-btn {
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .booking-form .th-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(28, 168, 203, 0.35);
+        }
+
+        @media (max-width: 992px) {
+            .booking-form-wrapper {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .booking-form .form-control {
+                padding: 12px 12px 12px 42px;
+                font-size: 0.95rem;
+                height: 48px;
+            }
+
+            .booking-form .form-select {
+                padding: 12px 12px;
+                height: 48px;
+            }
+
+            .booking-form .input-icon {
+                left: 14px;
+                font-size: 0.9rem;
+            }
+
+            .booking-form-wrapper {
+                padding: 20px;
+            }
+
+            .booking-form .btn-lg {
+                width: 100%;
+                text-align: center;
+                padding: 14px 24px;
+            }
+        }
+
+        .booking-form {
+            margin-top: 0 !important;
+        }
+
+        /* Input Icon Styling */
+        .booking-form .input-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-size: 0.9rem;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .booking-form .textarea-icon {
+            top: 16px;
+            transform: none;
+        }
+
+        .booking-form-sidebar .form-control {
+            padding-left: 38px;
+        }
+
+        .booking-form-sidebar .form-select {
+            padding-left: 38px;
+        }
+
+        .booking-form-sidebar textarea.form-control {
+            padding-top: 14px;
+        }
     </style>
 </head>
 
@@ -785,69 +1247,93 @@ if (!isset($tour)) {
 
     <?php include 'components/header.php'; ?>
 
-<main>
 
-        <!-- Tour Hero Section -->
-        <section class="tour-hero" style="background-image: url('../assets/img/<?php echo json_decode($tour['images'], true)[0] ?? 'default.webp'; ?>');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <span class="tour-badge">Most Popular</span>
-                        <h1 class="breadcumb-title"><?php echo htmlspecialchars($tour['title']); ?></h1>
-                        <br>
-                        <p class="text-white"><?php echo htmlspecialchars($tour['location']); ?> | <?php echo htmlspecialchars(substr($tour['description'], 0, 100)); ?>...</p>
-
-                        <div class="hero-meta">
-                            <div class="hero-meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span><?php echo htmlspecialchars($tour['duration']); ?></span>
-                            </div>
-                            <div class="hero-meta-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Pickup & Drop: <?php echo htmlspecialchars($tour['location']); ?></span>
-                            </div>
-                            <div class="hero-meta-item">
-                                <i class="fas fa-users"></i>
-                                <span>Private Tour</span>
-                            </div>
-                            <div class="hero-meta-item">
-                                <i class="fas fa-star"></i>
-                                <span><?php echo number_format($tour['rating'], 1); ?> (<?php echo $tour['reviews'] ?? '0'; ?> reviews)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main>
 
         <!-- Tour Details Section -->
-        <section class="space-top space-extra-bottom fade-in">
+        <section class=" fade-in">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
+
+                <!-- Tour Gallery (Full Width) -->
+                <div class="mb-5 pb-3 border-bottom">
+                    <?php
+$images = json_decode($tour['images'], true) ?: [];
+$imageCount = count($images);
+if ($imageCount == 0) {
+    echo '<p>No images available.</p>';
+}
+elseif ($imageCount == 1) {
+    echo '<div class="tour-gallery-single">';
+    echo '<img src="../assets/img/' . htmlspecialchars($images[0]) . '" alt="' . htmlspecialchars($tour['title']) . '">';
+    echo '</div>';
+}
+elseif ($imageCount == 2) {
+    echo '<div class="tour-gallery-two">';
+    foreach ($images as $image) {
+        echo '<img src="../assets/img/' . htmlspecialchars($image) . '" alt="' . htmlspecialchars($tour['title']) . '">';
+    }
+    echo '</div>';
+}
+else {
+    echo '<div class="tour-gallery-main">';
+    echo '<div class="gallery-img gallery-large" style="background-image: url(\'../assets/img/' . htmlspecialchars($images[0]) . '\');"></div>';
+    for ($i = 1; $i < min(3, $imageCount); $i++) {
+        echo '<div class="gallery-img gallery-small" style="background-image: url(\'../assets/img/' . htmlspecialchars($images[$i]) . '\');"></div>';
+    }
+    if ($imageCount > 3) {
+        $remaining = $imageCount - 3;
+        echo '<button class="image-pill" data-bs-toggle="modal" data-bs-target="#galleryModal"><i class="fas fa-images"></i> +' . $remaining . '</button>';
+    }
+    echo '</div>';
+}
+?>
+                </div>
+
+                <!-- Main Content with Sidebar -->
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <h1 class="breadcumb-title  mb-5 text-black">
+                            <?php echo htmlspecialchars($tour['title']); ?>
+                        </h1>
+
+                        <!-- Tour Hero Section -->
+                        <section class="tour-hero pb-5 mt-5">
+                            <div class="postion-relative ">
+
+                                <div class="hero-meta">
+                                    <div class="hero-meta-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>
+                                            <?php echo htmlspecialchars($tour['duration']); ?>
+                                        </span>
+                                    </div>
+                                    <div class="hero-meta-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Pickup & Drop:
+                                            <?php echo htmlspecialchars($tour['location']); ?>
+                                        </span>
+                                    </div>
+                                    <div class="hero-meta-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>Private Tour</span>
+                                    </div>
+                                    <div class="hero-meta-item">
+                                        <i class="fas fa-star"></i>
+                                        <span>
+                                            <?php echo number_format($tour['rating'], 1); ?> (
+                                            <?php echo $tour['reviews'] ?? '0'; ?> reviews)
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
                         <!-- Overview -->
-                        <div class="mb-5 pb-3 border-bottom">
-                            <h2 class="sec-title mb-5">Tour Overview</h2>
-                            <p><?php echo nl2br(htmlspecialchars($tour['description'])); ?></p>
+                        <div class="mb-5 pb-3 border-top pt-5 border-bottom">
+                            <h2 class="sec-title ">Tour Overview</h2>
+                            <div><?php echo $tour['description']; ?></div>
 
-                            <div class="tour-highlight">
-                                <h4 class="mb-3"><i class="fas fa-bolt me-2"></i> Why Choose This Tour?</h4>
-                                <p><?php echo htmlspecialchars($tour['why_choose'] ?? 'Experience the best of this tour in a comfortable and memorable way.'); ?></p>
-                            </div>
-                        </div>
-
-                        <!-- Tour Gallery -->
-                        <div class="mb-5 pb-3 border-bottom">
-                            <h2 class="sec-title mb-5">Tour Gallery</h2>
-                            <div class="tour-gallery">
-                                <?php
-                                $images = json_decode($tour['images'], true) ?: [];
-                                $images = array_slice($images, 0, 4); // Limit to 4 images
-                                foreach ($images as $image) {
-                                    echo '<img src="../assets/img/' . htmlspecialchars($image) . '" alt="' . htmlspecialchars($tour['title']) . '">';
-                                }
-                                ?>
-                            </div>
                         </div>
 
                         <!-- Highlights -->
@@ -855,11 +1341,11 @@ if (!isset($tour)) {
                             <h2 class="sec-title mb-5">Tour Highlights</h2>
                             <div class="row">
                                 <?php
-                                $highlights = json_decode($tour['highlights'] ?? '[]', true) ?: [];
-                                $icons = ['fas fa-sun', 'fas fa-utensils', 'fas fa-landmark', 'fas fa-user-shield', 'fas fa-camera', 'fas fa-hotel'];
-                                foreach ($highlights as $index => $highlight) {
-                                    $icon = $icons[$index % count($icons)];
-                                    echo '<div class="col-md-6">
+$highlights = json_decode($tour['highlights'] ?? '[]', true) ?: [];
+$icons = ['fas fa-sun', 'fas fa-utensils', 'fas fa-landmark', 'fas fa-user-shield', 'fas fa-camera', 'fas fa-hotel'];
+foreach ($highlights as $index => $highlight) {
+    $icon = $icons[$index % count($icons)];
+    echo '<div class="col-md-6">
                                         <div class="highlight-row">
                                             <div class="highlight-icon">
                                                 <i class="' . $icon . '"></i>
@@ -869,60 +1355,40 @@ if (!isset($tour)) {
                                             </div>
                                         </div>
                                     </div>';
-                                }
-                                ?>
+}
+?>
                             </div>
                         </div>
 
-                        <!-- Quick Info Widget -->
-                        <div class="mb-5 pb-3">
-                            <h2 class="sec-title mb-5">Tour Details</h2>
-                            <div class="tour-info-list">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="info-item d-flex align-items-center mb-2">
-                                            <div class="info-icon me-3">
-                                                <i class="fas fa-clock"></i>
-                                            </div>
-                                            <div class="info-content">
-                                                <h6 class="mb-1">Duration</h6>
-                                                <p class="mb-0"><?php echo htmlspecialchars($tour['duration']); ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="info-item d-flex align-items-center mb-2">
-                                            <div class="info-icon me-3">
-                                                <i class="fas fa-users"></i>
-                                            </div>
-                                            <div class="info-content">
-                                                <h6 class="mb-1">Service</h6>
-                                                <p class="mb-0"><?php echo htmlspecialchars($tour['location']); ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="info-item d-flex align-items-center mb-2">
-                                            <div class="info-icon me-3">
-                                                <i class="fas fa-language"></i>
-                                            </div>
-                                            <div class="info-content">
-                                                <h6 class="mb-1">Language</h6>
-                                                <p class="mb-0">English, Hindi, Spanish (on request)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="info-item d-flex align-items-center mb-2">
-                                            <div class="info-icon me-3">
-                                                <i class="fas fa-car"></i>
-                                            </div>
-                                            <div class="info-content">
-                                                <h6 class="mb-1">Transport</h6>
-                                                <p class="mb-0">Private Luxury Car</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <!-- Inclusions/Exclusions -->
+                        <div class="mb-5 pb-3 border-bottom">
+                            <h2 class="sec-title mb-5">Inclusion Or Exclusion</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="mb-3"><i class="fas fa-check-circle text-success me-2"></i>
+                                        Inclusions
+                                    </h5>
+                                    <ul class="inclusion-list">
+                                        <?php
+$included = json_decode($tour['included'] ?? '[]', true) ?: [];
+foreach ($included as $item) {
+    echo '<li>' . htmlspecialchars($item) . '</li>';
+}
+?>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="mb-3"><i class="fas fa-times-circle text-danger me-2"></i>
+                                        Exclusions
+                                    </h5>
+                                    <ul class="exclusion-list">
+                                        <?php
+$excluded = json_decode($tour['excluded'] ?? '[]', true) ?: [];
+foreach ($excluded as $item) {
+    echo '<li>' . htmlspecialchars($item) . '</li>';
+}
+?>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -931,71 +1397,114 @@ if (!isset($tour)) {
                         <div class="mb-5 pb-3 border-bottom">
                             <h2 class="sec-title mb-5">Tour Itinerary</h2>
 
-                                <?php
-                                $itinerary = json_decode($tour['itinerary'] ?? '[]', true) ?: [];
-                                foreach ($itinerary as $index => $day) {
-                                    $stepNum = $index + 1;
-                                    $title = is_array($day) && isset($day['title']) ? $day['title'] : 'Step ' . $stepNum;
-                                    $description = is_array($day) && isset($day['description']) ? $day['description'] : (is_array($day) && isset($day['points']) ? implode(' ', $day['points']) : $day);
-                                    echo '<div class="itinerary-step">
+                            <?php
+$itinerary = json_decode($tour['itinerary'] ?? '[]', true) ?: [];
+foreach ($itinerary as $index => $day) {
+    $stepNum = $index + 1;
+    $title = is_array($day) && isset($day['title']) ? $day['title'] : 'Step ' . $stepNum;
+    $description = is_array($day) && isset($day['description']) ? $day['description'] : (is_array($day) && isset($day['points']) ? implode(' ', $day['points']) : $day);
+    echo '<div class="itinerary-step">
                                         <h4>' . htmlspecialchars($title) . '</h4>
                                         <p>' . htmlspecialchars($description) . '</p>
                                     </div>';
-                                }
-                                ?>
-                                                    </div>
-
-                        <!-- Inclusions/Exclusions -->
-                        <div class="mb-5 pb-3">
-                            <h2 class="sec-title mb-5">What's Included</h2>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4 class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Inclusions</h4>
-                                    <ul class="inclusion-list">
-                                        <?php
-                                        $included = json_decode($tour['included'] ?? '[]', true) ?: [];
-                                        foreach ($included as $item) {
-                                            echo '<li>' . htmlspecialchars($item) . '</li>';
-                                        }
-                                        ?>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <h4 class="mb-3"><i class="fas fa-times-circle text-danger me-2"></i> Exclusions</h4>
-                                    <ul class="exclusion-list">
-                                        <?php
-                                        $excluded = json_decode($tour['excluded'] ?? '[]', true) ?: [];
-                                        foreach ($excluded as $item) {
-                                            echo '<li>' . htmlspecialchars($item) . '</li>';
-                                        }
-                                        ?>
-                                    </ul>
-                                </div>
-                            </div>
+}
+?>
                         </div>
+                    </div>
 
-                        <!-- Call to Action Section -->
-                        <!-- <section class="cta-section">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8">
-                                        <h2>Ready to Experience This Amazing Tour?</h2>
-                                        <p>Book your unforgettable journey today and create memories that will last a lifetime. Our expert guides and premium service ensure you have the best experience possible.</p>
-                                        <div class="cta-buttons">
-                                            <a href="booking.php" class="cta-btn cta-btn-primary">
-                                                <i class="fas fa-calendar-check"></i>
-                                                Book This Tour
-                                            </a>
-                                            <a href="contact.php" class="cta-btn cta-btn-secondary">
-                                                <i class="fas fa-phone"></i>
-                                                Contact Us
-                                            </a>
+                    <!-- Sidebar with Booking Form -->
+                    <div class="col-lg-4">
+                        <div class="sidebar-form-wrapper" style="position: sticky; top: 100px;">
+                            <form action="api/mail.php" method="POST" class="booking-form ajax-contact">
+                                <h6 class="mb-2" style="color: #113D48; font-weight: 600;">Book This Tour</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.85rem;">Get an instant quote! We'll
+                                    respond within 24 hours.</p>
+
+                                <div class="row g-2">
+                                    <div class="col-12">
+                                        <div class="form-group mb-2 position-relative">
+                                            <input type="text" class="form-control" name="first_name" id="first_name"
+                                                placeholder="First Name *" required>
+                                            <i class="fa-light fa-user input-icon"></i>
                                         </div>
                                     </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-2 position-relative">
+                                            <input type="text" class="form-control" name="last_name" id="last_name"
+                                                placeholder="Last Name *" required>
+                                            <i class="fa-light fa-user input-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-2 position-relative">
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                placeholder="Your Email *" required>
+                                            <i class="fa-light fa-envelope input-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-2 position-relative">
+                                            <input type="tel" class="form-control" name="phone" id="phone"
+                                                placeholder="Phone Number *" required>
+                                            <i class="fa-light fa-phone input-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-2 position-relative">
+                                            <input type="text" class="form-control" name="tour_name" id="tour_name"
+                                                value="<?php echo htmlspecialchars($tour['title']); ?>" readonly>
+                                            <i class="fa-light fa-map-location-dot input-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-2 position-relative">
+                                            <input type="date" class="form-control" name="travel_date" id="travel_date"
+                                                required>
+                                            <i class="fa-light fa-calendar input-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group mb-2 position-relative">
+                                            <select name="adults" id="adults" class="form-select" required>
+                                                <option value="">Adults</option>
+                                                <option value="1">1</option>
+                                                <option value="2" selected>2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6+</option>
+                                            </select>
+                                            <i class="fa-light fa-users input-icon"
+                                                style="right: 12px; left: auto;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group mb-2 position-relative">
+                                            <select name="children" id="children" class="form-select">
+                                                <option value="0">Children</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                            <i class="fa-light fa-child input-icon"
+                                                style="right: 12px; left: auto;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-3 position-relative">
+                                            <textarea name="special_requests" id="special_requests" rows="2"
+                                                class="form-control" placeholder="Special Requests..."></textarea>
+                                            <i class="fa-light fa-comment-dots input-icon textarea-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="th-btn style3 w-100 py-2">Get A Quote</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </section> -->
-
+                                <p class="form-messages mb-0 mt-2 text-center"></p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1007,37 +1516,48 @@ if (!isset($tour)) {
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="title-area text-center mb-4">
-                            <span class="sub-title" style="color:#113d48;font-weight:600;letter-spacing:1px;">Explore More</span>
-                            <h2 class="sec-title" style="font-size:2.1rem;font-weight:700;">Related Tours</h2>
+                            <span class="sub-title" style="color:#113d48;font-weight:600;letter-spacing:1px;">Explore
+                                More</span>
+                            <h2 class="sec-title" style="font-size:2.1rem;font-weight:700; border: none;">
+                                Related Tours
+                            </h2>
                         </div>
                     </div>
                 </div>
                 <div class="row gy-4">
                     <?php
-                    $relatedTours = getTours($tour['category_name'], 3, $tour['id']);
-                    foreach ($relatedTours as $relatedTour): ?>
+$relatedTours = getTours($tour['category_name'], 3, $tour['id']);
+foreach ($relatedTours as $relatedTour): ?>
                         <div class="col-md-6 col-lg-4">
                             <div class="related-tour-card">
                                 <a href="../tour/<?php echo $relatedTour['slug']; ?>">
-                                <div class="tour-img">
-                                    <img src="../assets/img/<?php echo json_decode($relatedTour['images'], true)[0] ?? 'default.webp'; ?>" alt="<?php echo htmlspecialchars($relatedTour['title']); ?>">
-                                </div>
-                                
-                                <div class="tour-content">
-                                    <h3 class="tour-title"><?php echo htmlspecialchars($relatedTour['title']); ?></h3>
-                                    <p class="tour-destination"><?php echo htmlspecialchars($relatedTour['location']); ?></p>
-                                    <div class="tour-meta">
-                                        <div class="tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span><?php echo number_format($relatedTour['rating'], 1); ?> (<?php echo $relatedTour['reviews'] ?? '0'; ?>+)</span>
-                                        </div>
+                                    <div class="tour-img">
+                                        <img src="../assets/img/<?php echo json_decode($relatedTour['images'], true)[0] ?? 'default.webp'; ?>"
+                                            alt="<?php echo htmlspecialchars($relatedTour['title']); ?>">
                                     </div>
-                                    <a href="../tour/<?php echo $relatedTour['slug']; ?>" class="th-btn style3">View Details</a>
-                                </div>
+
+                                    <div class="tour-content">
+                                        <h3 class="tour-title">
+                                            <?php echo htmlspecialchars($relatedTour['title']); ?>
+                                        </h3>
+                                        <p class="tour-destination">
+                                            <?php echo htmlspecialchars($relatedTour['location']); ?>
+                                        </p>
+                                        <div class="tour-meta">
+                                            <div class="tour-rating">
+                                                <i class="fas fa-star"></i>
+                                                <span><?php echo number_format($relatedTour['rating'], 1); ?>
+                                                    (<?php echo $relatedTour['reviews'] ?? '0'; ?>+)</span>
+                                            </div>
+                                        </div>
+                                        <a href="../tour/<?php echo $relatedTour['slug']; ?>" class="th-btn style3">View
+                                            Details</a>
+                                    </div>
                                 </a>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php
+endforeach; ?>
                 </div>
             </div>
         </section>
@@ -1046,45 +1566,65 @@ if (!isset($tour)) {
 
     <?php include 'components/footer.php'; ?>
 
-    <div id="login-form" class="popup-login-register mfp-hide">
-        <ul class="nav" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation"><button class="nav-menu" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Login</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-menu active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">Register</button></li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <h3 class="box-title mb-30">Sign in to your account</h3>
-                <div class="th-login-form">
-                    <form action="https://html.themehour.net/tourm/demo/mail.php" method="POST" class="login-form ajax-contact">
-                        <div class="row">
-                            <div class="form-group col-12"><label>Username or email</label> <input type="text" class="form-control" name="email" id="email" required="required"></div>
-                            <div class="form-group col-12"><label>Password</label> <input type="password" class="form-control" name="pasword" id="pasword" required="required"></div>
-                            <div class="form-btn mb-20 col-12"><button class="th-btn btn-fw th-radius2">Send Message</button></div>
-                        </div>
-                        <div id="forgot_url"><a href="my-account.php">Forgot password?</a></div>
-                        <p class="form-messages mb-0 mt-3"></p>
-                    </form>
+    <?php include 'components/script.php'; ?>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="galleryModalLabel">Tour Gallery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="tab-pane fade active show" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="https://html.themehour.net/tourm/demo/mail.php" method="POST" class="login-form ajax-contact">
-                    <div class="row">
-                        <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control" name="usename" id="usename" required="required"></div>
-                        <div class="form-group col-12"><label>First name*</label> <input type="text" class="form-control" name="firstname" id="firstname" required="required"></div>
-                        <div class="form-group col-12"><label>Last name*</label> <input type="text" class="form-control" name="lastname" id="lastname" required="required"></div>
-                        <div class="form-group col-12"><label for="new_email">Your email*</label> <input type="text" class="form-control" name="new_email" id="new_email" required="required"></div>
-                        <div class="form-group col-12"><label for="new_email_confirm">Confirm email*</label> <input type="text" class="form-control" name="new_email_confirm" id="new_email_confirm" required="required"></div>
-                        <div class="statement"><span class="register-notes">A password will be emailed to you.</span></div>
-                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button></div>
+                <div class="modal-body">
+                    <div class="gallery-modal-grid">
+                        <?php
+$images = json_decode($tour['images'], true) ?: [];
+foreach ($images as $image) {
+    echo '<img src="../assets/img/' . htmlspecialchars($image) . '" alt="' . htmlspecialchars($tour['title']) . '" class="gallery-modal-img">';
+}
+?>
                     </div>
-                    <p class="form-messages mb-0 mt-3"></p>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 
-    <?php include 'components/script.php'; ?>
+    <!-- Initialize Main Tour Slider -->
+    <script>
+        jQuery(document).ready(function ($) {
+            // Initialize the main tour slider
+            if (typeof Swiper !== 'undefined') {
+                const tourSliderMain = new Swiper('#tourSliderMain', {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: '.slider-next',
+                        prevEl: '.slider-prev',
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        576: {
+                            slidesPerView: 2,
+                        },
+                        992: {
+                            slidesPerView: 3,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

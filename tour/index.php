@@ -1,41 +1,26 @@
+<?php require_once '../config.php'; ?>
+
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Popular Tours - India Day Trip | Taj Mahal & Golden Triangle</title>
     <meta name="author" content="India Day Trip">
-    <meta name="description" content="Explore our popular tours including Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Book your Agra-based adventure with India Day Trip.">
-    <meta name="keywords" content="Popular tours India, Taj Mahal tours, Golden Triangle tours, Same Day tours Agra, Delhi tours, Jaipur tours">
-    <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://indiadaytrip.com/tour/">
-    <meta property="og:title" content="Popular Tours - India Day Trip | Taj Mahal & Golden Triangle">
-    <meta property="og:description" content="Explore our popular tours including Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Book your Agra-based adventure with India Day Trip.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/destination/d-agra.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiadaytrip.com/tour/">
-    <meta property="twitter:title" content="Popular Tours - India Day Trip | Taj Mahal & Golden Triangle">
-    <meta property="twitter:description" content="Explore our popular tours including Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Book your Agra-based adventure with India Day Trip.">
-    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/destination/d-agra.webp">
+    <?php renderSEOHead('tour_listing'); ?>
 
     <?php
-    require_once '../config.php';
-    $search = $_GET['s'] ?? null;
-    $orderby = $_GET['orderby'] ?? null;
-    $tours = getTours(null, null, null, $search, $orderby);
-    ?>
-    
+require_once '../config.php';
+$search = $_GET['s'] ?? null;
+$orderby = $_GET['orderby'] ?? null;
+$tours = getTours(null, null, null, $search, $orderby);
+?>
+
     <?php include '../components/links.php'; ?>
-    </head>
-    
-    <body>
+</head>
+
+<body>
     <?php include '../components/preloader.php'; ?>
     <?php include '../components/sidebar.php'; ?>
     <?php include '../components/header.php'; ?>
@@ -58,8 +43,10 @@
                     <div class="col-md-4">
                         <div class="search-form-area">
                             <form class="search-form" method="get">
-                                <input type="text" name="s" placeholder="Search" value="<?php echo htmlspecialchars($search ?? ''); ?>">
-                                <input type="hidden" name="orderby" value="<?php echo htmlspecialchars($orderby ?? ''); ?>">
+                                <input type="text" name="s" placeholder="Search"
+                                    value="<?php echo htmlspecialchars($search ?? ''); ?>">
+                                <input type="hidden" name="orderby"
+                                    value="<?php echo htmlspecialchars($orderby ?? ''); ?>">
                                 <button type="submit">
                                     <i class="fa-light fa-magnifying-glass"></i>
                                 </button>
@@ -70,13 +57,17 @@
                         <div class="sorting-filter-wrap">
                             <form class="woocommerce-ordering" method="get">
                                 <input type="hidden" name="s" value="<?php echo htmlspecialchars($search ?? ''); ?>">
-                                <select name="orderby" class="orderby" aria-label="destination order" onchange="this.form.submit()">
-                                    <option value="menu_order" <?php echo ($orderby == 'menu_order' || !$orderby) ? 'selected' : ''; ?>>Default Sorting</option>
-                                    <option value="popularity" <?php echo ($orderby == 'popularity') ? 'selected' : ''; ?>>Sort by popularity</option>
-                                    <option value="rating" <?php echo ($orderby == 'rating') ? 'selected' : ''; ?>>Sort by average rating</option>
-                                    <option value="date" <?php echo ($orderby == 'date') ? 'selected' : ''; ?>>Sort by latest</option>
-                                    <option value="price" <?php echo ($orderby == 'price') ? 'selected' : ''; ?>>Sort by price: low to high</option>
-                                    <option value="price-desc" <?php echo ($orderby == 'price-desc') ? 'selected' : ''; ?>>Sort by price: high to low</option>
+                                <select name="orderby" class="orderby" aria-label="destination order"
+                                    onchange="this.form.submit()">
+                                    <option value="menu_order" <?php echo($orderby == 'menu_order' || !$orderby) ? 'selected' : ''; ?>>Default Sorting</option>
+                                    <option value="popularity" <?php echo($orderby == 'popularity') ? 'selected' : ''; ?>>Sort by popularity</option>
+                                    <option value="rating" <?php echo($orderby == 'rating') ? 'selected' : ''; ?>>Sort by
+                                        average rating</option>
+                                    <option value="date" <?php echo($orderby == 'date') ? 'selected' : ''; ?>>Sort by
+                                        latest</option>
+                                    <option value="price" <?php echo($orderby == 'price') ? 'selected' : ''; ?>>Sort by
+                                        price: low to high</option>
+                                    <option value="price-desc" <?php echo($orderby == 'price-desc') ? 'selected' : ''; ?>>Sort by price: high to low</option>
                                 </select>
                             </form>
                         </div>
@@ -86,18 +77,21 @@
             <div class="row">
                 <div class="col-12">
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade active show" id="tab-grid" role="tabpanel" aria-labelledby="tab-tour-grid">
+                        <div class="tab-pane fade active show" id="tab-grid" role="tabpanel"
+                            aria-labelledby="tab-tour-grid">
                             <div class="row gy-24 gx-24">
                                 <?php foreach ($tours as $tour): ?>
                                     <div class="col-xxl-4 col-lg-4 col-md-6 mb-4"><?php echo renderTourCard($tour); ?></div>
-                                <?php endforeach; ?>
+                                <?php
+endforeach; ?>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tab-list" role="tabpanel" aria-labelledby="tab-tour-list">
                             <div class="row gy-30">
                                 <?php foreach ($tours as $tour): ?>
                                     <div class="col-12"><?php echo renderTourCard($tour); ?></div>
-                                <?php endforeach; ?>
+                                <?php
+endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -117,14 +111,8 @@
 
     <?php include '../components/footer.php'; ?>
 
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
-    </div>
 
     <?php include '../components/script.php'; ?>
 </body>
 
 </html>
-

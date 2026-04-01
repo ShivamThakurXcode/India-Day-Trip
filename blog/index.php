@@ -1,11 +1,21 @@
+<?php require_once '../config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - India Day Trip</title>
+    <meta name="author" content="India Day Trip">
+    <?php renderSEOHead('blog_listing'); ?>
+    <meta property="twitter:url" content="https://indiadaytrip.com/blog/">
+    <meta property="twitter:title" content="Blog - India Day Trip">
+    <meta property="twitter:description"
+        content="Read travel tips, guides, and stories about Taj Mahal Tours, Golden Triangle, and India travel. Expert advice from India Day Trip.">
+    <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/logo/logo-header.webp">
     <?php include '../components/links.php'; ?>
 </head>
+
 <body>
     <?php include '../components/header.php'; ?>
 
@@ -26,13 +36,13 @@
     <section class="space">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 require_once '../config.php';
                 require_once '../functions.php';
-                
+
                 // Get all published blogs
                 $blogs = getBlogs(null, null, 'published');
-                
+
                 if (empty($blogs)): ?>
                     <div class="col-12">
                         <p class="text-center">No blog posts available yet.</p>
@@ -49,4 +59,5 @@
     <?php include '../components/footer.php'; ?>
     <?php include '../components/script.php'; ?>
 </body>
+
 </html>

@@ -32,6 +32,12 @@
             </a>
         </li>
         <li class="menu-item">
+            <a href="seo.php" class="menu-link">
+                <i class="fas fa-search menu-icon"></i>
+                <span class="menu-text">SEO Management</span>
+            </a>
+        </li>
+        <li class="menu-item">
             <a href="settings.php" class="menu-link">
                 <i class="fas fa-cog menu-icon"></i>
                 <span class="menu-text">Settings</span>

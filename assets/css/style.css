@@ -1237,7 +1237,9 @@ textarea.form-control,
 textarea {
     min-height: 154px;
     padding-top: 16px;
-    padding-bottom: 17px
+    padding-bottom: 17px;
+    border: 1px solid gray;
+    overflow: hidden;
 }
 
 .form-group {
@@ -7983,7 +7985,7 @@ ol.wp-block-rss {
     padding: 15px 35px
 }
 
-@media (max-width: 1299px) {
+@media (max-width: 1199px) {
     .header-button .th-btn {
         display: none
     }
@@ -19058,7 +19060,9 @@ span.select2-selection.select2-selection--single:focus {
 .contact-form textarea {
     min-height: 159px;
     padding-top: 16px;
-    padding-bottom: 17px
+    padding-bottom: 17px;
+    border: 1px solid gray;
+    overflow: hidden;
 }
 
 .contact-form .nice-select:after {
@@ -30125,19 +30129,19 @@ span.select2-selection.select2-selection--single:focus {
 
 .tour-box_price {
     font-family: var(--body-font);
-    font-size: 18px;
+    font-size: small;
     font-weight: 400;
     color: var(--body-color);
     margin-bottom: 35px
 }
 
-.tour-box .currency {
+/* .tour-box .currency {
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.02em;
     color: var(--black-color2)
-}
+} */
 
 .tour-box .tour-action {
     display: -webkit-box;
@@ -30160,7 +30164,7 @@ span.select2-selection.select2-selection--single:focus {
 
 .tour-box .tour-action span {
     font-weight: 400;
-    font-size: 16px;
+    font-size: small;
     color: var(--title-color)
 }
 

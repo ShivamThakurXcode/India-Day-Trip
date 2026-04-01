@@ -10,22 +10,47 @@ if ($depth > 0) {
 $current_page = $_SERVER['SCRIPT_NAME'];
 ?>
 <header class="th-header header-layout1 header-layout2">
-    <div class="header-top">
+    <div class="header-top d-none d-lg-block" style="background-color: #0c2d62;">
         <div class="container th-container">
             <div class="row justify-content-center justify-content-lg-between align-items-center">
                 <div class="col-auto d-none d-md-block">
                     <div class="header-links">
                         <ul>
-                            <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular fa-location-dot"></i>
-                                <span>Shop No. 2, Gupta Market, Tajganj, Agra</span>
+                            <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular fa-location-dot" style="color: #ffc107;"></i>
+                                <span class="text-white">Shop No. 2, Gupta Market, Tajganj, Agra</span>
                             </li>
-                            <li class="d-none d-xl-inline-block"><i class="fa-regular fa-clock"></i> <span>Daily:
+                            <li class="d-none d-xl-inline-block"><i class="fa-regular fa-clock" style="color: #ffc107;"></i> <span class="text-white">Daily:
                                     8.00 am - 8.00 pm</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-auto">
-
+                    <div class="header-top-right d-none d-lg-flex align-items-center">
+                        <div class="contact-info d-none d-xl-flex align-items-center gap-3 me-4">
+                            <a href="tel:+919897030802" class="contact-item d-flex align-items-center gap-2 text-white text-decoration-none">
+                                <i class="fas fa-phone-alt" style="color: #ffc107;"></i>
+                                <span>+91 9897030802</span>
+                            </a>
+                            <a href="mailto:info@indiadaytrip.com" class="contact-item d-flex align-items-center gap-2 text-white text-decoration-none">
+                                <i class="fas fa-envelope" style="color: #ffc107;"></i>
+                                <span>info@indiadaytrip.com</span>
+                            </a>
+                        </div>
+                        <div class="social-links d-flex align-items-center ">
+                            <a href="https://www.facebook.com" target="_blank" class="d-flex align-items-center justify-content-center text-white social-icon" style="width: 36px; height: 36px; background-color: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.twitter.com" target="_blank" class="d-flex align-items-center justify-content-center text-white social-icon" style="width: 36px; height: 36px; background-color: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="d-flex align-items-center justify-content-center text-white social-icon" style="width: 36px; height: 36px; background-color: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com" target="_blank" class="d-flex align-items-center justify-content-center text-white social-icon" style="width: 36px; height: 36px; background-color: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +85,7 @@ $current_page = $_SERVER['SCRIPT_NAME'];
                                 class="far fa-bars"></i></button>
                     </div>
                     <div class="col-auto d-none d-xl-block">
-                        <div class="header-button"><a href="<?php echo $base_path; ?>to_book/index.php" class="th-btn style3 th-icon">Book Now</a>
+                        <div class="header-button"><a href="<?php echo $base_path; ?>/to_book/index.php" class="th-btn style3 th-icon">Book Now</a>
                         </div>
                     </div>
                 </div>

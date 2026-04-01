@@ -18,19 +18,18 @@ if ($depth > 0) {
                         <div class="th-widget-about">
                             <div class="about-logo mb-3">
                                 <a href="<?php echo $base_path; ?>index.php">
-                                    <img src="<?php echo $base_path; ?>assets/img/logo/logo-footer.webp" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
+                                    <img src="../assets/img/logo/logo-footer.webp" alt="India Day Trip" class="img-fluid" style="height: 70px; width: auto;">
                                 </a>
                             </div>
-                            <p class="about-text mb-4">
-                                Agra’s trusted company for unforgettable Taj Mahal and Golden Triangle tours. Experience safe, memorable, and expertly guided journeys with us—serving travelers with excellence for years.
+                           <p class="about-text mb-4">
+                                Agra’s premier travel company for unforgettable Taj Mahal and Golden Triangle tours. We deliver world-class service, carefully crafted itineraries, and expert local guidance to ensure a smooth and luxurious travel experience. Trusted by travelers for years, we are committed to excellence, comfort, and creating remarkable memories at every destination.
                             </p>
+
                             <div class="th-social">
                                 <a href="https://www.facebook.com/" aria-label="Facebook" class="me-2"><i
                                         class="fab fa-facebook-f"></i></a>
                                 <a href="https://www.twitter.com/" aria-label="Twitter" class="me-2"><i
                                         class="fab fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/" aria-label="LinkedIn" class="me-2"><i
-                                        class="fab fa-linkedin-in"></i></a>
                                 <a href="https://www.whatsapp.com/" aria-label="WhatsApp" class="me-2"><i
                                         class="fab fa-whatsapp"></i></a>
                                 <a href="https://instagram.com/" aria-label="Instagram"><i
@@ -78,19 +77,19 @@ if ($depth > 0) {
                         <h3 class="widget_title">Get In Touch</h3>
                         <div class="">
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/location-dot.svg" alt="Location"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/location-dot.svg" alt="Location"></div>
                                 <div class="details">
                                     <p class="mb-0">Shop No. 2, Gupta Market, Tajganj, Agra, Uttar Pradesh, India</p>
                                 </div>
                             </div>
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/phone.svg" alt="Phone"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/phone.svg" alt="Phone"></div>
                                 <div class="details">
                                     <p class="mb-0"><a href="tel:+918126052755" class="info-box_link">+91 81260 52755</a></p>
                                 </div>
                             </div>
                             <div class="info-box_text mb-3 d-flex align-items-center">
-                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>assets/img/icon/envelope.svg" alt="Email"></div>
+                                <div class="icon me-3 flex-shrink-0"><img src="<?php echo $base_path; ?>../assets/img/icon/envelope.svg" alt="Email"></div>
                                 <div class="details">
                                     <p class="mb-0"><a href="mailto:info@indiadaytrip.com"
                                             class="info-box_link">info@indiadaytrip.com</a></p>
@@ -124,15 +123,15 @@ if ($depth > 0) {
                 <div class="col-lg-4 col-md-4">
                     <div class="trust-badges text-center">
                         <div class="d-flex justify-content-center align-items-center gap-3">
-                            <img src="<?php echo $base_path; ?>assets/img/icon/tripadvisor.svg" alt="TripAdvisor" style="height: 80px; width: auto;">
+                            <img src="<?php echo $base_path; ?>../assets/img/icon/tripadvisor.png" alt="TripAdvisor" style="width: auto;">
                             <span class="text-white text-start">Trusted by <br> Travelers Worldwide</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="payment-on-arrival text-center">
-                        <div class="border border-white border-2" style="border-style: dashed; padding: 10px; border-radius: 5px;">
-                            <p class="text-white mb-0">We also accept payment on arrival</p>
+                        <div class="" >
+                            <img src="<?php echo $base_path; ?>../assets/img/icon/payment-cash.png" alt="Payment on Arrival" style=" width: auto; margin-bottom: 5px;">
                         </div>
                     </div>
                 </div>

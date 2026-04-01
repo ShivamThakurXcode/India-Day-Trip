@@ -73,8 +73,8 @@ function getDBConnection() {
  */
 function renderTourCard($tour) {
     $imagePath = $tour['images'] ? json_decode($tour['images'], true)[0] : 'taj_mahal_tour/taj_mahal-1.webp';
-    $imageUrl = "assets/img/{$imagePath}";
-    $detailUrl = "tours/{$tour['slug']}";
+    $imageUrl = "../assets/img/{$imagePath}";
+    $detailUrl = "../tour/{$tour['slug']}";
     $rating = number_format($tour['rating'], 1);
     $ratingPercent = $tour['rating'] * 20; // For width percentage, assuming 5 stars = 100%
 
@@ -82,13 +82,15 @@ function renderTourCard($tour) {
     $dataType = strtolower($titleParts[0] . '-' . $titleParts[1]);
     $dataLocation = strtolower(str_replace(' - ', ' ', $tour['location']));
     $dataDuration = htmlspecialchars($tour['duration']);
-    $displayLocation = htmlspecialchars($tour['location']) . ' - Delhi';
+    $displayLocation = htmlspecialchars($tour['location']) ;
     $displayDuration = htmlspecialchars($tour['duration']) . ' Day';
     $altText = ' Discover the Majestic ' . $titleParts[0] . ' ' . $titleParts[1];
 
     $html = '<div class="tour-box th-ani gsap-cursor" data-type="' . $dataType . '" data-location="' . $dataLocation . '" data-duration="' . $dataDuration . '">
                                             <div class="tour-box_img global-img">
+                                            <a href="' . $detailUrl . '">
                                                 <img src="' . $imageUrl . '" alt="' . $altText . '">
+                                                </a>
                                             </div>
                                             <div class="tour-content">
                                                 <h3 class="box-title">
@@ -364,6 +366,437 @@ function getBlogComments($blog_id, $status = 'approved') {
 
     $stmt = $pdo->prepare($query);
     $stmt->execute($params);
+    return $stmt->fetchAll();
+}
+
+/**
+ * Get SEO data for a page
+ *
+ * @param string $page_key The page key (e.g., 'home', 'about')
+ * @return array|null SEO data or null if not found
+ */
+function getPageSEO($page_key) {
+    global $pdo;
+
+    $stmt = $pdo->prepare("SELECT * FROM page_seo WHERE page_key = ?");
+    $stmt->execute([$page_key]);
+    return $stmt->fetch();
+}
+
+/**
+ * Render SEO head tags for a page
+ *
+ * @param string $page_key The page key
+ * @param array $overrides Optional overrides for specific fields
+ */
+function renderSEOHead($page_key, $overrides = []) {
+    $seo = getPageSEO($page_key);
+
+    if (!$seo) {
+        // Default fallback
+        $seo = [
+            'page_title' => 'India Day Trip - Agra Based Tour & Travel Company',
+            'meta_description' => 'India Day Trip - Agra based tour and travel company offering Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours',
+            'meta_keywords' => 'India Day Trip, Agra tours, Taj Mahal tours, Golden Triangle tours',
+            'canonical_url' => 'https://indiadaytrip.com/',
+            'robots_meta' => 'INDEX,FOLLOW'
+        ];
+    }
+
+    // Apply overrides
+    foreach ($overrides as $key => $value) {
+        if (isset($seo[$key])) {
+            $seo[$key] = $value;
+        }
+    }
+
+    // Output title
+    echo '<title>' . htmlspecialchars($seo['page_title']) . '</title>' . "\n";
+
+    // Output meta tags
+    if (!empty($seo['meta_description'])) {
+        echo '    <meta name="description" content="' . htmlspecialchars($seo['meta_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['meta_keywords'])) {
+        echo '    <meta name="keywords" content="' . htmlspecialchars($seo['meta_keywords']) . '">' . "\n";
+    }
+
+    if (!empty($seo['robots_meta'])) {
+        echo '    <meta name="robots" content="' . htmlspecialchars($seo['robots_meta']) . '">' . "\n";
+    }
+
+    // Canonical URL
+    $canonical = $seo['canonical_url'] ?? '';
+    if (empty($canonical)) {
+        $canonical = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    }
+    echo '    <link rel="canonical" href="' . htmlspecialchars($canonical) . '">' . "\n";
+
+    // Open Graph
+    if (!empty($seo['og_title'])) {
+        echo '    <meta property="og:title" content="' . htmlspecialchars($seo['og_title']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_description'])) {
+        echo '    <meta property="og:description" content="' . htmlspecialchars($seo['og_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_image'])) {
+        echo '    <meta property="og:image" content="' . htmlspecialchars($seo['og_image']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_type'])) {
+        echo '    <meta property="og:type" content="' . htmlspecialchars($seo['og_type']) . '">' . "\n";
+    }
+
+    echo '    <meta property="og:url" content="' . htmlspecialchars($canonical) . '">' . "\n";
+
+    // Twitter
+    if (!empty($seo['twitter_card'])) {
+        echo '    <meta property="twitter:card" content="' . htmlspecialchars($seo['twitter_card']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_title'])) {
+        echo '    <meta property="twitter:title" content="' . htmlspecialchars($seo['twitter_title']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_description'])) {
+        echo '    <meta property="twitter:description" content="' . htmlspecialchars($seo['twitter_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_image'])) {
+        echo '    <meta property="twitter:image" content="' . htmlspecialchars($seo['twitter_image']) . '">' . "\n";
+    }
+
+    // Schema markup
+    if (!empty($seo['schema_markup'])) {
+        echo '    <script type="application/ld+json">' . "\n";
+        echo $seo['schema_markup'] . "\n";
+        echo '    </script>' . "\n";
+    }
+}
+
+/**
+ * Render SEO head tags for a tour
+ *
+ * @param array $tour Tour data from database
+ */
+function renderTourSEOHead($tour) {
+    global $pdo;
+
+    // Check if tour has custom SEO
+    $seo_fields = ['meta_title', 'meta_description', 'meta_keywords', 'canonical_url', 'robots_meta', 'og_title', 'og_description', 'og_image', 'twitter_title', 'twitter_description', 'twitter_image', 'schema_markup'];
+    $has_custom_seo = false;
+
+    foreach ($seo_fields as $field) {
+        if (!empty($tour[$field])) {
+            $has_custom_seo = true;
+            break;
+        }
+    }
+
+    if ($has_custom_seo) {
+        // Use tour's custom SEO
+        $seo = [];
+        foreach ($seo_fields as $field) {
+            $seo[$field] = $tour[$field] ?? '';
+        }
+        $seo['page_title'] = $tour['meta_title'] ?? '';
+        $seo['og_type'] = 'article';
+        $seo['twitter_card'] = 'summary_large_image';
+    } else {
+        // Generate SEO from tour data
+        $title = htmlspecialchars($tour['title']);
+        $description = htmlspecialchars(substr(strip_tags($tour['description']), 0, 160));
+        $keywords = 'India Day Trip, ' . htmlspecialchars($tour['location']) . ' tours, ' . htmlspecialchars(str_replace(' - ', ' ', $tour['title']));
+
+        $seo = [
+            'page_title' => $title . ' - India Day Trip',
+            'meta_description' => $description,
+            'meta_keywords' => $keywords,
+            'canonical_url' => 'https://indiadaytrip.com/tour/' . htmlspecialchars($tour['slug']),
+            'robots_meta' => 'INDEX,FOLLOW',
+            'og_title' => $title,
+            'og_description' => $description,
+            'og_image' => !empty($tour['images']) ? 'https://indiadaytrip.com/assets/img/' . json_decode($tour['images'], true)[0] : '',
+            'og_type' => 'article',
+            'twitter_title' => $title,
+            'twitter_description' => $description,
+            'twitter_image' => !empty($tour['images']) ? 'https://indiadaytrip.com/assets/img/' . json_decode($tour['images'], true)[0] : '',
+            'twitter_card' => 'summary_large_image',
+            'schema_markup' => ''
+        ];
+    }
+
+    // Output title
+    echo '<title>' . htmlspecialchars($seo['page_title']) . '</title>' . "\n";
+
+    // Output meta tags
+    if (!empty($seo['meta_description'])) {
+        echo '    <meta name="description" content="' . htmlspecialchars($seo['meta_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['meta_keywords'])) {
+        echo '    <meta name="keywords" content="' . htmlspecialchars($seo['meta_keywords']) . '">' . "\n";
+    }
+
+    if (!empty($seo['robots_meta'])) {
+        echo '    <meta name="robots" content="' . htmlspecialchars($seo['robots_meta']) . '">' . "\n";
+    }
+
+    // Canonical URL
+    $canonical = $seo['canonical_url'] ?? '';
+    if (empty($canonical)) {
+        $canonical = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    }
+    echo '    <link rel="canonical" href="' . htmlspecialchars($canonical) . '">' . "\n";
+
+    // Open Graph
+    if (!empty($seo['og_title'])) {
+        echo '    <meta property="og:title" content="' . htmlspecialchars($seo['og_title']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_description'])) {
+        echo '    <meta property="og:description" content="' . htmlspecialchars($seo['og_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_image'])) {
+        echo '    <meta property="og:image" content="' . htmlspecialchars($seo['og_image']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_type'])) {
+        echo '    <meta property="og:type" content="' . htmlspecialchars($seo['og_type']) . '">' . "\n";
+    }
+
+    echo '    <meta property="og:url" content="' . htmlspecialchars($canonical) . '">' . "\n";
+
+    // Twitter
+    if (!empty($seo['twitter_card'])) {
+        echo '    <meta property="twitter:card" content="' . htmlspecialchars($seo['twitter_card']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_title'])) {
+        echo '    <meta property="twitter:title" content="' . htmlspecialchars($seo['twitter_title']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_description'])) {
+        echo '    <meta property="twitter:description" content="' . htmlspecialchars($seo['twitter_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_image'])) {
+        echo '    <meta property="twitter:image" content="' . htmlspecialchars($seo['twitter_image']) . '">' . "\n";
+    }
+
+    // Schema markup
+    if (!empty($seo['schema_markup'])) {
+        echo '    <script type="application/ld+json">' . "\n";
+        echo $seo['schema_markup'] . "\n";
+        echo '    </script>' . "\n";
+    }
+}
+
+/**
+ * Render SEO head tags for a blog
+ *
+ * @param array $blog Blog data from database
+ */
+function renderBlogSEOHead($blog) {
+    // Check if blog has custom SEO
+    $seo_fields = ['meta_title', 'meta_description', 'meta_keywords', 'canonical_url', 'robots_meta', 'og_title', 'og_description', 'og_image', 'twitter_title', 'twitter_description', 'twitter_image', 'schema_markup'];
+    $has_custom_seo = false;
+
+    foreach ($seo_fields as $field) {
+        if (!empty($blog[$field])) {
+            $has_custom_seo = true;
+            break;
+        }
+    }
+
+    if ($has_custom_seo) {
+        // Use blog's custom SEO
+        $seo = [];
+        foreach ($seo_fields as $field) {
+            $seo[$field] = $blog[$field] ?? '';
+        }
+        $seo['og_type'] = 'article';
+        $seo['twitter_card'] = 'summary_large_image';
+    } else {
+        // Generate SEO from blog data
+        $title = htmlspecialchars($blog['title']);
+        $description = htmlspecialchars($blog['excerpt'] ?: substr(strip_tags($blog['content']), 0, 160));
+        $keywords = 'India travel blog, ' . htmlspecialchars($blog['title']) . ', India Day Trip';
+
+        $seo = [
+            'page_title' => $title . ' - India Day Trip Blog',
+            'meta_description' => $description,
+            'meta_keywords' => $keywords,
+            'canonical_url' => 'https://indiadaytrip.com/blog/' . htmlspecialchars($blog['slug']),
+            'robots_meta' => 'INDEX,FOLLOW',
+            'og_title' => $title,
+            'og_description' => $description,
+            'og_image' => !empty($blog['featured_image']) ? 'https://indiadaytrip.com/assets/img/blog/' . htmlspecialchars($blog['featured_image']) : '',
+            'og_type' => 'article',
+            'twitter_title' => $title,
+            'twitter_description' => $description,
+            'twitter_image' => !empty($blog['featured_image']) ? 'https://indiadaytrip.com/assets/img/blog/' . htmlspecialchars($blog['featured_image']) : '',
+            'twitter_card' => 'summary_large_image',
+            'schema_markup' => ''
+        ];
+    }
+
+    // Output title
+    echo '<title>' . htmlspecialchars($seo['page_title']) . '</title>' . "\n";
+
+    // Output meta tags
+    if (!empty($seo['meta_description'])) {
+        echo '    <meta name="description" content="' . htmlspecialchars($seo['meta_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['meta_keywords'])) {
+        echo '    <meta name="keywords" content="' . htmlspecialchars($seo['meta_keywords']) . '">' . "\n";
+    }
+
+    if (!empty($seo['robots_meta'])) {
+        echo '    <meta name="robots" content="' . htmlspecialchars($seo['robots_meta']) . '">' . "\n";
+    }
+
+    // Canonical URL
+    $canonical = $seo['canonical_url'] ?? '';
+    if (empty($canonical)) {
+        $canonical = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    }
+    echo '    <link rel="canonical" href="' . htmlspecialchars($canonical) . '">' . "\n";
+
+    // Open Graph
+    if (!empty($seo['og_title'])) {
+        echo '    <meta property="og:title" content="' . htmlspecialchars($seo['og_title']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_description'])) {
+        echo '    <meta property="og:description" content="' . htmlspecialchars($seo['og_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_image'])) {
+        echo '    <meta property="og:image" content="' . htmlspecialchars($seo['og_image']) . '">' . "\n";
+    }
+
+    if (!empty($seo['og_type'])) {
+        echo '    <meta property="og:type" content="' . htmlspecialchars($seo['og_type']) . '">' . "\n";
+    }
+
+    echo '    <meta property="og:url" content="' . htmlspecialchars($canonical) . '">' . "\n";
+
+    // Open Graph article specific
+    echo '    <meta property="article:published_time" content="' . date('c', strtotime($blog['publication_date'])) . '">' . "\n";
+    echo '    <meta property="article:author" content="' . htmlspecialchars($blog['author']) . '">' . "\n";
+
+    // Twitter
+    if (!empty($seo['twitter_card'])) {
+        echo '    <meta property="twitter:card" content="' . htmlspecialchars($seo['twitter_card']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_title'])) {
+        echo '    <meta property="twitter:title" content="' . htmlspecialchars($seo['twitter_title']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_description'])) {
+        echo '    <meta property="twitter:description" content="' . htmlspecialchars($seo['twitter_description']) . '">' . "\n";
+    }
+
+    if (!empty($seo['twitter_image'])) {
+        echo '    <meta property="twitter:image" content="' . htmlspecialchars($seo['twitter_image']) . '">' . "\n";
+    }
+
+    // Schema markup
+    if (!empty($seo['schema_markup'])) {
+        echo '    <script type="application/ld+json">' . "\n";
+        echo $seo['schema_markup'] . "\n";
+        echo '    </script>' . "\n";
+    }
+}
+
+/**
+ * Update SEO data for a page
+ *
+ * @param string $page_key The page key
+ * @param array $data SEO data to update
+ * @return bool Success status
+ */
+function updatePageSEO($page_key, $data) {
+    global $pdo;
+
+    $fields = ['page_title', 'meta_description', 'meta_keywords', 'canonical_url', 'robots_meta',
+               'og_title', 'og_description', 'og_image', 'og_type',
+               'twitter_title', 'twitter_description', 'twitter_image', 'twitter_card',
+               'schema_markup'];
+
+    $setParts = [];
+    $params = [];
+
+    foreach ($fields as $field) {
+        if (isset($data[$field])) {
+            $setParts[] = "$field = ?";
+            $params[] = $data[$field];
+        }
+    }
+
+    if (empty($setParts)) {
+        return false;
+    }
+
+    $params[] = $page_key;
+    $query = "UPDATE page_seo SET " . implode(', ', $setParts) . " WHERE page_key = ?";
+
+    $stmt = $pdo->prepare($query);
+    return $stmt->execute($params);
+}
+
+/**
+ * Insert or update SEO data for a page
+ *
+ * @param string $page_key The page key
+ * @param array $data SEO data
+ * @return bool Success status
+ */
+function setPageSEO($page_key, $data) {
+    global $pdo;
+
+    $fields = ['page_key', 'page_title', 'meta_description', 'meta_keywords', 'canonical_url', 'robots_meta',
+               'og_title', 'og_description', 'og_image', 'og_type',
+               'twitter_title', 'twitter_description', 'twitter_image', 'twitter_card',
+               'schema_markup'];
+
+    $columns = [];
+    $placeholders = [];
+    $params = [];
+
+    foreach ($fields as $field) {
+        if (isset($data[$field]) || $field === 'page_key') {
+            $columns[] = $field;
+            $placeholders[] = '?';
+            $params[] = $field === 'page_key' ? $page_key : ($data[$field] ?? null);
+        }
+    }
+
+    $query = "INSERT INTO page_seo (" . implode(', ', $columns) . ") VALUES (" . implode(', ', $placeholders) . ")
+              ON DUPLICATE KEY UPDATE " . implode(', ', array_map(function($col) {
+                  return "$col = VALUES($col)";
+              }, array_diff($columns, ['page_key'])));
+
+    $stmt = $pdo->prepare($query);
+    return $stmt->execute($params);
+}
+
+/**
+ * Get all page SEO data for admin management
+ *
+ * @return array Array of all page SEO records
+ */
+function getAllPageSEO() {
+    global $pdo;
+
+    $stmt = $pdo->query("SELECT * FROM page_seo ORDER BY page_key");
     return $stmt->fetchAll();
 }
 

@@ -24,6 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $tags = array_map('trim', explode(',', $_POST['tags']));
         $tags_json = json_encode($tags);
         $category_id = $_POST['category_id'] ?? null;
+        $meta_title = trim($_POST['meta_title'] ?? '');
+        $meta_description = trim($_POST['meta_description'] ?? '');
+        $meta_keywords = trim($_POST['meta_keywords'] ?? '');
+        $schemas = trim($_POST['schemas'] ?? '[]');
 
         // Generate slug if empty
         if (empty($slug)) {
@@ -40,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         if ($id) {
-            $query = "UPDATE blogs SET title = ?, slug = ?, content = ?, excerpt = ?, author = ?, publication_date = ?, status = ?, tags = ?, category_id = ?";
-            $params = [$title, $slug, $content, $excerpt, $author, $publication_date, $status, $tags_json, $category_id];
+            $query = "UPDATE blogs SET title = ?, slug = ?, content = ?, excerpt = ?, author = ?, publication_date = ?, status = ?, tags = ?, category_id = ?, meta_title = ?, meta_description = ?, meta_keywords = ?, schemas = ?";
+            $params = [$title, $slug, $content, $excerpt, $author, $publication_date, $status, $tags_json, $category_id, $meta_title, $meta_description, $meta_keywords, $schemas];
             if ($featured_image) {
                 $query .= ", featured_image = ?";
                 $params[] = $featured_image;
@@ -52,8 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->execute($params);
             $_SESSION['message'] = 'Blog updated successfully!';
         } else {
-            $stmt = $pdo->prepare("INSERT INTO blogs (title, slug, content, excerpt, author, publication_date, status, tags, category_id, featured_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$title, $slug, $content, $excerpt, $author, $publication_date, $status, $tags_json, $category_id, $featured_image]);
+            $stmt = $pdo->prepare("INSERT INTO blogs (title, slug, content, excerpt, author, publication_date, status, tags, category_id, featured_image, meta_title, meta_description, meta_keywords, schemas) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$title, $slug, $content, $excerpt, $author, $publication_date, $status, $tags_json, $category_id, $featured_image, $meta_title, $meta_description, $meta_keywords, $schemas]);
             $_SESSION['message'] = 'Blog added successfully!';
         }
     } catch (Exception $e) {
@@ -313,20 +317,71 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Tags (comma separated)</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-tags"></i></span>
-                                        </div>
-                                        <input type="text" name="tags" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Featured Image</label>
-                                    <input type="file" name="featured_image" class="form-control">
-                                    <div id="currentImage"></div>
-                                </div>
+                                 <div class="form-group">
+                                     <label>Tags (comma separated)</label>
+                                     <div class="input-group">
+                                         <div class="input-group-prepend">
+                                             <span class="input-group-text"><i class="fas fa-tags"></i></span>
+                                         </div>
+                                         <input type="text" name="tags" class="form-control">
+                                     </div>
+                                 </div>
+
+                                 <!-- SEO Settings Box -->
+                                 <div class="seo-settings-box" style="border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; background-color: #f8f9fa; margin-bottom: 20px;">
+                                     <h6 style="margin-bottom: 15px; color: #495057; font-weight: 600;"><i class="fas fa-search" style="margin-right: 8px;"></i>SEO Settings</h6>
+                                     <div class="form-group" style="margin-bottom: 15px;">
+                                         <label style="font-weight: 500; color: #495057;">Meta Title</label>
+                                         <div class="input-group">
+                                             <div class="input-group-prepend">
+                                                 <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                                             </div>
+                                             <input type="text" name="meta_title" class="form-control" maxlength="60" placeholder="Custom page title for SEO">
+                                         </div>
+                                         <small class="form-text text-muted">60 characters max. Leave empty to use blog title.</small>
+                                     </div>
+                                     <div class="form-group" style="margin-bottom: 15px;">
+                                         <label style="font-weight: 500; color: #495057;">Meta Description</label>
+                                         <textarea name="meta_description" class="form-control" rows="3" maxlength="160" placeholder="Custom meta description for SEO"></textarea>
+                                         <small class="form-text text-muted">160 characters max. Leave empty to auto-generate from content.</small>
+                                     </div>
+                                     <div class="form-group" style="margin-bottom: 0;">
+                                         <label style="font-weight: 500; color: #495057;">Meta Keywords</label>
+                                         <div class="input-group">
+                                             <div class="input-group-prepend">
+                                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                             </div>
+                                             <input type="text" name="meta_keywords" class="form-control" placeholder="keyword1, keyword2, keyword3">
+                                         </div>
+                                         <small class="form-text text-muted">Comma-separated keywords (optional).</small>
+                                     </div>
+                                 </div>
+
+                                 <!-- Schema Settings Box -->
+                                 <div class="schema-settings-box" style="border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; background-color: #f8f9fa; margin-bottom: 20px;">
+                                     <h6 style="margin-bottom: 15px; color: #495057; font-weight: 600;"><i class="fas fa-code" style="margin-right: 8px;"></i>Schema Markup</h6>
+                                     <div id="schemaContainer">
+                                         <!-- Schema items will be added here dynamically -->
+                                     </div>
+                                     <div class="schema-actions" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #dee2e6;">
+                                         <button type="button" class="btn btn-outline-primary btn-sm" onclick="addSchema()">
+                                             <i class="fas fa-plus"></i> Add Schema
+                                         </button>
+                                         <div class="schema-templates" style="margin-top: 10px;">
+                                             <small class="text-muted">Quick templates:</small>
+                                             <button type="button" class="btn btn-outline-secondary btn-xs ml-2" onclick="addArticleSchema()">Article</button>
+                                             <button type="button" class="btn btn-outline-secondary btn-xs ml-1" onclick="addBreadcrumbSchema()">Breadcrumb</button>
+                                             <button type="button" class="btn btn-outline-secondary btn-xs ml-1" onclick="addFAQSchema()">FAQ</button>
+                                         </div>
+                                     </div>
+                                     <input type="hidden" name="schemas" id="schemasInput">
+                                 </div>
+
+                                 <div class="form-group">
+                                     <label>Featured Image</label>
+                                     <input type="file" name="featured_image" class="form-control">
+                                     <div id="currentImage"></div>
+                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -382,6 +437,21 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                     $('select[name="status"]').val(blog.status);
                     $('select[name="category_id"]').val(blog.category_id);
                     $('input[name="tags"]').val(blog.tags ? JSON.parse(blog.tags).join(', ') : '');
+                    $('input[name="meta_title"]').val(blog.meta_title || '');
+                    $('textarea[name="meta_description"]').val(blog.meta_description || '');
+                    $('input[name="meta_keywords"]').val(blog.meta_keywords || '');
+
+                    // Load schemas
+                    if (blog.schemas) {
+                        try {
+                            const existingSchemas = JSON.parse(blog.schemas);
+                            existingSchemas.forEach(function(schema) {
+                                addSchema(schema.type || 'custom', schema.data);
+                            });
+                        } catch (e) {
+                            console.warn('Failed to load existing schemas:', e);
+                        }
+                    }
                     if (blog.featured_image) {
                         $('#currentImage').html('<img src="../assets/img/blog/' + blog.featured_image + '" width="100" class="mt-2 border rounded">');
                     } else {
@@ -479,6 +549,362 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
             $(document).on("click", ".switchIcon", function() {
                 $(".color-scheme-wrap").toggleClass("active");
             });
+        });
+
+        // Schema functionality
+        let schemaCounter = 0;
+        let schemas = [];
+
+        function addSchema(type = 'custom', data = null) {
+            const schemaId = schemaCounter++;
+            let schemaHtml = '';
+
+            if (type === 'article') {
+                schemaHtml = createArticleSchema(schemaId);
+            } else if (type === 'breadcrumb') {
+                schemaHtml = createBreadcrumbSchema(schemaId);
+            } else if (type === 'faq') {
+                schemaHtml = createFAQSchema(schemaId);
+            } else {
+                schemaHtml = createCustomSchema(schemaId, data);
+            }
+
+            $('#schemaContainer').append(schemaHtml);
+            if (data) {
+                $(`#schemaType${schemaId}`).val(data.type || 'custom');
+                $(`#schemaJson${schemaId}`).val(JSON.stringify(data, null, 2));
+            }
+            updateSchemasInput();
+        }
+
+        function createCustomSchema(id, data = null) {
+            const jsonValue = data ? JSON.stringify(data, null, 2) : `{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "${data?.title || 'Article Title'}",
+  "description": "${data?.description || 'Article description'}",
+  "author": {
+    "@type": "Person",
+    "name": "${data?.author || 'Author Name'}"
+  },
+  "datePublished": "${data?.datePublished || new Date().toISOString().split('T')[0]}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "India Day Trip"
+  }
+}`;
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <select id="schemaType${id}" class="form-control form-control-sm" style="width: 150px;" onchange="changeSchemaType(${id}, this.value)">
+            <option value="custom">Custom JSON-LD</option>
+            <option value="article">Article</option>
+            <option value="breadcrumb">Breadcrumb</option>
+            <option value="faq">FAQ</option>
+            <option value="organization">Organization</option>
+            <option value="website">Website</option>
+        </select>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <textarea id="schemaJson${id}" class="form-control" rows="8" placeholder="Enter JSON-LD schema markup">${jsonValue}</textarea>
+    <div class="schema-preview" style="margin-top: 10px;">
+        <button type="button" class="btn btn-info btn-sm" onclick="validateSchema(${id})">
+            <i class="fas fa-check"></i> Validate
+        </button>
+        <span id="validationResult${id}" style="margin-left: 10px; font-size: 12px;"></span>
+    </div>
+</div>`;
+        }
+
+        function createArticleSchema(id) {
+            const currentDate = new Date().toISOString().split('T')[0];
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <strong>Article Schema</strong>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Headline</label>
+                <input type="text" id="articleHeadline${id}" class="form-control" placeholder="Article headline">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Author</label>
+                <input type="text" id="articleAuthor${id}" class="form-control" placeholder="Author name">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea id="articleDescription${id}" class="form-control" rows="2" placeholder="Article description"></textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Publication Date</label>
+                <input type="date" id="articleDate${id}" class="form-control" value="${currentDate}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Image URL</label>
+                <input type="url" id="articleImage${id}" class="form-control" placeholder="https://example.com/image.jpg">
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" onclick="generateArticleSchema(${id})">
+        <i class="fas fa-magic"></i> Generate JSON-LD
+    </button>
+    <textarea id="schemaJson${id}" class="form-control mt-2" rows="8" style="display: none;"></textarea>
+</div>`;
+        }
+
+        function createBreadcrumbSchema(id) {
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <strong>Breadcrumb Schema</strong>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <div id="breadcrumbItems${id}">
+        <div class="breadcrumb-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+            <input type="text" class="form-control form-control-sm" placeholder="Name" style="margin-right: 10px; flex: 1;">
+            <input type="url" class="form-control form-control-sm" placeholder="URL" style="margin-right: 10px; flex: 2;">
+            <button type="button" class="btn btn-danger btn-sm" onclick="removeBreadcrumbItem(this)">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addBreadcrumbItem(${id})">
+        <i class="fas fa-plus"></i> Add Item
+    </button>
+    <button type="button" class="btn btn-primary btn-sm ml-2" onclick="generateBreadcrumbSchema(${id})">
+        <i class="fas fa-magic"></i> Generate JSON-LD
+    </button>
+    <textarea id="schemaJson${id}" class="form-control mt-2" rows="6" style="display: none;"></textarea>
+</div>`;
+        }
+
+        function createFAQSchema(id) {
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <strong>FAQ Schema</strong>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <div id="faqItems${id}">
+        <div class="faq-item" style="border: 1px solid #f0f0f0; border-radius: 4px; padding: 10px; margin-bottom: 10px;">
+            <input type="text" class="form-control form-control-sm mb-2" placeholder="Question">
+            <textarea class="form-control form-control-sm" rows="2" placeholder="Answer"></textarea>
+            <button type="button" class="btn btn-danger btn-sm mt-2" onclick="removeFaqItem(this)">
+                <i class="fas fa-minus"></i> Remove
+            </button>
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addFaqItem(${id})">
+        <i class="fas fa-plus"></i> Add FAQ
+    </button>
+    <button type="button" class="btn btn-primary btn-sm ml-2" onclick="generateFAQSchema(${id})">
+        <i class="fas fa-magic"></i> Generate JSON-LD
+    </button>
+    <textarea id="schemaJson${id}" class="form-control mt-2" rows="8" style="display: none;"></textarea>
+</div>`;
+        }
+
+        function addArticleSchema() {
+            addSchema('article');
+        }
+
+        function addBreadcrumbSchema() {
+            addSchema('breadcrumb');
+        }
+
+        function addFAQSchema() {
+            addSchema('faq');
+        }
+
+        function removeSchema(id) {
+            $(`#schemaItem${id}`).remove();
+            schemas = schemas.filter(s => s.id !== id);
+            updateSchemasInput();
+        }
+
+        function changeSchemaType(id, type) {
+            // This could be enhanced to convert between schema types
+            console.log('Schema type changed to:', type);
+        }
+
+        function validateSchema(id) {
+            const jsonText = $(`#schemaJson${id}`).val();
+            try {
+                JSON.parse(jsonText);
+                $(`#validationResult${id}`).html('<span style="color: green;">✓ Valid JSON</span>');
+            } catch (e) {
+                $(`#validationResult${id}`).html('<span style="color: red;">✗ Invalid JSON</span>');
+            }
+        }
+
+        function generateArticleSchema(id) {
+            const headline = $(`#articleHeadline${id}`).val() || 'Article Headline';
+            const author = $(`#articleAuthor${id}`).val() || 'Author Name';
+            const description = $(`#articleDescription${id}`).val() || 'Article description';
+            const date = $(`#articleDate${id}`).val() || new Date().toISOString().split('T')[0];
+            const image = $(`#articleImage${id}`).val() || '';
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": headline,
+                "description": description,
+                "author": {
+                    "@type": "Person",
+                    "name": author
+                },
+                "datePublished": date,
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "India Day Trip"
+                }
+            };
+
+            if (image) {
+                schema.image = image;
+            }
+
+            $(`#schemaJson${id}`).val(JSON.stringify(schema, null, 2)).show();
+            updateSchemasInput();
+        }
+
+        function addBreadcrumbItem(id) {
+            const itemHtml = `
+<div class="breadcrumb-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+    <input type="text" class="form-control form-control-sm" placeholder="Name" style="margin-right: 10px; flex: 1;">
+    <input type="url" class="form-control form-control-sm" placeholder="URL" style="margin-right: 10px; flex: 2;">
+    <button type="button" class="btn btn-danger btn-sm" onclick="removeBreadcrumbItem(this)">
+        <i class="fas fa-minus"></i>
+    </button>
+</div>`;
+            $(`#breadcrumbItems${id}`).append(itemHtml);
+        }
+
+        function removeBreadcrumbItem(button) {
+            $(button).closest('.breadcrumb-item').remove();
+        }
+
+        function generateBreadcrumbSchema(id) {
+            const items = [];
+            $(`#breadcrumbItems${id} .breadcrumb-item`).each(function(index) {
+                const name = $(this).find('input[type="text"]').val();
+                const url = $(this).find('input[type="url"]').val();
+                if (name && url) {
+                    items.push({
+                        "@type": "ListItem",
+                        "position": index + 1,
+                        "name": name,
+                        "item": url
+                    });
+                }
+            });
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": items
+            };
+
+            $(`#schemaJson${id}`).val(JSON.stringify(schema, null, 2)).show();
+            updateSchemasInput();
+        }
+
+        function addFaqItem(id) {
+            const itemHtml = `
+<div class="faq-item" style="border: 1px solid #f0f0f0; border-radius: 4px; padding: 10px; margin-bottom: 10px;">
+    <input type="text" class="form-control form-control-sm mb-2" placeholder="Question">
+    <textarea class="form-control form-control-sm" rows="2" placeholder="Answer"></textarea>
+    <button type="button" class="btn btn-danger btn-sm mt-2" onclick="removeFaqItem(this)">
+        <i class="fas fa-minus"></i> Remove
+    </button>
+</div>`;
+            $(`#faqItems${id}`).append(itemHtml);
+        }
+
+        function removeFaqItem(button) {
+            $(button).closest('.faq-item').remove();
+        }
+
+        function generateFAQSchema(id) {
+            const faqs = [];
+            $(`#faqItems${id} .faq-item`).each(function() {
+                const question = $(this).find('input[type="text"]').val();
+                const answer = $(this).find('textarea').val();
+                if (question && answer) {
+                    faqs.push({
+                        "@type": "Question",
+                        "name": question,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": answer
+                        }
+                    });
+                }
+            });
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqs
+            };
+
+            $(`#schemaJson${id}`).val(JSON.stringify(schema, null, 2)).show();
+            updateSchemasInput();
+        }
+
+        function updateSchemasInput() {
+            const schemasData = [];
+            $('.schema-item').each(function() {
+                const id = $(this).attr('id').replace('schemaItem', '');
+                const jsonText = $(`#schemaJson${id}`).val();
+                if (jsonText) {
+                    try {
+                        const schema = JSON.parse(jsonText);
+                        schemasData.push({
+                            id: id,
+                            type: $(`#schemaType${id}`).val() || 'custom',
+                            data: schema
+                        });
+                    } catch (e) {
+                        console.warn('Invalid JSON in schema', id);
+                    }
+                }
+            });
+            $('#schemasInput').val(JSON.stringify(schemasData));
+        }
+
+        // Initialize schema functionality
+        $(document).ready(function() {
+            // Load existing schemas when editing
+            if (typeof blog !== 'undefined' && blog.schemas) {
+                try {
+                    const existingSchemas = JSON.parse(blog.schemas);
+                    existingSchemas.forEach(function(schema) {
+                        addSchema(schema.type || 'custom', schema.data);
+                    });
+                } catch (e) {
+                    console.warn('Failed to load existing schemas:', e);
+                }
+            }
         });
     </script>
 </body>

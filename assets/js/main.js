@@ -654,50 +654,62 @@
     c,
     d,
     p = ".ajax-contact",
-    u = '[name="email"]',
-    h = e(".form-messages");
-  function f() {
-    var t = e(p).serialize();
-    (function () {
-      var t,
-        a = !0;
-      function i(i) {
-        i = i.split(",");
-        for (var n = 0; n < i.length; n++)
-          (t = p + " " + i[n]),
-            e(t).val()
-              ? (e(t).removeClass("is-invalid"), (a = !0))
-              : (e(t).addClass("is-invalid"), (a = !1));
+    u = '[name="email"]';
+  function f(o) {
+    var form = o.closest(p);
+    var t = $(form).serialize();
+    var h = $(form).find(".form-messages");
+    
+    // Get all required fields in this form
+    var requiredFields = form.querySelectorAll('[required]');
+    var isValid = true;
+    
+    requiredFields.forEach(function(field) {
+      if (!field.value.trim()) {
+        isValid = false;
+        $(field).addClass('is-invalid');
+      } else {
+        $(field).removeClass('is-invalid');
       }
-      i(
-        '[name="name"],[name="email"],[name="subject"],[name="number"],[name="message"]'
-      ),
-        e(u).val() &&
-        e(u)
-          .val()
-          .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
-          ? (e(u).removeClass("is-invalid"), (a = !0))
-          : (e(u).addClass("is-invalid"), (a = !1));
-      return a;
-    })() &&
-      jQuery
-        .ajax({ url: e(p).attr("action"), data: t, type: "POST" })
-        .done(function (t) {
-          h.removeClass("error"),
-            h.addClass("success"),
-            h.text(t),
-            e(p + ' input:not([type="submit"]),' + p + " textarea").val("");
-        })
-        .fail(function (e) {
-          h.removeClass("success"),
-            h.addClass("error"),
-            "" !== e.responseText
-              ? h.html(e.responseText)
-              : h.html(
-                  "Oops! An error occured and your message could not be sent."
-                );
-        });
+    });
+    
+    // Validate email if present
+    var emailField = form.querySelector('[name="email"]');
+    if (emailField && emailField.value) {
+      var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailRegex.test(emailField.value)) {
+        isValid = false;
+        $(emailField).addClass('is-invalid');
+      }
+    }
+    
+    if (!isValid) {
+      h.removeClass("success").addClass("error").text("Please fill in all required fields correctly.");
+      return;
+    }
+    
+    $.ajax({ url: $(form).attr("action"), data: t, type: "POST" })
+      .done(function (data) {
+        h.removeClass("error"),
+          h.addClass("success"),
+          h.text(data),
+          $(form + ' input:not([type="submit"]),' + form + " textarea").val("");
+      })
+      .fail(function (e) {
+        h.removeClass("success"),
+          h.addClass("error"),
+          "" !== e.responseText
+            ? h.html(e.responseText)
+            : h.html(
+                "Oops! An error occured and your message could not be sent."
+              );
+      });
   }
+  // Bind submit handler
+  $(document).on('submit', '.ajax-contact', function(e) {
+    e.preventDefault();
+    f($(this));
+  });
   function g(t, a, i, n) {
     e(a).on("click", function (a) {
       a.preventDefault(), e(t).addClass(n);
@@ -727,9 +739,6 @@
       });
   }
   if (
-    (e(p).on("submit", function (e) {
-      e.preventDefault(), f();
-    }),
     (l = ".popup-search-box"),
     (c = ".searchClose"),
     (d = "show"),
@@ -758,7 +767,8 @@
     e(".popup-video").magnificPopup({ type: "iframe" }),
     e(".popup-content").magnificPopup({ type: "inline", midClick: !0 }),
     e(".th-anim").length)
-  ) {
+  
+  {
     gsap.registerPlugin(ScrollTrigger),
       document.querySelectorAll(".th-anim").forEach((e) => {
         let t = e.querySelector("img"),

@@ -34,26 +34,26 @@
     <?php include '../components/header.php'; ?>
 
     <?php
-    require_once '../config.php';
-    require_once '../functions.php';
+require_once '../config.php';
+require_once '../functions.php';
 
-    $slug = isset($_GET['slug']) ? $_GET['slug'] : '';
+$slug = isset($_GET['slug']) ? $_GET['slug'] : '';
 
-    // Try to fetch from database first
-    $dbBlog = null;
-    if ($slug) {
-        $stmt = $pdo->prepare("SELECT * FROM blogs WHERE slug = ? AND status = 'published'");
-        $stmt->execute([$slug]);
-        $dbBlog = $stmt->fetch();
-    }
+// Try to fetch from database first
+$dbBlog = null;
+if ($slug) {
+    $stmt = $pdo->prepare("SELECT * FROM blogs WHERE slug = ? AND status = 'published'");
+    $stmt->execute([$slug]);
+    $dbBlog = $stmt->fetch();
+}
 
-    $blogs = [
-        'best-time-to-visit-taj-mahal' => [
-            'title' => 'Best Time to Visit Taj Mahal: A Complete Guide',
-            'date' => 'Sep 09, 2024',
-            'read_time' => '6 min read',
-            'image' => '../assets/img/blog/blog-agra.webp',
-            'content' => '
+$blogs = [
+    'best-time-to-visit-taj-mahal' => [
+        'title' => 'Best Time to Visit Taj Mahal: A Complete Guide',
+        'date' => 'Sep 09, 2024',
+        'read_time' => '6 min read',
+        'image' => '../assets/img/blog/blog-agra.webp',
+        'content' => '
                 <p>The Taj Mahal, one of the Seven Wonders of the World, is a must-visit destination for travelers to India. Located in Agra, this iconic mausoleum attracts millions of visitors each year. However, to truly appreciate its beauty and avoid the crowds, timing your visit is crucial.</p>
 
                 <h3>Best Seasons to Visit</h3>
@@ -80,13 +80,13 @@
                     <li>Respect the dress code and photography rules</li>
                 </ul>
             '
-        ],
-        'must-try-local-places-foods-in-delhi' => [
-            'title' => 'Must-Try Local Places & Foods in Delhi',
-            'date' => 'Sep 05, 2024',
-            'read_time' => '6 min read',
-            'image' => '../assets/img/blog/blog-delhi.webp',
-            'content' => '
+    ],
+    'must-try-local-places-foods-in-delhi' => [
+        'title' => 'Must-Try Local Places & Foods in Delhi',
+        'date' => 'Sep 05, 2024',
+        'read_time' => '6 min read',
+        'image' => '../assets/img/blog/blog-delhi.webp',
+        'content' => '
                 <p>Delhi, the capital of India, is a culinary paradise that offers a diverse range of flavors and experiences. From street food to fine dining, the city has something for every palate. Here are some must-try local places and foods that will give you an authentic taste of Delhi.</p>
 
                 <h3>Iconic Street Food Spots</h3>
@@ -121,13 +121,13 @@
                     <li>Start with small portions if you have a sensitive stomach</li>
                 </ul>
             '
-        ],
-        'perfect-5-day-golden-triangle-itinerary' => [
-            'title' => 'Perfect 5-Day Golden Triangle Itinerary',
-            'date' => 'Sep 10, 2024',
-            'read_time' => '8 min read',
-            'image' => '../assets/img/blog/blog-tour.webp',
-            'content' => '
+    ],
+    'perfect-5-day-golden-triangle-itinerary' => [
+        'title' => 'Perfect 5-Day Golden Triangle Itinerary',
+        'date' => 'Sep 10, 2024',
+        'read_time' => '8 min read',
+        'image' => '../assets/img/blog/blog-tour.webp',
+        'content' => '
                 <p>The Golden Triangle tour covering Delhi, Agra, and Jaipur is one of India\'s most popular tourist circuits. This 5-day itinerary allows you to experience the best of North India\'s heritage, culture, and architecture.</p>
 
                 <h3>Day 1: Arrival in Delhi</h3>
@@ -167,24 +167,26 @@
                     <li>Keep copies of important documents</li>
                 </ul>
             '
-        ]
-    ];
+    ]
+];
 
-    if ($dbBlog) {
-        $blog = [
-            'title' => $dbBlog['title'],
-            'date' => date('M d, Y', strtotime($dbBlog['publication_date'])),
-            'read_time' => '5 min read', // Default
-            'image' => '../assets/img/blog/' . ($dbBlog['featured_image'] ?: 'default.webp'),
-            'content' => $dbBlog['content']
-        ];
-    } elseif (isset($blogs[$slug])) {
-        $blog = $blogs[$slug];
-    } else {
-        header("Location: index.php");
-        exit;
-    }
-    ?>
+if ($dbBlog) {
+    $blog = [
+        'title' => $dbBlog['title'],
+        'date' => date('M d, Y', strtotime($dbBlog['publication_date'])),
+        'read_time' => '5 min read', // Default
+        'image' => '../assets/img/blog/' . ($dbBlog['featured_image'] ?: 'default.webp'),
+        'content' => $dbBlog['content']
+    ];
+}
+elseif (isset($blogs[$slug])) {
+    $blog = $blogs[$slug];
+}
+else {
+    header("Location: index.php");
+    exit;
+}
+?>
 
     <div class="breadcumb-wrapper" data-bg-src="../assets/img/bg/breadcumb-bg.webp">
         <div class="container">
@@ -254,7 +256,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php endforeach; ?>
+                                <?php
+endforeach; ?>
                             </div>
                         </div>
                     </aside>
@@ -265,11 +268,7 @@
 
     <?php include '../components/footer.php'; ?>
 
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
-    </div>
+
 
     <?php include '../components/script.php'; ?>
 </body>

@@ -26,6 +26,10 @@ checkAdminLogin();
         $availability = (int)$_POST['availability'];
         $category_id = $_POST['category_id'] ?: null;
         $location = trim($_POST['location']);
+        $meta_title = trim($_POST['meta_title'] ?? '');
+        $meta_description = trim($_POST['meta_description'] ?? '');
+        $meta_keywords = trim($_POST['meta_keywords'] ?? '');
+        $schemas = trim($_POST['schemas'] ?? '[]');
 
         // Generate slug if empty or auto-generate
         if (empty($slug)) {
@@ -54,12 +58,12 @@ checkAdminLogin();
         $images_json = json_encode($images);
 
         if ($id) {
-            $stmt = $pdo->prepare("UPDATE tours SET title = ?, slug = ?, description = ?, highlights = ?, included = ?, excluded = ?, itinerary = ?, pricing = ?, duration = ?, availability = ?, category_id = ?, location = ?, images = ? WHERE id = ?");
-            $stmt->execute([$title, $slug, $description, json_encode($highlights), json_encode($included), json_encode($excluded), json_encode($itinerary), $pricing, $duration, $availability, $category_id, $location, $images_json, $id]);
+            $stmt = $pdo->prepare("UPDATE tours SET title = ?, slug = ?, description = ?, highlights = ?, included = ?, excluded = ?, itinerary = ?, pricing = ?, duration = ?, availability = ?, category_id = ?, location = ?, images = ?, meta_title = ?, meta_description = ?, meta_keywords = ?, schemas = ? WHERE id = ?");
+            $stmt->execute([$title, $slug, $description, json_encode($highlights), json_encode($included), json_encode($excluded), json_encode($itinerary), $pricing, $duration, $availability, $category_id, $location, $images_json, $meta_title, $meta_description, $meta_keywords, $schemas, $id]);
             $_SESSION['message'] = 'Tour updated successfully!';
         } else {
-            $stmt = $pdo->prepare("INSERT INTO tours (title, slug, description, highlights, included, excluded, itinerary, pricing, duration, availability, category_id, location, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$title, $slug, $description, json_encode($highlights), json_encode($included), json_encode($excluded), json_encode($itinerary), $pricing, $duration, $availability, $category_id, $location, $images_json]);
+            $stmt = $pdo->prepare("INSERT INTO tours (title, slug, description, highlights, included, excluded, itinerary, pricing, duration, availability, category_id, location, images, meta_title, meta_description, meta_keywords, schemas) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$title, $slug, $description, json_encode($highlights), json_encode($included), json_encode($excluded), json_encode($itinerary), $pricing, $duration, $availability, $category_id, $location, $images_json, $meta_title, $meta_description, $meta_keywords, $schemas]);
             $_SESSION['message'] = 'Tour added successfully!';
         }
     } catch (Exception $e) {
@@ -93,6 +97,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <style>
         /* Color Switcher Enhancement */
         .color-switch-btns button {
@@ -386,12 +391,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
               </div>
               <div class="form-group">
                 <label>Description</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-file-alt"></i></span>
-                  </div>
-                  <textarea name="description" class="form-control" rows="3"></textarea>
-                </div>
+                <textarea name="description" id="description" class="form-control" rows="5"></textarea>
               </div>
               
               <!-- Tour Highlights Section -->
@@ -512,9 +512,59 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label>Images (multiple allowed, max 5)</label>
+               </div>
+               <!-- SEO Settings Box -->
+               <div class="seo-settings-box" style="border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; background-color: #f8f9fa; margin-bottom: 20px;">
+                 <h6 style="margin-bottom: 15px; color: #495057; font-weight: 600;"><i class="fas fa-search" style="margin-right: 8px;"></i>SEO Settings</h6>
+                 <div class="form-group" style="margin-bottom: 15px;">
+                   <label style="font-weight: 500; color: #495057;">Meta Title</label>
+                   <div class="input-group">
+                     <div class="input-group-prepend">
+                       <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                     </div>
+                     <input type="text" name="meta_title" class="form-control" maxlength="60" placeholder="Custom page title for SEO">
+                   </div>
+                   <small class="form-text text-muted">60 characters max. Leave empty to use tour title.</small>
+                 </div>
+                 <div class="form-group" style="margin-bottom: 15px;">
+                   <label style="font-weight: 500; color: #495057;">Meta Description</label>
+                   <textarea name="meta_description" class="form-control" rows="3" maxlength="160" placeholder="Custom meta description for SEO"></textarea>
+                   <small class="form-text text-muted">160 characters max. Leave empty to auto-generate from content.</small>
+                 </div>
+                 <div class="form-group" style="margin-bottom: 0;">
+                   <label style="font-weight: 500; color: #495057;">Meta Keywords</label>
+                   <div class="input-group">
+                     <div class="input-group-prepend">
+                       <span class="input-group-text"><i class="fas fa-key"></i></span>
+                     </div>
+                     <input type="text" name="meta_keywords" class="form-control" placeholder="keyword1, keyword2, keyword3">
+                   </div>
+                   <small class="form-text text-muted">Comma-separated keywords (optional).</small>
+                  </div>
+                </div>
+
+                <!-- Schema Settings Box -->
+                <div class="schema-settings-box" style="border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; background-color: #f8f9fa; margin-bottom: 20px;">
+                  <h6 style="margin-bottom: 15px; color: #495057; font-weight: 600;"><i class="fas fa-code" style="margin-right: 8px;"></i>Schema Markup</h6>
+                  <div id="schemaContainer">
+                    <!-- Schema items will be added here dynamically -->
+                  </div>
+                  <div class="schema-actions" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #dee2e6;">
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="addSchema()">
+                      <i class="fas fa-plus"></i> Add Schema
+                    </button>
+                    <div class="schema-templates" style="margin-top: 10px;">
+                      <small class="text-muted">Quick templates:</small>
+                      <button type="button" class="btn btn-outline-secondary btn-xs ml-2" onclick="addTourSchema()">Tour</button>
+                      <button type="button" class="btn btn-outline-secondary btn-xs ml-1" onclick="addProductSchema()">Product</button>
+                      <button type="button" class="btn btn-outline-secondary btn-xs ml-1" onclick="addOrganizationSchema()">Organization</button>
+                    </div>
+                  </div>
+                  <input type="hidden" name="schemas" id="schemasInput">
+                </div>
+
+                <div class="form-group">
+                  <label>Images (multiple allowed, max 5)</label>
                 <div class="custom-file-upload">
                   <input type="file" name="images[]" multiple class="form-control-file d-none" id="imageInput" accept="image/*">
                   <label for="imageInput" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
@@ -573,6 +623,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
             renderIncluded();
             renderExcluded();
             renderItinerary();
+            if (CKEDITOR.instances.description) {
+                CKEDITOR.instances.description.destroy();
+            }
+            CKEDITOR.replace('description');
         }
 
         // Initialize all arrays to prevent undefined errors
@@ -628,6 +682,21 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                     $('input[name="availability"]').val(tour.availability || '');
                     $('select[name="category_id"]').val(tour.category_id || '');
                     $('input[name="location"]').val(tour.location || '');
+                    $('input[name="meta_title"]').val(tour.meta_title || '');
+                    $('textarea[name="meta_description"]').val(tour.meta_description || '');
+                    $('input[name="meta_keywords"]').val(tour.meta_keywords || '');
+
+                    // Load schemas
+                    if (tour.schemas) {
+                        try {
+                            const existingSchemas = JSON.parse(tour.schemas);
+                            existingSchemas.forEach(function(schema) {
+                                addSchema(schema.type || 'custom', schema.data);
+                            });
+                        } catch (e) {
+                            console.warn('Failed to load existing schemas:', e);
+                        }
+                    }
                     
                     // Safely parse JSON fields with fallbacks
                     try {
@@ -691,9 +760,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
                     $('#currentImagesInput').val(JSON.stringify(currentImages));
                     $('#croppedImagesInput').val('[]');
                     renderCurrentImages();
-                    
+
                     $('#tourModalLabel').text('Edit Tour');
                     $('#tourModal').modal('show');
+                    if (CKEDITOR.instances.description) {
+                        CKEDITOR.instances.description.destroy();
+                    }
+                    CKEDITOR.replace('description');
                 } catch(e) {
                     console.error('Error in openEditModal:', e);
                     alert('Error processing tour data: ' + e.message);
@@ -1056,12 +1129,400 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
         });
 
         function updateHiddenFields() {
+            if (CKEDITOR.instances.description) {
+                CKEDITOR.instances.description.updateElement();
+            }
             $('#highlightsInput').val(JSON.stringify(highlights));
             $('#includedInput').val(JSON.stringify(included));
             $('#excludedInput').val(JSON.stringify(excluded));
             $('#itineraryInput').val(JSON.stringify(itinerary));
             return true;
         }
+
+        // Schema functionality for tours
+        let schemaCounter = 0;
+        let schemas = [];
+
+        function addSchema(type = 'custom', data = null) {
+            const schemaId = schemaCounter++;
+            let schemaHtml = '';
+
+            if (type === 'tour') {
+                schemaHtml = createTourSchema(schemaId);
+            } else if (type === 'product') {
+                schemaHtml = createProductSchema(schemaId);
+            } else if (type === 'organization') {
+                schemaHtml = createOrganizationSchema(schemaId);
+            } else {
+                schemaHtml = createCustomSchema(schemaId, data);
+            }
+
+            $('#schemaContainer').append(schemaHtml);
+            if (data) {
+                $(`#schemaType${schemaId}`).val(data.type || 'custom');
+                $(`#schemaJson${schemaId}`).val(JSON.stringify(data, null, 2));
+            }
+            updateSchemasInput();
+        }
+
+        function createCustomSchema(id, data = null) {
+            const jsonValue = data ? JSON.stringify(data, null, 2) : `{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "${data?.title || 'Tour Name'}",
+  "description": "${data?.description || 'Tour description'}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "${data?.location || 'Location'}",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  }
+}`;
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <select id="schemaType${id}" class="form-control form-control-sm" style="width: 150px;" onchange="changeSchemaType(${id}, this.value)">
+            <option value="custom">Custom JSON-LD</option>
+            <option value="tour">Tour</option>
+            <option value="product">Product</option>
+            <option value="organization">Organization</option>
+            <option value="event">Event</option>
+            <option value="place">Place</option>
+        </select>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <textarea id="schemaJson${id}" class="form-control" rows="8" placeholder="Enter JSON-LD schema markup">${jsonValue}</textarea>
+    <div class="schema-preview" style="margin-top: 10px;">
+        <button type="button" class="btn btn-info btn-sm" onclick="validateSchema(${id})">
+            <i class="fas fa-check"></i> Validate
+        </button>
+        <span id="validationResult${id}" style="margin-left: 10px; font-size: 12px;"></span>
+    </div>
+</div>`;
+        }
+
+        function createTourSchema(id) {
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <strong>Tour Schema</strong>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="tourName${id}" class="form-control" placeholder="Tour name">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" id="tourDescription${id}" class="form-control" placeholder="Tour description">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" id="tourLocation${id}" class="form-control" placeholder="Tour location">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Duration</label>
+                <input type="text" id="tourDuration${id}" class="form-control" placeholder="e.g., 2 days">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" id="tourPrice${id}" class="form-control" placeholder="Price (e.g., 500)">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Currency</label>
+                <select id="tourCurrency${id}" class="form-control">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" onclick="generateTourSchema(${id})">
+        <i class="fas fa-magic"></i> Generate JSON-LD
+    </button>
+    <textarea id="schemaJson${id}" class="form-control mt-2" rows="10" style="display: none;"></textarea>
+</div>`;
+        }
+
+        function createProductSchema(id) {
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <strong>Product Schema</strong>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="productName${id}" class="form-control" placeholder="Product name">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" id="productDescription${id}" class="form-control" placeholder="Product description">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" step="0.01" id="productPrice${id}" class="form-control" placeholder="Price">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Currency</label>
+                <select id="productCurrency${id}" class="form-control">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Availability</label>
+                <select id="productAvailability${id}" class="form-control">
+                    <option value="InStock">In Stock</option>
+                    <option value="OutOfStock">Out of Stock</option>
+                    <option value="PreOrder">Pre-order</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Image URL</label>
+        <input type="url" id="productImage${id}" class="form-control" placeholder="https://example.com/image.jpg">
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" onclick="generateProductSchema(${id})">
+        <i class="fas fa-magic"></i> Generate JSON-LD
+    </button>
+    <textarea id="schemaJson${id}" class="form-control mt-2" rows="8" style="display: none;"></textarea>
+</div>`;
+        }
+
+        function createOrganizationSchema(id) {
+            return `
+<div class="schema-item" id="schemaItem${id}" style="border: 1px solid #e9ecef; border-radius: 6px; padding: 15px; margin-bottom: 10px; background: white;">
+    <div class="schema-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <strong>Organization Schema</strong>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeSchema(${id})">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="orgName${id}" class="form-control" placeholder="Organization name" value="India Day Trip">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>URL</label>
+                <input type="url" id="orgUrl${id}" class="form-control" placeholder="Website URL" value="https://indiadaytrip.com">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea id="orgDescription${id}" class="form-control" rows="2" placeholder="Organization description">India Day Trip offers authentic cultural experiences and guided tours across India's most iconic destinations.</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" id="orgPhone${id}" class="form-control" placeholder="+91-XXXXXXXXXX">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="orgEmail${id}" class="form-control" placeholder="info@indiadaytrip.com">
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" onclick="generateOrganizationSchema(${id})">
+        <i class="fas fa-magic"></i> Generate JSON-LD
+    </button>
+    <textarea id="schemaJson${id}" class="form-control mt-2" rows="10" style="display: none;"></textarea>
+</div>`;
+        }
+
+        function addTourSchema() {
+            addSchema('tour');
+        }
+
+        function addProductSchema() {
+            addSchema('product');
+        }
+
+        function addOrganizationSchema() {
+            addSchema('organization');
+        }
+
+        function removeSchema(id) {
+            $(`#schemaItem${id}`).remove();
+            schemas = schemas.filter(s => s.id !== id);
+            updateSchemasInput();
+        }
+
+        function validateSchema(id) {
+            const jsonText = $(`#schemaJson${id}`).val();
+            try {
+                JSON.parse(jsonText);
+                $(`#validationResult${id}`).html('<span style="color: green;">✓ Valid JSON</span>');
+            } catch (e) {
+                $(`#validationResult${id}`).html('<span style="color: red;">✗ Invalid JSON</span>');
+            }
+        }
+
+        function generateTourSchema(id) {
+            const name = $(`#tourName${id}`).val() || 'Tour Name';
+            const description = $(`#tourDescription${id}`).val() || 'Tour description';
+            const location = $(`#tourLocation${id}`).val() || 'Location';
+            const duration = $(`#tourDuration${id}`).val() || '1 day';
+            const price = $(`#tourPrice${id}`).val() || '0';
+            const currency = $(`#tourCurrency${id}`).val() || 'INR';
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "TouristTrip",
+                "name": name,
+                "description": description,
+                "provider": {
+                    "@type": "Organization",
+                    "name": "India Day Trip"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": price,
+                    "priceCurrency": currency,
+                    "availability": "https://schema.org/InStock"
+                },
+                "touristType": "Cultural tourism",
+                "duration": `P${duration.replace(/[^\d]/g, '')}D`
+            };
+
+            $(`#schemaJson${id}`).val(JSON.stringify(schema, null, 2)).show();
+            updateSchemasInput();
+        }
+
+        function generateProductSchema(id) {
+            const name = $(`#productName${id}`).val() || 'Product Name';
+            const description = $(`#productDescription${id}`).val() || 'Product description';
+            const price = $(`#productPrice${id}`).val() || '0';
+            const currency = $(`#productCurrency${id}`).val() || 'INR';
+            const availability = $(`#productAvailability${id}`).val() || 'InStock';
+            const image = $(`#productImage${id}`).val() || '';
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": name,
+                "description": description,
+                "offers": {
+                    "@type": "Offer",
+                    "price": price,
+                    "priceCurrency": currency,
+                    "availability": `https://schema.org/${availability}`
+                }
+            };
+
+            if (image) {
+                schema.image = image;
+            }
+
+            $(`#schemaJson${id}`).val(JSON.stringify(schema, null, 2)).show();
+            updateSchemasInput();
+        }
+
+        function generateOrganizationSchema(id) {
+            const name = $(`#orgName${id}`).val() || 'Organization Name';
+            const url = $(`#orgUrl${id}`).val() || '';
+            const description = $(`#orgDescription${id}`).val() || 'Organization description';
+            const phone = $(`#orgPhone${id}`).val() || '';
+            const email = $(`#orgEmail${id}`).val() || '';
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": name,
+                "description": description,
+                "url": url,
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": phone,
+                    "email": email,
+                    "contactType": "customer service"
+                }
+            };
+
+            $(`#schemaJson${id}`).val(JSON.stringify(schema, null, 2)).show();
+            updateSchemasInput();
+        }
+
+        function updateSchemasInput() {
+            const schemasData = [];
+            $('.schema-item').each(function() {
+                const id = $(this).attr('id').replace('schemaItem', '');
+                const jsonText = $(`#schemaJson${id}`).val();
+                if (jsonText) {
+                    try {
+                        const schema = JSON.parse(jsonText);
+                        schemasData.push({
+                            id: id,
+                            type: $(`#schemaType${id}`).val() || 'custom',
+                            data: schema
+                        });
+                    } catch (e) {
+                        console.warn('Invalid JSON in schema', id);
+                    }
+                }
+            });
+            $('#schemasInput').val(JSON.stringify(schemasData));
+        }
+
+        // Initialize schema functionality
+        $(document).ready(function() {
+            // Load existing schemas when editing
+            if (typeof tour !== 'undefined' && tour.schemas) {
+                try {
+                    const existingSchemas = JSON.parse(tour.schemas);
+                    existingSchemas.forEach(function(schema) {
+                        addSchema(schema.type || 'custom', schema.data);
+                    });
+                } catch (e) {
+                    console.warn('Failed to load existing schemas:', e);
+                }
+            }
+        });
     </script>
 </body>
 </html>

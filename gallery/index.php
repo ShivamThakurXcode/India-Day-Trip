@@ -1,28 +1,14 @@
+<?php require_once '../config.php'; ?>
+
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>India Day Trip Gallery - Explore Agra & Taj Mahal Photos</title>
     <meta name="author" content="India Day Trip">
-    <meta name="description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
-    <meta name="keywords" content="India Day Trip gallery, Agra photos, Taj Mahal images, Golden Triangle tours photos, Delhi travel gallery, Jaipur pictures">
-    <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://indiadaytrip.com/gallery/">
-    <meta property="og:title" content="India Day Trip Gallery - Explore Agra & Taj Mahal Photos">
-    <meta property="og:description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
-    <meta property="og:image" content="https://indiadaytrip.com/assets/img/gallery/hg1.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiadaytrip.com/gallery/">
-    <meta property="twitter:title" content="India Day Trip Gallery - Explore Agra & Taj Mahal Photos">
-    <meta property="twitter:description" content="Browse our gallery of stunning photos from Same Day Tours, Taj Mahal Tours, and Golden Triangle Tours. Experience the beauty of Agra, Delhi, and Jaipur through our travel photography.">
+    <?php renderSEOHead('gallery'); ?>
     <meta property="twitter:image" content="https://indiadaytrip.com/assets/img/gallery/hg1.webp">
 
     <?php include '../components/links.php'; ?>
@@ -66,17 +52,12 @@
 
     <?php include '../components/footer.php'; ?>
 
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
-    </div>
 
     <?php include '../components/script.php'; ?>
-    
+
     <script>
         // Gallery loading functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadGalleryImages();
         });
 
@@ -99,7 +80,7 @@
                 })
                 .then(data => {
                     loadingSpinner.style.display = 'none';
-                    
+
                     if (data.success && data.data.length > 0) {
                         data.data.forEach(image => {
                             const galleryItem = createGalleryItem(image);
@@ -120,29 +101,29 @@
         function createGalleryItem(image) {
             const colDiv = document.createElement('div');
             colDiv.className = 'col-auto';
-            
+
             const galleryBox = document.createElement('div');
             galleryBox.className = 'gallery-box style5';
-            
+
             const galleryImg = document.createElement('div');
             galleryImg.className = 'gallery-img global-img';
-            
+
             const img = document.createElement('img');
             img.src = image.url;
             img.alt = image.alt_text || image.title || 'Gallery Image';
             img.loading = 'lazy'; // Lazy loading for performance
-            
+
             const link = document.createElement('a');
             link.href = image.url;
             link.className = 'icon-btn popup-image';
             link.setAttribute('data-gallery', 'gallery');
             link.innerHTML = '<i class="fal fa-magnifying-glass-plus"></i>';
-            
+
             galleryImg.appendChild(img);
             galleryImg.appendChild(link);
             galleryBox.appendChild(galleryImg);
             colDiv.appendChild(galleryBox);
-            
+
             return colDiv;
         }
     </script>
